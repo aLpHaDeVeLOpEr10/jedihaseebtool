@@ -191,7 +191,7 @@
                     <template x-for="(faq, index) in faqs" :key="index">
                         <div class="border border-gray-200 rounded-xl p-4 space-y-3">
                             <div class="flex justify-between">
-                                <span class="text-sm font-medium text-gray-700">FAQ {{ index + 1 }}</span>
+                                <span class="text-sm font-medium text-gray-700" x-text="'FAQ ' + (index + 1)"></span>
                                 <button type="button" @click="removeFaq(index)"
                                         class="text-red-400 hover:text-red-600 text-sm">Remove</button>
                             </div>
