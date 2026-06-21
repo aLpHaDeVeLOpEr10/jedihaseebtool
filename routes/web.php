@@ -16,6 +16,18 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Tools
 Route::get('/tools', [ToolController::class, 'index'])->name('tools.index');
+Route::get('/tools/instagram-downloader/proxy', [ToolController::class, 'instagramProxy'])
+    ->name('instagram.proxy')
+    ->middleware('throttle:20,1');
+Route::get('/tools/facebook-reels-and-stories-downloader/proxy', [ToolController::class, 'facebookProxy'])
+    ->name('facebook.proxy')
+    ->middleware('throttle:20,1');
+Route::get('/tools/youtube-video-and-shorts-downloader/proxy', [ToolController::class, 'youtubeProxy'])
+    ->name('youtube.proxy')
+    ->middleware('throttle:10,1');
+Route::get('/tools/tiktok-videos-downloader/proxy', [ToolController::class, 'tiktokProxy'])
+    ->name('tiktok.proxy')
+    ->middleware('throttle:10,1');
 Route::get('/tools/{slug}', [ToolController::class, 'show'])->name('tools.show');
 Route::post('/tools/{slug}/process', [ToolController::class, 'process'])
     ->name('tools.process')

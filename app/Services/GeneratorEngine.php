@@ -68,9 +68,9 @@ class GeneratorEngine
             }
 
             // Shuffle required into password
-            $password = str_split($password + $required);
-            shuffle($password);
-            $passwords[] = implode('', array_slice(array_merge($required, str_split(implode('', $password))), 0, $length));
+            $passwordChars = array_merge($required, str_split($password));
+            shuffle($passwordChars);
+            $passwords[] = implode('', array_slice($passwordChars, 0, $length));
         }
 
         return [
