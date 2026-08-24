@@ -16,7 +16,10 @@ class Tool extends Model
         'category_id', 'name', 'slug', 'short_description', 'long_description',
         'icon', 'color', 'status', 'is_featured', 'tool_type', 'blade_path',
         'input_schema', 'output_schema', 'engine_class', 'engine_method',
-        'seo_title', 'seo_description', 'seo_keywords', 'og_image', 'canonical_url',
+        'seo_title', 'seo_description', 'seo_keywords',
+        'og_image', 'og_title', 'og_description',
+        'twitter_title', 'twitter_description',
+        'canonical_url', 'robots', 'schema_markup',
         'has_custom_blade', 'view_count', 'use_count', 'sort_order',
     ];
 
@@ -66,12 +69,36 @@ class Tool extends Model
 
     public function getSeoTitleAttribute($value): string
     {
-        return $value ?: $this->name . ' - ' . Setting::get('site_name', 'JEDISEBITOOL');
+        $suffix = Setting::get('seo_title_suffix', '');
+
+        if ($value) {
+            return $suffix ? trim($value . ' ' . $suffix) : $value;
+        }
+
+        if ($suffix) {
+            return trim($this->name . ' ' . $suffix);
+        }
+
+        return $this->name . ' - ' . Setting::get('site_name', 'JEDISEBITOOL');
     }
 
     public function getSeoDescriptionAttribute($value): string
     {
-        return $value ?: ($this->short_description ?? 'Use our free ' . $this->name . ' online tool.');
+        if ($value) {
+            return $value;
+        }
+
+        if ($this->short_description) {
+            return $this->short_description;
+        }
+
+        return Setting::get('seo_default_description', 'Use our free ' . $this->name . ' online tool.');
+    }
+
+    // Returns the robots meta value, defaulting to index,follow when not set.
+    public function getRobotsMetaAttribute(): string
+    {
+        return $this->getRawOriginal('robots') ?: 'index, follow';
     }
 
     public function getUrlAttribute(): string

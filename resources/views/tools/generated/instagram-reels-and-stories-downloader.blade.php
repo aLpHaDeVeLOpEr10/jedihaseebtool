@@ -3,6 +3,7 @@
 @section('title', $tool->seo_title ?: 'Instagram Reels & Stories Downloader - Free Online Tool')
 @section('description', $tool->seo_description ?: 'Download Instagram Reels, Stories, Posts and Videos for free. Paste any public Instagram URL and save the media instantly.')
 
+@section('renders_own_faqs', '1')
 @section('content')
 <style>
 /* ══════════════════════════════════════════════════════════════

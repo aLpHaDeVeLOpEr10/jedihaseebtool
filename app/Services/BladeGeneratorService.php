@@ -58,6 +58,7 @@ class BladeGeneratorService
 
 @section('title', \$tool->seo_title)
 @section('description', \$tool->seo_description)
+@section('renders_own_content_sections', '1')
 
 @section('content')
 <div class="min-h-screen bg-gray-50">
@@ -133,11 +134,38 @@ class BladeGeneratorService
                 </div>
                 @endif
 
-                {{-- FAQs --}}
-                @if(\$tool->faqs->count() > 0)
+                {{-- Content Sections --}}
+                @foreach(\$tool->contents->where('is_visible', true) as \$section)
                 <div class="card p-6">
-                    <h2 class="text-lg font-semibold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                    <x-faq-list :faqs="\$tool->faqs" />
+                    @if(\$section->title)
+                    <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ \$section->title }}</h2>
+                    @endif
+                    <div class="tool-prose">{!! nl2br(e(\$section->content)) !!}</div>
+                </div>
+                @endforeach
+
+                {{-- FAQs --}}
+                @if(\$tool->faqs->where('is_visible', true)->count() > 0)
+                <div class="card p-6">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-5">Frequently Asked Questions</h2>
+                    <div class="space-y-3" x-data="{ open: null }">
+                        @foreach(\$tool->faqs->where('is_visible', true) as \$fi => \$faq)
+                        <div class="border border-gray-100 rounded-xl overflow-hidden">
+                            <button @click="open = open === {{ \$fi }} ? null : {{ \$fi }}"
+                                    class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors">
+                                <span class="font-medium text-gray-800 text-sm">{{ \$faq->question }}</span>
+                                <svg class="w-4 h-4 text-gray-400 flex-shrink-0 transition-transform"
+                                     :class="open === {{ \$fi }} ? 'rotate-180' : ''"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="open === {{ \$fi }}" x-cloak class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                                {{ \$faq->answer }}
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
                 @endif
             </div>

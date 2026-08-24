@@ -3,6 +3,7 @@
 @section('title', $tool->seo_title ?: 'TikTok Videos Downloader - Free Online Tool')
 @section('description', $tool->seo_description ?: 'Download TikTok videos without watermark in HD. Paste any TikTok link and save MP4 instantly — free, fast, no app required.')
 
+@section('renders_own_faqs', '1')
 @section('content')
 <style>
 /* ══════════════════════════════════════════════════════════════

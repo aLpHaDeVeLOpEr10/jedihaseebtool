@@ -71,6 +71,7 @@
 </style>
 @endsection
 
+@section('renders_own_faqs', '1')
 @section('content')
 <div class="min-h-screen bg-gray-50">
 

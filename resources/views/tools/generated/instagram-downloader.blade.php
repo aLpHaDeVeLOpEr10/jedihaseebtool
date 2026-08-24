@@ -3,6 +3,7 @@
 @section('title', $tool->seo_title)
 @section('description', $tool->seo_description)
 
+@section('renders_own_faqs', '1')
 @section('content')
 <style>
 /* ══════════════════════════════════════════════════════════════

@@ -53,25 +53,41 @@ class ToolController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'              => 'required|string|max:200',
-            'slug'              => 'nullable|string|max:200|unique:tools,slug',
-            'category_id'       => 'required|exists:categories,id',
-            'short_description' => 'nullable|string|max:500',
-            'long_description'  => 'nullable|string',
-            'icon'              => 'nullable|string|max:10',
-            'color'             => 'nullable|string|max:20',
-            'status'            => 'required|in:active,inactive,draft',
-            'is_featured'       => 'boolean',
-            'tool_type'         => 'required|string|max:50',
-            'input_schema'      => 'nullable|json',
-            'output_schema'     => 'nullable|json',
-            'engine_class'      => 'nullable|string|max:200',
-            'engine_method'     => 'nullable|string|max:200',
-            'seo_title'         => 'nullable|string|max:200',
-            'seo_description'   => 'nullable|string|max:500',
-            'seo_keywords'      => 'nullable|string|max:500',
-            'sort_order'        => 'nullable|integer',
+            'name'                => 'required|string|max:200',
+            'slug'                => 'nullable|string|max:200|unique:tools,slug',
+            'category_id'         => 'required|exists:categories,id',
+            'short_description'   => 'nullable|string|max:500',
+            'long_description'    => 'nullable|string',
+            'icon'                => 'nullable|string|max:10',
+            'color'               => 'nullable|string|max:20',
+            'status'              => 'required|in:active,inactive,draft',
+            'is_featured'         => 'boolean',
+            'tool_type'           => 'required|string|max:50',
+            'input_schema'        => 'nullable|json',
+            'output_schema'       => 'nullable|json',
+            'engine_class'        => 'nullable|string|max:200',
+            'engine_method'       => 'nullable|string|max:200',
+            // SEO fields
+            'seo_title'           => 'nullable|string|max:200',
+            'seo_description'     => 'nullable|string|max:500',
+            'seo_keywords'        => 'nullable|string|max:500',
+            'canonical_url'       => 'nullable|url|max:500',
+            'og_title'            => 'nullable|string|max:200',
+            'og_description'      => 'nullable|string|max:500',
+            'og_image'            => 'nullable|url|max:500',
+            'twitter_title'       => 'nullable|string|max:200',
+            'twitter_description' => 'nullable|string|max:500',
+            'robots'              => 'nullable|string|max:100',
+            'schema_markup'       => 'nullable|string',
+            'sort_order'          => 'nullable|integer',
         ]);
+
+        // Normalise empty strings → null so DB stays clean and accessors fall back correctly
+        foreach (['seo_title','seo_description','seo_keywords','canonical_url','og_title','og_description','og_image','twitter_title','twitter_description','robots','schema_markup'] as $f) {
+            if (isset($validated[$f]) && $validated[$f] === '') {
+                $validated[$f] = null;
+            }
+        }
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['name']);
@@ -95,6 +111,11 @@ class ToolController extends Controller
         // Save FAQs
         if ($request->filled('faqs')) {
             $this->saveFaqs($tool, json_decode($request->faqs, true) ?? []);
+        }
+
+        // Save content sections
+        if ($request->filled('contents')) {
+            $this->saveContents($tool, json_decode($request->contents, true) ?? []);
         }
 
         // Generate Blade file
@@ -129,37 +150,59 @@ class ToolController extends Controller
     public function update(Request $request, Tool $tool)
     {
         $validated = $request->validate([
-            'name'              => 'required|string|max:200',
-            'slug'              => 'required|string|max:200|unique:tools,slug,' . $tool->id,
-            'category_id'       => 'required|exists:categories,id',
-            'short_description' => 'nullable|string|max:500',
-            'long_description'  => 'nullable|string',
-            'icon'              => 'nullable|string|max:10',
-            'color'             => 'nullable|string|max:20',
-            'status'            => 'required|in:active,inactive,draft',
-            'is_featured'       => 'boolean',
-            'tool_type'         => 'required|string|max:50',
-            'engine_class'      => 'nullable|string|max:200',
-            'engine_method'     => 'nullable|string|max:200',
-            'seo_title'         => 'nullable|string|max:200',
-            'seo_description'   => 'nullable|string|max:500',
-            'seo_keywords'      => 'nullable|string|max:500',
-            'sort_order'        => 'nullable|integer',
+            'name'                => 'required|string|max:200',
+            'slug'                => 'required|string|max:200|unique:tools,slug,' . $tool->id,
+            'category_id'         => 'required|exists:categories,id',
+            'short_description'   => 'nullable|string|max:500',
+            'long_description'    => 'nullable|string',
+            'icon'                => 'nullable|string|max:10',
+            'color'               => 'nullable|string|max:20',
+            'status'              => 'required|in:active,inactive,draft',
+            'is_featured'         => 'boolean',
+            'tool_type'           => 'required|string|max:50',
+            'engine_class'        => 'nullable|string|max:200',
+            'engine_method'       => 'nullable|string|max:200',
+            // SEO fields
+            'seo_title'           => 'nullable|string|max:200',
+            'seo_description'     => 'nullable|string|max:500',
+            'seo_keywords'        => 'nullable|string|max:500',
+            'canonical_url'       => 'nullable|url|max:500',
+            'og_title'            => 'nullable|string|max:200',
+            'og_description'      => 'nullable|string|max:500',
+            'og_image'            => 'nullable|url|max:500',
+            'twitter_title'       => 'nullable|string|max:200',
+            'twitter_description' => 'nullable|string|max:500',
+            'robots'              => 'nullable|string|max:100',
+            'schema_markup'       => 'nullable|string',
+            'sort_order'          => 'nullable|integer',
         ]);
+
+        // Normalise empty strings → null so DB stays clean and accessors fall back correctly
+        foreach (['seo_title','seo_description','seo_keywords','canonical_url','og_title','og_description','og_image','twitter_title','twitter_description','robots','schema_markup'] as $f) {
+            if (isset($validated[$f]) && $validated[$f] === '') {
+                $validated[$f] = null;
+            }
+        }
 
         $validated['is_featured'] = $request->boolean('is_featured');
         $tool->update($validated);
 
         // Update inputs
-        if ($request->has('inputs')) {
+        if ($request->filled('inputs')) {
             $tool->inputs()->delete();
             $this->saveInputs($tool, json_decode($request->inputs, true) ?? []);
         }
 
         // Update FAQs
-        if ($request->has('faqs')) {
+        if ($request->filled('faqs')) {
             $tool->faqs()->delete();
             $this->saveFaqs($tool, json_decode($request->faqs, true) ?? []);
+        }
+
+        // Update content sections
+        if ($request->filled('contents')) {
+            $tool->contents()->delete();
+            $this->saveContents($tool, json_decode($request->contents, true) ?? []);
         }
 
         // Update blade content
@@ -233,6 +276,20 @@ class ToolController extends Controller
                 'question'   => $faq['question'],
                 'answer'     => $faq['answer'] ?? '',
                 'sort_order' => $i,
+            ]);
+        }
+    }
+
+    private function saveContents(Tool $tool, array $contents): void
+    {
+        foreach ($contents as $i => $section) {
+            if (empty($section['content'])) continue;
+            $tool->contents()->create([
+                'section_key' => $section['section_key'] ?? 'section_' . ($i + 1),
+                'title'       => $section['title'] ?? null,
+                'content'     => $section['content'],
+                'sort_order'  => isset($section['sort_order']) ? (int) $section['sort_order'] : $i,
+                'is_visible'  => isset($section['is_visible']) ? (bool) $section['is_visible'] : true,
             ]);
         }
     }

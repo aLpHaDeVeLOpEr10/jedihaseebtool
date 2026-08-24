@@ -3,6 +3,7 @@
 @section('title', $tool->seo_title ?: 'Facebook Reels & Stories Downloader - Free Online Tool')
 @section('description', $tool->seo_description ?: 'Download Facebook Reels, Videos and Stories for free. Paste any public Facebook URL and save the video instantly.')
 
+@section('renders_own_faqs', '1')
 @section('content')
 <style>
 /* ══════════════════════════════════════════════════════════════

@@ -41,8 +41,6 @@ class SettingsController extends Controller
         ]);
 
         foreach ($validated as $key => $value) {
-            if ($value === null) continue;
-
             $type = match (true) {
                 in_array($key, ['enable_search', 'maintenance_mode']) => 'boolean',
                 in_array($key, ['tools_per_page']) => 'integer',
@@ -52,13 +50,14 @@ class SettingsController extends Controller
 
             // Validate JSON for currency rates
             if ($key === 'currency_rates') {
+                if ($value === null) continue;
                 json_decode($value);
                 if (json_last_error() !== JSON_ERROR_NONE) {
                     return back()->withErrors(['currency_rates' => 'Invalid JSON format for currency rates.']);
                 }
             }
 
-            Setting::set($key, $value, $type);
+            Setting::set($key, $value ?? '', $type);
         }
 
         // Handle boolean fields that might not be in request

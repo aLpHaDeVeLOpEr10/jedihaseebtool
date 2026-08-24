@@ -7,24 +7,86 @@
 
     
     <title><?php echo $__env->yieldContent('title', config('app.name', 'JEDISEBITOOL')); ?></title>
-    <meta name="description" content="<?php echo $__env->yieldContent('description', \App\Models\Setting::get('seo_default_description', 'Free online tools for everyone.')); ?>">
-    <?php echo $__env->yieldContent('seo_keywords_meta'); ?>
+    <?php
+        // Meta description: child section > tool model > global default
+        $_seoDesc = $__env->hasSection('description')
+            ? $__env->yieldContent('description')
+            : ($__env->hasSection('meta_description')
+                ? $__env->yieldContent('meta_description')
+                : (isset($tool) && $tool->getRawOriginal('seo_description')
+                    ? $tool->seo_description  // accessor adds short_description fallback
+                    : \App\Models\Setting::get('seo_default_description', 'Free online tools for everyone.')));
+
+        // Open Graph
+        $_ogTitle = $__env->hasSection('og_title')
+            ? $__env->yieldContent('og_title')
+            : (isset($tool) && $tool->getRawOriginal('og_title')
+                ? $tool->getRawOriginal('og_title')
+                : $__env->yieldContent('title', config('app.name')));
+
+        $_ogDesc = $__env->hasSection('og_description')
+            ? $__env->yieldContent('og_description')
+            : (isset($tool) && $tool->getRawOriginal('og_description')
+                ? $tool->getRawOriginal('og_description')
+                : $_seoDesc);
+
+        $_ogImage = $__env->hasSection('og_image')
+            ? $__env->yieldContent('og_image')
+            : (isset($tool) && $tool->getRawOriginal('og_image') ? $tool->getRawOriginal('og_image') : '');
+
+        // Twitter Card
+        $_twTitle = isset($tool) && $tool->getRawOriginal('twitter_title')
+            ? $tool->getRawOriginal('twitter_title')
+            : $_ogTitle;
+
+        $_twDesc = isset($tool) && $tool->getRawOriginal('twitter_description')
+            ? $tool->getRawOriginal('twitter_description')
+            : $_seoDesc;
+
+        // Canonical URL
+        $_canonical = $__env->hasSection('canonical')
+            ? $__env->yieldContent('canonical')
+            : (isset($tool) && $tool->getRawOriginal('canonical_url')
+                ? $tool->getRawOriginal('canonical_url')
+                : url()->current());
+
+        // Robots
+        $_robots = isset($tool) ? $tool->robots_meta : 'index, follow';
+
+        // SEO keywords
+        $_keywords = isset($tool) && $tool->getRawOriginal('seo_keywords')
+            ? $tool->getRawOriginal('seo_keywords')
+            : '';
+    ?>
+    <meta name="description" content="<?php echo e($_seoDesc); ?>">
+    <?php if($_keywords): ?>
+    <meta name="keywords" content="<?php echo e($_keywords); ?>">
+    <?php endif; ?>
+    <meta name="robots" content="<?php echo e($_robots); ?>">
 
     
-    <link rel="canonical" href="<?php echo $__env->yieldContent('canonical', url()->current()); ?>">
+    <link rel="canonical" href="<?php echo e($_canonical); ?>">
 
     
-    <meta property="og:title" content="<?php echo $__env->yieldContent('og_title', config('app.name')); ?>">
-    <meta property="og:description" content="<?php echo $__env->yieldContent('og_description', ''); ?>">
+    <meta property="og:title" content="<?php echo e($_ogTitle); ?>">
+    <meta property="og:description" content="<?php echo e($_ogDesc); ?>">
     <meta property="og:url" content="<?php echo e(url()->current()); ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?php echo e(\App\Models\Setting::get('site_name', config('app.name'))); ?>">
+    <?php if($_ogImage): ?>
+    <meta property="og:image" content="<?php echo e($_ogImage); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <?php endif; ?>
     <?php echo $__env->yieldContent('og_image_meta'); ?>
 
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo $__env->yieldContent('title', config('app.name')); ?>">
-    <meta name="twitter:description" content="<?php echo $__env->yieldContent('description', ''); ?>">
+    <meta name="twitter:card" content="<?php echo e($_ogImage ? 'summary_large_image' : 'summary'); ?>">
+    <meta name="twitter:title" content="<?php echo e($_twTitle); ?>">
+    <meta name="twitter:description" content="<?php echo e($_twDesc); ?>">
+    <?php if($_ogImage): ?>
+    <meta name="twitter:image" content="<?php echo e($_ogImage); ?>">
+    <?php endif; ?>
 
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -40,7 +102,11 @@
     <?php echo $__env->yieldContent('head'); ?>
 
     
-    <?php echo $__env->yieldContent('structured_data'); ?>
+    <?php if($__env->hasSection('structured_data')): ?>
+        <?php echo $__env->yieldContent('structured_data'); ?>
+    <?php elseif(isset($tool) && $tool->getRawOriginal('schema_markup')): ?>
+        <script type="application/ld+json"><?php echo $tool->getRawOriginal('schema_markup'); ?></script>
+    <?php endif; ?>
 
     
     <?php if(\App\Models\Setting::get('google_analytics')): ?>
@@ -74,6 +140,53 @@
     
     <main>
         <?php echo $__env->yieldContent('content'); ?>
+
+        
+        <?php if (! ($__env->hasSection('renders_own_content_sections'))): ?>
+            <?php if(isset($tool) && $tool->contents->where('is_visible', true)->isNotEmpty()): ?>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-8 space-y-6">
+                <?php $__currentLoopData = $tool->contents->where('is_visible', true); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $section): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="card p-6">
+                    <?php if($section->title): ?>
+                    <h2 class="text-lg font-semibold text-gray-900 mb-4"><?php echo e($section->title); ?></h2>
+                    <?php endif; ?>
+                    <div class="tool-prose"><?php echo nl2br(e($section->content)); ?></div>
+                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        
+        <?php if (! ($__env->hasSection('renders_own_faqs'))): ?>
+            <?php if(isset($tool) && $tool->faqs->where('is_visible', true)->isNotEmpty()): ?>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+                <div class="card p-6">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-5">Frequently Asked Questions</h2>
+                    <div class="space-y-3" x-data="{ open: null }">
+                        <?php $__currentLoopData = $tool->faqs->where('is_visible', true); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fi => $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="border border-gray-100 rounded-xl overflow-hidden">
+                            <button @click="open = open === <?php echo e($fi); ?> ? null : <?php echo e($fi); ?>"
+                                    class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors">
+                                <span class="font-medium text-gray-800 text-sm"><?php echo e($faq->question); ?></span>
+                                <svg class="w-4 h-4 text-gray-400 flex-shrink-0 transition-transform"
+                                     :class="open === <?php echo e($fi); ?> ? 'rotate-180' : ''"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="open === <?php echo e($fi); ?>" x-cloak
+                                 class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+                                <?php echo e($faq->answer); ?>
+
+                            </div>
+                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+        <?php endif; ?>
     </main>
 
     

@@ -2,6 +2,8 @@
 
 @section('title', $tool->seo_title)
 @section('description', $tool->seo_description)
+@section('renders_own_content_sections', '1')
+@section('renders_own_faqs', '1')
 
 @if($tool->seo_keywords)
 @section('seo_keywords_meta')

@@ -3,6 +3,7 @@
 @section('title', $tool->seo_title ?: 'YouTube Video & Shorts Downloader - Free Online Tool')
 @section('description', $tool->seo_description ?: 'Download YouTube videos and Shorts in multiple qualities. Paste any YouTube URL and save MP4 or audio files instantly.')
 
+@section('renders_own_faqs', '1')
 @section('content')
 <style>
 /* ══════════════════════════════════════════════════════════════
