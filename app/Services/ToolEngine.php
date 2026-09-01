@@ -23,25 +23,6 @@ class ToolEngine
             return app(PythonEngine::class)->execute($request->all());
         }
 
-        // ── Instagram downloader tools — server-side media extraction ──
-        if (in_array($tool->slug, ['instagram-downloader', 'instagram-reels-and-stories-downloader'], true)) {
-            return app(InstagramDownloaderEngine::class)->download($request->all());
-        }
-
-        // ── Facebook downloader tool ──────────────────────────────────
-        if ($tool->slug === 'facebook-reels-and-stories-downloader') {
-            return app(FacebookDownloaderEngine::class)->download($request->all());
-        }
-
-        // ── YouTube downloader ────────────────────────────────────────
-        if ($tool->slug === 'youtube-video-and-shorts-downloader') {
-            return app(YoutubeDownloaderEngine::class)->getInfo($request->all());
-        }
-
-        // ── TikTok downloader ─────────────────────────────────────────
-        if ($tool->slug === 'tiktok-videos-downloader') {
-            return app(TiktokDownloaderEngine::class)->getInfo($request->all());
-        }
 
         // Check if a specific engine method is configured
         if ($tool->engine_class && $tool->engine_method) {

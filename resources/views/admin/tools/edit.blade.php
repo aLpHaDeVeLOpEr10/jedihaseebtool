@@ -232,7 +232,7 @@
                         <input type="text" name="seo_keywords"
                                value="{{ old('seo_keywords', $tool->getRawOriginal('seo_keywords')) }}"
                                class="form-input" maxlength="500"
-                               placeholder="tiktok downloader, free, no watermark">
+                               placeholder="pdf converter, free, online">
                         <p class="form-help">Comma-separated. Not a major ranking signal but used by some search engines.</p>
                     </div>
                     <div>
