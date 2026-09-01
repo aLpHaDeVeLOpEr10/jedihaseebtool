@@ -828,7 +828,7 @@
                             ['🏦','Build Savings','Enter a contribution amount and see your future balance grow'],
                             ['🎯','Goal Planner','Set a target amount and find out how long it takes to reach it'],
                             ['📅','Monthly Target','Tell us your goal and timeframe — get the exact monthly savings needed'],
-                            ['🏁','Milestones','See when you'll hit $10K, $50K, $100K and beyond'],
+                            ['🏁','Milestones','See when you\'ll hit $10K, $50K, $100K and beyond'],
                             ['📊','Growth Chart','Visual line chart showing your savings journey over time'],
                             ['💡','What-If','Compare different contribution amounts side by side'],
                         ] as [$icon,$title,$desc])
