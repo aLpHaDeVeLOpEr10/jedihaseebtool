@@ -79,7 +79,7 @@ class Tool extends Model
             return trim($this->name . ' ' . $suffix);
         }
 
-        return $this->name . ' - ' . Setting::get('site_name', 'JEDISEBITOOL');
+        return $this->name . ' - ' . Setting::get('site_name', 'Toolsearch');
     }
 
     public function getSeoDescriptionAttribute($value): string

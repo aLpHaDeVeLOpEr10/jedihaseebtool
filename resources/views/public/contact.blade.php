@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Contact Us - ' . \App\Models\Setting::get('site_name', 'JEDISEBITOOL'))
+@section('title', 'Contact Us - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
 @section('content')
 <div class="max-w-2xl mx-auto px-4 sm:px-6 py-16">
     <div class="text-center mb-10">
@@ -41,11 +41,9 @@
 
     <div class="mt-8 grid sm:grid-cols-2 gap-4">
         <div class="card p-5 text-center">
-            <div class="text-2xl mb-2">📧</div>
-            <p class="font-semibold text-gray-800 text-sm">Email</p>
-            <a href="mailto:{{ \App\Models\Setting::get('contact_email', 'hello@jedisebitool.com') }}" class="text-brand-600 text-sm hover:underline">
-                {{ \App\Models\Setting::get('contact_email', 'hello@jedisebitool.com') }}
-            </a>
+            <div class="text-2xl mb-2">💬</div>
+            <p class="font-semibold text-gray-800 text-sm">Get in Touch</p>
+            <p class="text-gray-500 text-sm">Use the form above — it reaches us directly.</p>
         </div>
         <div class="card p-5 text-center">
             <div class="text-2xl mb-2">⏱️</div>

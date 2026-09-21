@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'All Categories - ' . \App\Models\Setting::get('site_name', 'JEDISEBITOOL'))
+@section('title', 'All Categories - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
 @section('content')
 <div class="bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">

@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', \App\Models\Setting::get('site_name', 'JEDISEBITOOL') . ' - Free Online Tools')
+@section('title', \App\Models\Setting::get('site_name', 'Toolsearch') . ' - Free Online Tools')
 @section('description', \App\Models\Setting::get('seo_default_description', 'Free online tools for calculations, conversions, generators and more.'))
 
 @section('structured_data')
@@ -8,7 +8,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "{{ \App\Models\Setting::get('site_name', 'JEDISEBITOOL') }}",
+    "name": "{{ \App\Models\Setting::get('site_name', 'Toolsearch') }}",
     "url": "{{ url('/') }}",
     "description": "{{ \App\Models\Setting::get('seo_default_description', '') }}",
     "potentialAction": {

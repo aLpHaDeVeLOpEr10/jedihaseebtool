@@ -1,7 +1,7 @@
 {
-    "name": "jedisebitool/jedisebitool",
+    "name": "toolsearch/toolsearch",
     "type": "project",
-    "description": "JEDISEBITOOL - Premium Minimalist Multi-Tool Platform",
+    "description": "Toolsearch - Premium Minimalist Multi-Tool Platform",
     "keywords": ["laravel", "tools", "calculator", "converter"],
     "license": "MIT",
     "require": {

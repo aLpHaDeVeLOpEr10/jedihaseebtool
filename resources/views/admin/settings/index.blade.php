@@ -19,7 +19,7 @@
                 <h2 class="font-semibold text-gray-900">Site Identity</h2>
                 <div>
                     <label class="form-label">Site Name *</label>
-                    <input type="text" name="site_name" value="{{ $settings['site_name']->value ?? 'JEDISEBITOOL' }}" class="form-input" required>
+                    <input type="text" name="site_name" value="{{ $settings['site_name']->value ?? 'Toolsearch' }}" class="form-input" required>
                     <p class="form-help">This name appears in the header, footer, and page titles.</p>
                 </div>
                 <div>
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <label class="form-label">Footer Text</label>
-                    <input type="text" name="footer_text" value="{{ $settings['footer_text']->value ?? '' }}" class="form-input" placeholder="© 2024 JEDISEBITOOL. All rights reserved.">
+                    <input type="text" name="footer_text" value="{{ $settings['footer_text']->value ?? '' }}" class="form-input" placeholder="© 2024 Toolsearch. All rights reserved.">
                 </div>
             </div>
             <div class="card p-6 space-y-4">
@@ -74,8 +74,8 @@
             <h2 class="font-semibold text-gray-900">Default SEO Settings</h2>
             <div>
                 <label class="form-label">SEO Title Suffix</label>
-                <input type="text" name="seo_title_suffix" value="{{ $settings['seo_title_suffix']->value ?? '' }}" class="form-input" placeholder="- JEDISEBITOOL">
-                <p class="form-help">Appended to all page titles. E.g. "BMI Calculator - JEDISEBITOOL"</p>
+                <input type="text" name="seo_title_suffix" value="{{ $settings['seo_title_suffix']->value ?? '' }}" class="form-input" placeholder="- Toolsearch">
+                <p class="form-help">Appended to all page titles. E.g. "BMI Calculator - Toolsearch"</p>
             </div>
             <div>
                 <label class="form-label">Default Meta Description</label>

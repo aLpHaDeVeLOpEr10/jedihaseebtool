@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'HTML, CSS & JavaScript Compiler — JEDISEBITOOL')
+@section('title', 'HTML, CSS & JavaScript Compiler — Toolsearch')
 @section('description', 'Free online HTML, CSS & JavaScript live compiler. Write code and see results instantly — syntax highlighting, sandboxed preview, console output. No installation needed.')
 
 @section('head')

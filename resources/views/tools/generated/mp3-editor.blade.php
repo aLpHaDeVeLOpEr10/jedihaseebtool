@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'MP3 Editor — Trim, Cut, Volume, Fade In/Out Online | JEDISEBITOOL')
+@section('title', 'MP3 Editor — Trim, Cut, Volume, Fade In/Out Online | Toolsearch')
 @section('description', 'Free browser-based MP3 editor. Trim audio, adjust volume, add fade in/fade out, preview in real-time, and download your edited MP3. No uploads — runs entirely in your browser.')
 
 @section('head')

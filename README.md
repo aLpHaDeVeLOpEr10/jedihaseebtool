@@ -1,4 +1,4 @@
-# JEDISEBITOOL — Free Online Tools Platform
+# Toolsearch — Free Online Tools Platform
 
 A production-ready **Laravel 11** multi-tool platform where admins can dynamically create, manage, and deploy online tools. Built with Blade, Tailwind CSS 3, Alpine.js, and MySQL.
 
@@ -44,8 +44,8 @@ A production-ready **Laravel 11** multi-tool platform where admins can dynamical
 ### Step 1 — Clone and install
 
 ```bash
-git clone https://github.com/yourorg/jedisebitool.git
-cd jedisebitool
+git clone https://github.com/yourorg/toolsearch.git
+cd toolsearch
 
 composer install
 npm install
@@ -61,7 +61,7 @@ php artisan key:generate
 Edit `.env` with your database credentials:
 
 ```env
-APP_NAME=JEDISEBITOOL
+APP_NAME=Toolsearch
 APP_URL=http://localhost:8000
 
 DB_CONNECTION=mysql
@@ -83,7 +83,7 @@ php artisan migrate --seed
 ```
 
 This seeds:
-- Admin user: `admin@jedisebitool.com` / `password123`
+- Admin user: `admin@toolsearch.online` / `password123`
 - 14 default settings (site name, currency rates, SEO, etc.)
 - 33 categories
 - 15 fully-wired working tools + 80+ stub tools
@@ -112,7 +112,7 @@ Visit `http://localhost:8000`
 
 | URL | Credentials |
 |-----|------------|
-| `/login` | admin@jedisebitool.com |
+| `/login` | admin@toolsearch.online |
 | `/admin` | password: `password123` |
 
 ---
@@ -167,7 +167,7 @@ Visit `http://localhost:8000`
 ## 📁 Project Structure
 
 ```
-jedisebitool/
+toolsearch/
 ├── app/
 │   ├── Http/Controllers/
 │   │   ├── Admin/          # Dashboard, Tools, Categories, Settings, Contacts

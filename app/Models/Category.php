@@ -47,7 +47,7 @@ class Category extends Model
 
     public function getSeoTitleAttribute($value): string
     {
-        return $value ?: $this->name . ' Tools - ' . Setting::get('site_name', 'JEDISEBITOOL');
+        return $value ?: $this->name . ' Tools - ' . Setting::get('site_name', 'Toolsearch');
     }
 
     public function getSeoDescriptionAttribute($value): string

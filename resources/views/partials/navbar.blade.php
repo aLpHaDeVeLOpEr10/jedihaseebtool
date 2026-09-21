@@ -3,9 +3,7 @@
         <div class="flex items-center justify-between h-16">
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center gap-2.5 font-bold text-gray-900 hover:text-brand-600 transition-colors">
-                <div class="w-8 h-8 rounded-lg hero-gradient flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">J</span>
-                </div>
+                <x-logo-mark tile :tile-size="32" :size="22" />
                 <span class="hidden sm:block">{{ \App\Models\Setting::get('site_name', config('app.name')) }}</span>
             </a>
 

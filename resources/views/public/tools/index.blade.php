@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'All Tools - ' . \App\Models\Setting::get('site_name', 'JEDISEBITOOL'))
+@section('title', 'All Tools - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
 @section('description', 'Browse our complete library of free online tools — calculators, converters, generators and more.')
 
 @section('content')

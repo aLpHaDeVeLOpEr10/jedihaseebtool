@@ -11,10 +11,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@jedisebitool.com'],
+            ['email' => 'admin@toolsearch.online'],
             [
                 'name'     => 'Admin User',
-                'email'    => 'admin@jedisebitool.com',
+                'email'    => 'admin@toolsearch.online',
                 'password' => Hash::make('password123'),
                 'role'     => 'admin',
                 'is_active' => true,

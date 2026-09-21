@@ -823,7 +823,7 @@ function pmTool() {
 
         var name = this._safeName(this.outputName);
         out.setTitle(name.replace(/\.pdf$/i, ''));
-        out.setCreator(@json(config('app.name', 'JEDISEBITOOL') . ' PDF Merger'));
+        out.setCreator(@json(config('app.name', 'Toolsearch') . ' PDF Merger'));
         out.setProducer('pdf-lib');
         out.setCreationDate(new Date());
         out.setModificationDate(new Date());

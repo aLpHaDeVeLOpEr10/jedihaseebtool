@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Python Compiler — Run Python Code Online | JEDISEBITOOL')
+@section('title', 'Python Compiler — Run Python Code Online | Toolsearch')
 @section('description', 'Free online Python compiler. Write and run Python 3 code instantly — real backend execution, live stdout/stderr output, stdin support, and syntax highlighting. No install needed.')
 
 @section('head')

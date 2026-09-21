@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- SEO --}}
-    <title>@yield('title', config('app.name', 'JEDISEBITOOL'))</title>
+    <title>@yield('title', config('app.name', 'Toolsearch'))</title>
     @php
         // Meta description: child section > tool model > global default
         $_seoDesc = $__env->hasSection('description')
@@ -90,6 +90,8 @@
 
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#4f46e5">
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

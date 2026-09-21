@@ -11,7 +11,7 @@ return [
     ],
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@jedisebitool.com'),
-        'name'    => env('MAIL_FROM_NAME', 'JEDISEBITOOL'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@toolsearch.online'),
+        'name'    => env('MAIL_FROM_NAME', 'Toolsearch'),
     ],
 ];

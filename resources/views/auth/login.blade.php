@@ -3,17 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Login — {{ \App\Models\Setting::get('site_name', 'JEDISEBITOOL') }}</title>
+    <title>Admin Login — {{ \App\Models\Setting::get('site_name', 'Toolsearch') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50 min-h-screen flex items-center justify-center font-sans">
     <div class="w-full max-w-md px-4">
         <div class="text-center mb-8">
             <a href="{{ route('home') }}" class="inline-flex items-center gap-2.5 font-bold text-gray-900 text-xl hover:text-brand-600 transition-colors">
-                <div class="w-10 h-10 rounded-xl hero-gradient flex items-center justify-center">
-                    <span class="text-white font-bold">J</span>
-                </div>
-                {{ \App\Models\Setting::get('site_name', 'JEDISEBITOOL') }}
+                <x-logo-mark tile :tile-size="40" :size="27" class="rounded-xl" />
+                {{ \App\Models\Setting::get('site_name', 'Toolsearch') }}
             </a>
             <h1 class="text-2xl font-bold text-gray-900 mt-6 mb-1">Admin Login</h1>
             <p class="text-gray-500 text-sm">Sign in to manage your tools and settings</p>
@@ -34,7 +32,7 @@
                     <label class="form-label">Email Address</label>
                     <input type="email" name="email" value="{{ old('email') }}"
                            class="form-input" required autofocus
-                           placeholder="admin@jedisebitool.com">
+                           placeholder="you@example.com">
                 </div>
                 <div>
                     <label class="form-label">Password</label>
