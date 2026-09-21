@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('title', 'Contact Us - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'Report a bug, request a new tool, or send feedback to the Toolsearch team using the contact form. We read every message.')
 @section('content')
 <div class="max-w-2xl mx-auto px-4 sm:px-6 py-16">
     <div class="text-center mb-10">

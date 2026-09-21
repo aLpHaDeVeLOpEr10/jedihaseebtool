@@ -331,7 +331,7 @@
 
       <!-- Tips -->
       <div class="card p-5">
-        <h3 class="font-semibold text-gray-900 mb-3">Tips &amp; Ideas</h3>
+        <h2 class="font-semibold text-gray-900 mb-3">Tips &amp; Ideas</h2>
         <div class="space-y-2 text-sm text-gray-600">
           <div class="flex gap-2 items-start"><span class="text-indigo-500 font-bold">&#x1F4DD;</span><span>Use <strong class="text-gray-800">double-click</strong> on any option to edit it instantly.</span></div>
           <div class="flex gap-2 items-start"><span class="text-indigo-500 font-bold">&#x1F500;</span><span>Hit <strong class="text-gray-800">Shuffle</strong> to randomise the order before spinning.</span></div>

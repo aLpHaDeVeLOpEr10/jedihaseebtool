@@ -1,5 +1,6 @@
 @extends('layouts.public')
-@section('title', 'All Categories - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('title', 'Browse All Tool Categories - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'Every Toolsearch category in one place: health and finance calculators, unit converters, PDF and image tools, text utilities and generators.')
 @section('content')
 <div class="bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">

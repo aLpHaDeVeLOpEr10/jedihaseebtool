@@ -570,7 +570,7 @@ input[type="range"] { accent-color: #4f46e5; cursor: pointer; }
                 {{-- Related tools --}}
                 @if($relatedTools->count())
                 <div>
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Related Tools</h3>
+                    <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Related Tools</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         @foreach($relatedTools as $related)
                         <a href="{{ route('tools.show', $related->slug) }}"

@@ -554,7 +554,7 @@
                 {{-- Related tools --}}
                 @if($relatedTools->count())
                 <div x-show="phase === 'idle'" class="space-y-3">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Related Tools</h3>
+                    <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Related Tools</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         @foreach($relatedTools as $related)
                         <a href="{{ route('tools.show', $related->slug) }}"

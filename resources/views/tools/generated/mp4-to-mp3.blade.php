@@ -209,7 +209,7 @@
 
                 {{-- Tips --}}
                 <div class="card p-5">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Tips</h3>
+                    <h2 class="text-sm font-semibold text-gray-700 mb-3">Tips</h2>
                     <ul class="space-y-2 text-xs text-gray-500 leading-relaxed">
                         <li class="flex items-start gap-2">
                             <span class="text-brand-500 mt-0.5">•</span>
@@ -239,7 +239,7 @@
                 {{-- Related tools --}}
                 @if($relatedTools->count() > 0)
                 <div class="card p-5">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+                    <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
                     <div class="space-y-2">
                         @foreach($relatedTools as $related)
                         <a href="{{ route('tools.show', $related) }}"

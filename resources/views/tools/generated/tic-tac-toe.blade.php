@@ -281,7 +281,7 @@
 
         {{-- ══ HOW TO PLAY ══ --}}
         <div class="card p-5">
-            <h3 class="font-semibold text-gray-800 mb-3">How to play</h3>
+            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
             <div class="grid sm:grid-cols-2 gap-2.5 text-sm text-gray-500">
                 <div class="flex gap-2.5">
                     <span class="text-indigo-400 font-bold flex-shrink-0">1.</span>
@@ -305,7 +305,7 @@
         {{-- ══ RELATED TOOLS ══ --}}
         @if($relatedTools->count())
         <div>
-            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h3>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 @foreach($relatedTools as $related)
                 <a href="{{ route('tools.show', $related->slug) }}"

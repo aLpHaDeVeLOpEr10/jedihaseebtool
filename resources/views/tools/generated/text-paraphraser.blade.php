@@ -416,7 +416,7 @@ The implementation of advanced machine learning algorithms has significantly tra
         {{-- ── Related Tools ── --}}
         @if($relatedTools->count())
         <div>
-            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h3>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                 @foreach($relatedTools as $related)
                 <a href="{{ route('tools.show', $related->slug) }}"

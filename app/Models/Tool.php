@@ -39,6 +39,14 @@ class Tool extends Model
             if (empty($tool->slug)) {
                 $tool->slug = Str::slug($tool->name);
             }
+
+            // Guarantee uniqueness: a duplicate slug would make one of the two
+            // tools unreachable and split any ranking signal between them.
+            $base = $tool->slug;
+            $i = 2;
+            while (static::withTrashed()->where('slug', $tool->slug)->exists()) {
+                $tool->slug = $base . '-' . $i++;
+            }
         });
     }
 
@@ -150,13 +158,36 @@ class Tool extends Model
         return $this->status === 'active';
     }
 
+    /**
+     * Related tools from the same category.
+     *
+     * Deterministic on purpose: a stable internal link graph is what crawlers
+     * need. Ordered by popularity, then name, so the same page always links to
+     * the same siblings. Falls back to other categories when the category is
+     * too small to fill the row, so no tool is left a dead end.
+     */
     public function getRelatedTools(int $limit = 4)
     {
-        return static::active()
+        $related = static::active()
             ->where('category_id', $this->category_id)
             ->where('id', '!=', $this->id)
-            ->inRandomOrder()
+            ->orderByDesc('view_count')
+            ->orderBy('name')
             ->limit($limit)
             ->get();
+
+        if ($related->count() < $limit) {
+            $filler = static::active()
+                ->where('id', '!=', $this->id)
+                ->whereNotIn('id', $related->pluck('id'))
+                ->orderByDesc('view_count')
+                ->orderBy('name')
+                ->limit($limit - $related->count())
+                ->get();
+
+            $related = $related->concat($filler);
+        }
+
+        return $related;
     }
 }

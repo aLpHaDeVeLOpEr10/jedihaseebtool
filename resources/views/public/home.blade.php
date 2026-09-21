@@ -3,23 +3,6 @@
 @section('title', \App\Models\Setting::get('site_name', 'Toolsearch') . ' - Free Online Tools')
 @section('description', \App\Models\Setting::get('seo_default_description', 'Free online tools for calculations, conversions, generators and more.'))
 
-@section('structured_data')
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "{{ \App\Models\Setting::get('site_name', 'Toolsearch') }}",
-    "url": "{{ url('/') }}",
-    "description": "{{ \App\Models\Setting::get('seo_default_description', '') }}",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "{{ url('/search') }}?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-    }
-}
-</script>
-@endsection
-
 @section('content')
 
 {{-- Hero Section --}}

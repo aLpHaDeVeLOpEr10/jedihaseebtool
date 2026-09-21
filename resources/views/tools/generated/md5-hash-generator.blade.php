@@ -109,7 +109,7 @@
 
         {{-- Info section --}}
         <div class="card p-6">
-            <h3 class="text-sm font-semibold text-gray-700 mb-3">About MD5</h3>
+            <h2 class="text-sm font-semibold text-gray-700 mb-3">About MD5</h2>
             <ul class="space-y-2 text-sm text-gray-500">
                 <li class="flex items-start gap-2">
                     <span class="text-brand-400 mt-0.5">•</span>
@@ -137,7 +137,7 @@
         {{-- Related Tools --}}
         @if($relatedTools->count())
         <div class="mt-8">
-            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h3>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h2>
             <div class="grid grid-cols-2 gap-3">
                 @foreach($relatedTools as $related)
                 <a href="{{ route('tools.show', $related->slug) }}"

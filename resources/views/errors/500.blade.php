@@ -1,5 +1,8 @@
 @extends('layouts.public')
 @section('title', '500 - Server Error')
+@section('robots', 'noindex, follow')
+@section('canonical', '')
+@section('description', 'Something went wrong on our end. Please try again in a moment.')
 @section('content')
 <div class="min-h-[60vh] flex items-center justify-center px-4">
     <div class="text-center max-w-lg">

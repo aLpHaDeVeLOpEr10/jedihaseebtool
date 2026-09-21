@@ -41,15 +41,18 @@ class ToolController extends Controller
         return view('public.tools.index', compact('tools', 'categories', 'toolTypes'));
     }
 
-    public function show(string $slug)
+    public function show(string $slug, Request $request)
     {
         $tool = Tool::active()
             ->with(['category', 'contents', 'faqs', 'inputs'])
             ->where('slug', $slug)
             ->firstOrFail();
 
-        // Increment view count
-        $tool->incrementViews();
+        // Increment view count for humans only — bot traffic would both inflate
+        // the popularity ordering and write to the database on every crawl hit.
+        if (!$this->looksLikeBot($request)) {
+            $tool->incrementViews();
+        }
 
         $relatedTools = $tool->getRelatedTools(4);
 
@@ -77,6 +80,27 @@ class ToolController extends Controller
         $tool->incrementUses();
 
         return response()->json($result);
+    }
+
+    /**
+     * Crude but sufficient crawler check — used only to decide whether a page
+     * view counts towards popularity ordering.
+     */
+    protected function looksLikeBot(Request $request): bool
+    {
+        $agent = strtolower((string) $request->userAgent());
+
+        if ($agent === '') {
+            return true;
+        }
+
+        foreach (['bot', 'crawler', 'spider', 'slurp', 'facebookexternalhit', 'preview', 'headless', 'lighthouse', 'pingdom', 'curl', 'wget', 'python-requests'] as $needle) {
+            if (str_contains($agent, $needle)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function search(Request $request)

@@ -1,5 +1,8 @@
 @extends('layouts.public')
 @section('title', '404 - Page Not Found')
+@section('robots', 'noindex, follow')
+@section('canonical', '')
+@section('description', 'The page you requested could not be found. Browse our free online tools instead.')
 @section('content')
 <div class="min-h-[60vh] flex items-center justify-center px-4">
     <div class="text-center max-w-lg">

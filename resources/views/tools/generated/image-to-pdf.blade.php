@@ -585,7 +585,7 @@
 
         {{-- Tips --}}
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Tips</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Tips</h2>
           <ul class="space-y-2.5 text-xs text-gray-600">
             <li class="flex gap-2"><span class="text-brand-500 font-bold flex-shrink-0 mt-0.5">•</span><span>Drag image cards to reorder — the number badge shows the page order.</span></li>
             <li class="flex gap-2"><span class="text-brand-500 font-bold flex-shrink-0 mt-0.5">•</span><span>Use <strong>Fit</strong> for documents; <strong>Fill</strong> for photos where you want full coverage.</span></li>
@@ -619,7 +619,7 @@
         {{-- Related tools --}}
         @if($relatedTools->count() > 0)
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
           <div class="space-y-2">
             @foreach($relatedTools as $related)
             <a href="{{ route('tools.show', $related) }}"

@@ -13,26 +13,39 @@ class Setting extends Model
 
     public static function get(string $key, mixed $default = null): mixed
     {
-        if (isset(static::$cache[$key])) {
-            return static::$cache[$key];
+        if (array_key_exists($key, static::$cache)) {
+            return static::$cache[$key] ?? $default;
         }
 
-        $setting = static::where('key', $key)->first();
+        // Settings change rarely and are read several times per request, so
+        // they are cached across requests too. set() forgets the key.
+        $value = \Illuminate\Support\Facades\Cache::rememberForever(
+            'settings.' . $key,
+            function () use ($key) {
+                $setting = static::where('key', $key)->first();
 
-        if (!$setting) {
+                if (!$setting) {
+                    return ['missing' => true];
+                }
+
+                return ['value' => match ($setting->type) {
+                    'boolean' => (bool) $setting->value,
+                    'integer' => (int) $setting->value,
+                    'json'    => json_decode($setting->value, true),
+                    default   => $setting->value,
+                }];
+            }
+        );
+
+        if (!is_array($value) || array_key_exists('missing', $value)) {
+            static::$cache[$key] = null;
+
             return $default;
         }
 
-        $value = match ($setting->type) {
-            'boolean' => (bool) $setting->value,
-            'integer' => (int) $setting->value,
-            'json' => json_decode($setting->value, true),
-            default => $setting->value,
-        };
+        static::$cache[$key] = $value['value'];
 
-        static::$cache[$key] = $value;
-
-        return $value;
+        return $value['value'];
     }
 
     public static function set(string $key, mixed $value, string $type = 'string'): static

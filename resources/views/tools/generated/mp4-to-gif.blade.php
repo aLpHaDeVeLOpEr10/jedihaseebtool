@@ -419,7 +419,7 @@
 
       <!-- About GIF -->
       <div class="card p-5">
-        <h3 class="font-semibold text-gray-900 mb-3">About GIF Format</h3>
+        <h2 class="font-semibold text-gray-900 mb-3">About GIF Format</h2>
         <p class="text-sm text-gray-600 leading-relaxed mb-3">GIF supports up to 256 colors per frame, making it ideal for short animations, memes, and previews. Plays automatically with no click required.</p>
         <div class="space-y-1.5 text-sm text-gray-600">
           <div class="flex items-start gap-2"><span class="text-amber-500 font-bold">&#x2713;</span><span>Auto-plays everywhere (email, Slack, social)</span></div>
@@ -432,7 +432,7 @@
 
       <!-- Tips -->
       <div class="card p-5">
-        <h3 class="font-semibold text-gray-900 mb-3">Tips for Best Results</h3>
+        <h2 class="font-semibold text-gray-900 mb-3">Tips for Best Results</h2>
         <div>
           <div class="mg-tip">
             <span class="text-amber-600">&#x23F1;</span>

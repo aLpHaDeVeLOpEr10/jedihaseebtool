@@ -1,5 +1,6 @@
 @extends('layouts.public')
-@section('title', 'Search: ' . $q . ' - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('title', 'Search: ' . \Illuminate\Support\Str::limit(strip_tags($q), 60) . ' - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'Search results across every free tool on Toolsearch.')
 @section('content')
 <div class="bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">

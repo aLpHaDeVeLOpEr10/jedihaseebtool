@@ -357,7 +357,7 @@
       <div class="space-y-5">
 
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">How to Merge PDFs</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">How to Merge PDFs</h2>
           <ol class="space-y-2.5 text-xs text-gray-600">
             <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">1.</span><span>Add two or more PDF files by dropping them in or clicking to browse.</span></li>
             <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">2.</span><span>Drag files (or use ▲ ▼) to set the order.</span></li>
@@ -398,7 +398,7 @@
 
         @if($relatedTools->count() > 0)
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
           <div class="space-y-2">
             @foreach($relatedTools as $related)
             <a href="{{ route('tools.show', $related->slug) }}"
@@ -418,8 +418,9 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+{{-- pdf-lib and pdf.js are ~3 MB combined. They are fetched on the first file
+     the visitor adds, not on page load, so a visitor who only reads the page
+     never downloads them. --}}
 <script>
 /* ─────────────────────────────────────────────────────────────
    PDF Merger — Alpine.js component (prefix: pm-)
@@ -489,12 +490,50 @@ function pmTool() {
 
     // ── Lifecycle ──
     init() {
-      if (window.pdfjsLib) {
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc =
-          'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
-      }
       var self = this;
       window.addEventListener('beforeunload', function () { self._revokeOutput(); });
+    },
+
+    // ── Lazy library loading ──────────────────────────────────
+    _libsPromise: null,
+
+    _loadScript(src) {
+      return new Promise(function (resolve, reject) {
+        var existing = document.querySelector('script[src="' + src + '"]');
+        if (existing) {
+          if (existing.dataset.loaded === '1') return resolve();
+          existing.addEventListener('load', function () { resolve(); });
+          existing.addEventListener('error', function () { reject(new Error('Failed to load ' + src)); });
+          return;
+        }
+        var s = document.createElement('script');
+        s.src = src;
+        s.async = true;
+        s.onload = function () { s.dataset.loaded = '1'; resolve(); };
+        s.onerror = function () { reject(new Error('Failed to load ' + src)); };
+        document.head.appendChild(s);
+      });
+    },
+
+    ensureLibs() {
+      var self = this;
+      if (window.PDFLib && window.pdfjsLib) return Promise.resolve();
+      if (this._libsPromise) return this._libsPromise;
+
+      this._libsPromise = Promise.all([
+        this._loadScript('https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js'),
+        this._loadScript('https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js'),
+      ]).then(function () {
+        if (window.pdfjsLib) {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+        }
+      }).catch(function (err) {
+        self._libsPromise = null;
+        throw err;
+      });
+
+      return this._libsPromise;
     },
 
     // ── Adding files ──
@@ -516,9 +555,17 @@ function pmTool() {
       this._addFiles(Array.from((e.dataTransfer && e.dataTransfer.files) || []));
     },
 
-    _addFiles(list) {
+    async _addFiles(list) {
       if (!list.length) return;
       this.fileError = '';
+
+      try {
+        await this.ensureLibs();
+      } catch (err) {
+        this.fileError = 'The PDF library could not be loaded. Check your connection and try again.';
+        return;
+      }
+
       var skipped = [];
       var totalBytes = this.files.reduce(function (s, f) { return s + f.size; }, 0);
 
@@ -766,8 +813,11 @@ function pmTool() {
     // ── Merge ──
     async merge() {
       if (!this.canMerge) return;
-      if (!window.PDFLib) {
-        this.mergeError = 'The PDF library failed to load. Check your connection and refresh the page.';
+
+      try {
+        await this.ensureLibs();
+      } catch (err) {
+        this.mergeError = 'The PDF library could not be loaded. Check your connection and try again.';
         return;
       }
 

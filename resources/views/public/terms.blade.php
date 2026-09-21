@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('title', 'Terms of Use - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'The terms that apply when you use Toolsearch: acceptable use, accuracy of results, liability limits and how changes are communicated.')
 @section('content')
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
     <h1 class="text-4xl font-bold text-gray-900 mb-8">Terms of Use</h1>

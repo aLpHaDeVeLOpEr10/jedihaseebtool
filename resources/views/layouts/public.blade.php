@@ -30,9 +30,12 @@
                 ? $tool->getRawOriginal('og_description')
                 : $_seoDesc);
 
+        // Share image: per-tool override, else the branded site default
         $_ogImage = $__env->hasSection('og_image')
             ? $__env->yieldContent('og_image')
-            : (isset($tool) && $tool->getRawOriginal('og_image') ? $tool->getRawOriginal('og_image') : '');
+            : (isset($tool) && $tool->getRawOriginal('og_image')
+                ? $tool->getRawOriginal('og_image')
+                : url('/og-default.png'));
 
         // Twitter Card
         $_twTitle = isset($tool) && $tool->getRawOriginal('twitter_title')
@@ -43,15 +46,24 @@
             ? $tool->getRawOriginal('twitter_description')
             : $_seoDesc;
 
-        // Canonical URL
+        // Canonical URL.
+        // Paginated pages are self-canonical (page 2 must not claim to be page 1);
+        // sort/type/category filter variants consolidate onto the clean URL.
+        $_page      = (int) request()->query('page', 1);
+        $_pageSuffix = $_page > 1 ? '?page=' . $_page : '';
+
         $_canonical = $__env->hasSection('canonical')
-            ? $__env->yieldContent('canonical')
+            ? trim($__env->yieldContent('canonical'))
             : (isset($tool) && $tool->getRawOriginal('canonical_url')
                 ? $tool->getRawOriginal('canonical_url')
-                : url()->current());
+                : url()->current() . $_pageSuffix);
 
-        // Robots
-        $_robots = isset($tool) ? $tool->robots_meta : 'index, follow';
+        // Robots. Internal search results are never indexed; error pages opt out.
+        $_robots = $__env->hasSection('robots')
+            ? trim($__env->yieldContent('robots'))
+            : (request()->routeIs('search')
+                ? 'noindex, follow'
+                : (isset($tool) ? $tool->robots_meta : 'index, follow'));
 
         // SEO keywords
         $_keywords = isset($tool) && $tool->getRawOriginal('seo_keywords')
@@ -64,14 +76,17 @@
     @endif
     <meta name="robots" content="{{ $_robots }}">
 
-    {{-- Canonical --}}
+    {{-- Canonical (suppressed on error pages) --}}
+    @if($_canonical)
     <link rel="canonical" href="{{ $_canonical }}">
+    @endif
 
     {{-- Open Graph --}}
     <meta property="og:title" content="{{ $_ogTitle }}">
     <meta property="og:description" content="{{ $_ogDesc }}">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ $_canonical ?: url()->current() }}">
+    <meta property="og:type" content="{{ isset($tool) ? 'article' : 'website' }}">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'en' ? 'en_US' : str_replace('-', '_', app()->getLocale()) }}">
     <meta property="og:site_name" content="{{ \App\Models\Setting::get('site_name', config('app.name')) }}">
     @if($_ogImage)
     <meta property="og:image" content="{{ $_ogImage }}">
@@ -93,9 +108,17 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#4f46e5">
 
-    {{-- Fonts --}}
+    {{-- Fonts: requested directly from the head so the browser can start the
+         download immediately, instead of chaining it behind app.css --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+    {{-- Keep Alpine-hidden blocks hidden before Alpine boots. Inlined so a CSS
+         rebuild can never purge it away and reintroduce layout shift. --}}
+    <style>[x-cloak]{display:none!important}</style>
 
     {{-- Styles --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -103,10 +126,16 @@
     {{-- Page-specific head --}}
     @yield('head')
 
-    {{-- Structured Data: child view section takes priority; fall back to tool model schema_markup --}}
-    @if($__env->hasSection('structured_data'))
+    {{-- Structured data. The shared graph covers every page (Organization,
+         WebSite, and per-page SoftwareApplication / BreadcrumbList / FAQPage /
+         CollectionPage). An admin-supplied schema_markup value is emitted in
+         addition, and a view may opt out of the shared graph entirely. --}}
+    @unless($__env->hasSection('structured_data'))
+        @include('partials.schema')
+    @else
         @yield('structured_data')
-    @elseif(isset($tool) && $tool->getRawOriginal('schema_markup'))
+    @endunless
+    @if(isset($tool) && $tool->getRawOriginal('schema_markup'))
         <script type="application/ld+json">{!! $tool->getRawOriginal('schema_markup') !!}</script>
     @endif
 

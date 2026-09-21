@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('title', 'About Us - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'Who builds Toolsearch and why every calculator, converter and file tool runs free in your browser, with no sign-up and no file uploads.')
 @section('content')
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
     <div class="text-center mb-12">

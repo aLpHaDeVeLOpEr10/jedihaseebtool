@@ -407,7 +407,7 @@
     {{-- Related tools --}}
     @if($relatedTools->count() > 0)
     <div class="card p-5">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+      <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
       <div class="space-y-1.5">
         @foreach($relatedTools->take(5) as $related)
         <a href="{{ route('tools.show', $related) }}"

@@ -13,35 +13,6 @@
 
 @section('canonical', $tool->canonical_url ?: route('tools.show', $tool))
 
-@section('structured_data')
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "{{ $tool->name }}",
-    "description": "{{ $tool->seo_description }}",
-    "url": "{{ route('tools.show', $tool) }}",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    @if($tool->faqs->count() > 0)
-    ,"mainEntity": {
-        "@type": "FAQPage",
-        "mainEntity": [
-            @foreach($tool->faqs->where('is_visible', true) as $faq)
-            {
-                "@type": "Question",
-                "name": "{{ addslashes($faq->question) }}",
-                "acceptedAnswer": { "@type": "Answer", "text": "{{ addslashes($faq->answer) }}" }
-            }{{ !$loop->last ? ',' : '' }}
-            @endforeach
-        ]
-    }
-    @endif
-}
-</script>
-@endsection
-
 @section('content')
 <div class="min-h-screen bg-gray-50">
 

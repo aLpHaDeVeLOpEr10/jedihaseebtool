@@ -404,7 +404,7 @@
         {{-- Related Tools --}}
         @if($relatedTools->count())
         <div class="mt-8">
-            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h3>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 @foreach($relatedTools as $related)
                 <a href="{{ route('tools.show', $related->slug) }}"

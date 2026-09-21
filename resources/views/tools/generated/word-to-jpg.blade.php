@@ -456,7 +456,7 @@
         </div>
 
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Tips</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Tips</h2>
           <ul class="space-y-2 text-xs text-gray-600">
             <li class="flex gap-2"><span class="text-blue-500 font-bold flex-shrink-0">•</span><span>For best results, use simple documents: text, images, and basic tables.</span></li>
             <li class="flex gap-2"><span class="text-blue-500 font-bold flex-shrink-0">•</span><span>Pages are split based on A4 dimensions — very long paragraphs may span page boundaries.</span></li>
@@ -468,7 +468,7 @@
 
         @if($relatedTools->count() > 0)
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
           <div class="space-y-2">
             @foreach($relatedTools as $related)
             <a href="{{ route('tools.show', $related) }}"

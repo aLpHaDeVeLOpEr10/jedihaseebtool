@@ -559,7 +559,7 @@
         </div>
 
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Tips</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Tips</h2>
           <ul class="space-y-2 text-xs text-gray-600">
             <li class="flex gap-2"><span class="text-violet-600 font-bold flex-shrink-0">•</span><span>First run downloads the FFmpeg engine (~25 MB, one time). Subsequent compressions start instantly.</span></li>
             <li class="flex gap-2"><span class="text-violet-600 font-bold flex-shrink-0">•</span><span>Lowering resolution (e.g. 1080p→720p) often reduces file size more than quality settings alone.</span></li>
@@ -570,7 +570,7 @@
 
         @if($relatedTools->count() > 0)
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
           <div class="space-y-2">
             @foreach($relatedTools as $related)
             <a href="{{ route('tools.show', $related) }}"

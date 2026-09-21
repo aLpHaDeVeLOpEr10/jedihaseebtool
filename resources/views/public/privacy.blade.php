@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('title', 'Privacy Policy - ' . \App\Models\Setting::get('site_name', 'Toolsearch'))
+@section('description', 'How Toolsearch handles data: most tools process everything in your browser, files are never uploaded, and we use essential cookies only.')
 @section('content')
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
     <h1 class="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>

@@ -451,7 +451,7 @@
 
         {{-- Tips --}}
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Tips</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Tips</h2>
           <ul class="space-y-2.5 text-xs text-gray-600">
             <li class="flex gap-2"><span class="text-red-500 font-bold flex-shrink-0">•</span><span><strong>1.5×</strong> resolution is ideal for web sharing — crisp without large file sizes.</span></li>
             <li class="flex gap-2"><span class="text-red-500 font-bold flex-shrink-0">•</span><span>Use <strong>3× / 216 DPI</strong> if you need to print or zoom into the images.</span></li>
@@ -464,7 +464,7 @@
         {{-- Related Tools --}}
         @if($relatedTools->count() > 0)
         <div class="card p-5">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+          <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
           <div class="space-y-2">
             @foreach($relatedTools as $related)
             <a href="{{ route('tools.show', $related) }}"

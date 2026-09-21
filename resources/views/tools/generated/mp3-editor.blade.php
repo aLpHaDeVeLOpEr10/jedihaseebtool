@@ -478,7 +478,7 @@
       </a>
     </div>
     <div class="card p-5">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3">How to Use</h3>
+      <h2 class="text-sm font-semibold text-gray-700 mb-3">How to Use</h2>
       <ol class="space-y-1.5 text-xs text-gray-600 list-decimal list-inside">
         <li>Upload an MP3, WAV, OGG, or AAC file</li>
         <li>Drag the purple handles to set trim range</li>
@@ -489,7 +489,7 @@
     </div>
     @if($relatedTools->count() > 0)
     <div class="card p-5">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h3>
+      <h2 class="text-sm font-semibold text-gray-700 mb-3">Related Tools</h2>
       <div class="space-y-1.5">
         @foreach($relatedTools->take(5) as $related)
         <a href="{{ route('tools.show', $related) }}"

@@ -372,7 +372,7 @@
 
         {{-- ── How It Works ── --}}
         <div class="card p-6 mb-4">
-            <h3 class="text-sm font-semibold text-gray-700 mb-3">How to Use</h3>
+            <h2 class="text-sm font-semibold text-gray-700 mb-3">How to Use</h2>
             <ol class="space-y-2 text-sm text-gray-500">
                 <li class="flex items-start gap-2">
                     <span class="text-brand-500 font-bold mt-0.5 flex-shrink-0">1.</span>
@@ -400,7 +400,7 @@
         {{-- Related Tools --}}
         @if($relatedTools->count())
         <div>
-            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h3>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Related Tools</h2>
             <div class="grid grid-cols-2 gap-3">
                 @foreach($relatedTools as $related)
                 <a href="{{ route('tools.show', $related->slug) }}"
