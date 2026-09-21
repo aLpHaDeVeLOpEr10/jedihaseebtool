@@ -108,13 +108,10 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#4f46e5">
 
-    {{-- Fonts: requested directly from the head so the browser can start the
-         download immediately, instead of chaining it behind app.css --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+    {{-- Inter is self-hosted (see resources/css/app.css). Preloading the latin
+         file starts the download in parallel with the stylesheet, so text
+         paints in the right face without a third-party round trip. --}}
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin>
 
     {{-- Keep Alpine-hidden blocks hidden before Alpine boots. Inlined so a CSS
          rebuild can never purge it away and reintroduce layout shift. --}}
