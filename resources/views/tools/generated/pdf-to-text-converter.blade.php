@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', $tool->seo_title)
 @section('meta_description', $tool->seo_description)

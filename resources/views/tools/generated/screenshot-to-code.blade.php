@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', 'Screenshot to Code — Generate HTML & CSS from Screenshots | Toolsearch')
 @section('description', 'Upload any screenshot or UI mockup and instantly get clean HTML + CSS starter code with the exact extracted color palette. Free, browser-based, no uploads.')

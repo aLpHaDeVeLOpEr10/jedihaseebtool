@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', 'HTML, CSS & JavaScript Compiler — Toolsearch')
 @section('description', 'Free online HTML, CSS & JavaScript live compiler. Write code and see results instantly — syntax highlighting, sandboxed preview, console output. No installation needed.')

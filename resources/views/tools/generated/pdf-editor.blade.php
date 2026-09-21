@@ -260,7 +260,7 @@
         <div class="pea-thumbs" id="pea-thumbs">
           <template x-for="(pg, i) in pages" :key="pg.id">
             <div class="pea-tcard" :class="curPage===i&&'cur'" @click="switchPage(i)">
-              <img :src="pg.thumb" x-show="pg.thumb" loading="lazy">
+              <img :src="pg.thumb" x-show="pg.thumb" loading="lazy" :alt="'Preview of page ' + (i + 1)">
               <div class="pea-tcard-ph" x-show="!pg.thumb" style="font-size:9px;color:#4b5563">Loading…</div>
               <div class="pea-tnum" x-text="i+1"></div>
               <div class="pea-tacts">
@@ -496,7 +496,7 @@
           <p style="font-size:11px;color:#6b7280;margin-bottom:6px">Recent signatures — click to reuse:</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
             <template x-for="(s,i) in savedSigs" :key="i">
-              <img :src="s" @click="placeSigData(s)" style="height:36px;background:#fff;border-radius:4px;cursor:pointer;border:2px solid #374151;padding:2px" title="Click to place">
+              <img :src="s" @click="placeSigData(s)" style="height:36px;background:#fff;border-radius:4px;cursor:pointer;border:2px solid #374151;padding:2px" title="Click to place" :alt="'Saved signature ' + (i + 1) + ' — click to place on the page'">
             </template>
           </div>
         </div>

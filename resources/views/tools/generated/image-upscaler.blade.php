@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', 'Image Upscaler — Enlarge Images 2x 3x 4x Online Free | Toolsearch')
 @section('description', 'Upscale and enlarge images 2x, 3x, or 4x using Lanczos bicubic resampling — free, browser-based, no uploads, no AI APIs. Supports JPG, PNG, and WebP.')

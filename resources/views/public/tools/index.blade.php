@@ -24,43 +24,57 @@
             </button>
 
             <div class="hidden lg:block space-y-6" :class="open ? '!block' : ''">
+                {{-- Filters are submitted as GET forms rather than links.
+                     Crawlers do not submit forms, so the category/type/sort
+                     combinations never become crawlable URLs, while the
+                     controls still work with JavaScript disabled. --}}
+
                 {{-- Category Filter --}}
                 <div class="card p-5">
                     <h3 class="font-semibold text-gray-900 text-sm mb-3">Category</h3>
-                    <div class="space-y-1.5">
-                        <a href="{{ route('tools.index', request()->except('category')) }}"
-                           class="flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors {{ !request('category') ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
+                    <form method="GET" action="{{ route('tools.index') }}" class="space-y-1.5">
+                        @if(request('type'))<input type="hidden" name="type" value="{{ request('type') }}">@endif
+                        @if(request('sort'))<input type="hidden" name="sort" value="{{ request('sort') }}">@endif
+
+                        <button type="submit" name="category" value=""
+                                class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm text-left transition-colors {{ !request('category') ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
                             <span>All Categories</span>
                             <span class="text-xs text-gray-400">{{ $tools->total() }}</span>
-                        </a>
+                        </button>
                         @foreach($categories as $cat)
-                        <a href="{{ route('tools.index', array_merge(request()->all(), ['category' => $cat->slug])) }}"
-                           class="flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors {{ request('category') === $cat->slug ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
+                        <button type="submit" name="category" value="{{ $cat->slug }}"
+                                class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm text-left transition-colors {{ request('category') === $cat->slug ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
                             <span class="flex items-center gap-2">
                                 <span>{{ $cat->icon }}</span>
                                 <span>{{ $cat->name }}</span>
                             </span>
                             <span class="text-xs text-gray-400">{{ $cat->active_tools_count }}</span>
-                        </a>
+                        </button>
                         @endforeach
-                    </div>
+                    </form>
+                    <p class="mt-3 text-xs text-gray-400">
+                        Browse category pages: <a href="{{ route('categories.index') }}" class="text-brand-600 hover:underline">all categories</a>
+                    </p>
                 </div>
 
                 {{-- Tool Type Filter --}}
                 <div class="card p-5">
                     <h3 class="font-semibold text-gray-900 text-sm mb-3">Tool Type</h3>
-                    <div class="space-y-1.5">
-                        <a href="{{ route('tools.index', request()->except('type')) }}"
-                           class="block px-3 py-2 rounded-lg text-sm transition-colors {{ !request('type') ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
+                    <form method="GET" action="{{ route('tools.index') }}" class="space-y-1.5">
+                        @if(request('category'))<input type="hidden" name="category" value="{{ request('category') }}">@endif
+                        @if(request('sort'))<input type="hidden" name="sort" value="{{ request('sort') }}">@endif
+
+                        <button type="submit" name="type" value=""
+                                class="w-full block px-3 py-2 rounded-lg text-sm text-left transition-colors {{ !request('type') ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
                             All Types
-                        </a>
+                        </button>
                         @foreach($toolTypes as $type)
-                        <a href="{{ route('tools.index', array_merge(request()->all(), ['type' => $type])) }}"
-                           class="block px-3 py-2 rounded-lg text-sm transition-colors capitalize {{ request('type') === $type ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
+                        <button type="submit" name="type" value="{{ $type }}"
+                                class="w-full block px-3 py-2 rounded-lg text-sm text-left capitalize transition-colors {{ request('type') === $type ? 'bg-brand-50 text-brand-700 font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
                             {{ ucfirst($type) }}
-                        </a>
+                        </button>
                         @endforeach
-                    </div>
+                    </form>
                 </div>
             </div>
         </aside>
@@ -72,15 +86,18 @@
                 <p class="text-sm text-gray-500">
                     Showing <strong>{{ $tools->firstItem() }}–{{ $tools->lastItem() }}</strong> of <strong>{{ $tools->total() }}</strong> tools
                 </p>
-                <div class="flex items-center gap-2">
-                    <span class="text-sm text-gray-500">Sort:</span>
-                    <select onchange="window.location = this.value" class="form-input py-1.5 text-sm w-auto">
-                        <option value="{{ route('tools.index', array_merge(request()->all(), ['sort' => 'default'])) }}" {{ request('sort', 'default') === 'default' ? 'selected' : '' }}>Default</option>
-                        <option value="{{ route('tools.index', array_merge(request()->all(), ['sort' => 'popular'])) }}" {{ request('sort') === 'popular' ? 'selected' : '' }}>Most Popular</option>
-                        <option value="{{ route('tools.index', array_merge(request()->all(), ['sort' => 'newest'])) }}" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest</option>
-                        <option value="{{ route('tools.index', array_merge(request()->all(), ['sort' => 'name'])) }}" {{ request('sort') === 'name' ? 'selected' : '' }}>A–Z</option>
+                <form method="GET" action="{{ route('tools.index') }}" class="flex items-center gap-2">
+                    @if(request('category'))<input type="hidden" name="category" value="{{ request('category') }}">@endif
+                    @if(request('type'))<input type="hidden" name="type" value="{{ request('type') }}">@endif
+                    <label for="tools-sort" class="text-sm text-gray-500">Sort:</label>
+                    <select id="tools-sort" name="sort" onchange="this.form.submit()" class="form-input py-1.5 text-sm w-auto">
+                        <option value="default" {{ request('sort', 'default') === 'default' ? 'selected' : '' }}>Default</option>
+                        <option value="popular" {{ request('sort') === 'popular' ? 'selected' : '' }}>Most Popular</option>
+                        <option value="newest" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest</option>
+                        <option value="name" {{ request('sort') === 'name' ? 'selected' : '' }}>A–Z</option>
                     </select>
-                </div>
+                    <noscript><button type="submit" class="btn btn-secondary btn-sm">Apply</button></noscript>
+                </form>
             </div>
 
             {{-- Tools Grid --}}

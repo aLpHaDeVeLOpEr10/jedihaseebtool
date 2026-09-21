@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', 'MP3 Editor — Trim, Cut, Volume, Fade In/Out Online | Toolsearch')
 @section('description', 'Free browser-based MP3 editor. Trim audio, adjust volume, add fade in/fade out, preview in real-time, and download your edited MP3. No uploads — runs entirely in your browser.')

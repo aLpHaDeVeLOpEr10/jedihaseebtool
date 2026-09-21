@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', $tool->seo_title)
 @section('description', $tool->seo_description)
@@ -19,16 +20,11 @@
     {{-- Tool Header --}}
     <div class="bg-white border-b border-gray-100">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-            {{-- Breadcrumb --}}
-            <nav class="flex items-center gap-2 text-sm text-gray-500 mb-6">
-                <a href="{{ route('home') }}" class="hover:text-brand-600 transition-colors">Home</a>
-                <span>›</span>
-                <a href="{{ route('categories.show', $tool->category) }}" class="hover:text-brand-600 transition-colors">
-                    {{ $tool->category->name }}
-                </a>
-                <span>›</span>
-                <span class="text-gray-900">{{ $tool->name }}</span>
-            </nav>
+            <x-breadcrumb class="mb-6" :items="[
+                ['label' => 'Home',                'url' => route('home')],
+                ['label' => $tool->category->name, 'url' => route('categories.show', $tool->category->slug)],
+                ['label' => $tool->name],
+            ]"/>
 
             <div class="flex items-start gap-5">
                 <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"

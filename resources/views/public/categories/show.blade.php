@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('renders_own_breadcrumb', '1')
 
 @section('title', $category->seo_title)
 @section('description', $category->seo_description)
@@ -6,13 +7,11 @@
 @section('content')
 <div class="bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-        <nav class="flex items-center gap-2 text-sm text-gray-500 mb-6">
-            <a href="{{ route('home') }}" class="hover:text-brand-600">Home</a>
-            <span>›</span>
-            <a href="{{ route('categories.index') }}" class="hover:text-brand-600">Categories</a>
-            <span>›</span>
-            <span class="text-gray-900">{{ $category->name }}</span>
-        </nav>
+        <x-breadcrumb class="mb-6" :items="[
+            ['label' => 'Home',       'url' => route('home')],
+            ['label' => 'Categories', 'url' => route('categories.index')],
+            ['label' => $category->name],
+        ]"/>
         <div class="flex items-center gap-4">
             <span class="text-5xl">{{ $category->icon }}</span>
             <div>
@@ -31,12 +30,18 @@
         <p class="text-sm text-gray-500">
             Showing <strong>{{ $tools->firstItem() }}–{{ $tools->lastItem() }}</strong> of <strong>{{ $tools->total() }}</strong>
         </p>
-        <select onchange="window.location = this.value" class="form-input py-1.5 text-sm w-auto">
-            <option value="{{ route('categories.show', [$category, 'sort' => 'default']) }}" {{ !request('sort') ? 'selected' : '' }}>Default</option>
-            <option value="{{ route('categories.show', [$category, 'sort' => 'popular']) }}" {{ request('sort') === 'popular' ? 'selected' : '' }}>Most Popular</option>
-            <option value="{{ route('categories.show', [$category, 'sort' => 'newest']) }}" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest</option>
-            <option value="{{ route('categories.show', [$category, 'sort' => 'name']) }}" {{ request('sort') === 'name' ? 'selected' : '' }}>A–Z</option>
-        </select>
+        {{-- GET form rather than a list of sorted URLs, so sort variants stay
+             out of the crawl graph while still working without JavaScript. --}}
+        <form method="GET" action="{{ route('categories.show', $category->slug) }}" class="flex items-center gap-2">
+            <label for="cat-sort" class="sr-only">Sort tools</label>
+            <select id="cat-sort" name="sort" onchange="this.form.submit()" class="form-input py-1.5 text-sm w-auto">
+                <option value="default" {{ !request('sort') ? 'selected' : '' }}>Default</option>
+                <option value="popular" {{ request('sort') === 'popular' ? 'selected' : '' }}>Most Popular</option>
+                <option value="newest" {{ request('sort') === 'newest' ? 'selected' : '' }}>Newest</option>
+                <option value="name" {{ request('sort') === 'name' ? 'selected' : '' }}>A–Z</option>
+            </select>
+            <noscript><button type="submit" class="btn btn-secondary btn-sm">Apply</button></noscript>
+        </form>
     </div>
 
     @if($tools->count() > 0)

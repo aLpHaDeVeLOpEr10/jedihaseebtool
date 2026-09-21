@@ -32,14 +32,15 @@
         <aside class="w-48 flex-shrink-0 hidden lg:block">
             <div class="card p-4">
                 <h3 class="font-semibold text-sm text-gray-700 mb-3">Filter by Category</h3>
-                <div class="space-y-1">
+                <form method="GET" action="{{ route('search') }}" class="space-y-1">
+                    <input type="hidden" name="q" value="{{ $q }}">
                     @foreach($categories as $cat)
-                    <a href="{{ route('search', ['q' => $q, 'category' => $cat->slug]) }}"
-                       class="block text-sm px-2 py-1.5 rounded-lg transition-colors {{ $category === $cat->slug ? 'bg-brand-50 text-brand-700' : 'text-gray-600 hover:bg-gray-50' }}">
+                    <button type="submit" name="category" value="{{ $cat->slug }}"
+                            class="w-full block text-sm px-2 py-1.5 rounded-lg text-left transition-colors {{ $category === $cat->slug ? 'bg-brand-50 text-brand-700' : 'text-gray-600 hover:bg-gray-50' }}">
                         {{ $cat->icon }} {{ $cat->name }}
-                    </a>
+                    </button>
                     @endforeach
-                </div>
+                </form>
             </div>
         </aside>
 

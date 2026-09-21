@@ -169,6 +169,20 @@
 
     {{-- Main Content --}}
     <main>
+        {{-- Breadcrumb for tool pages whose template does not render its own,
+             so every tool page carries the same trail markup. --}}
+        @if(request()->routeIs('tools.show') && isset($tool) && !$__env->hasSection('renders_own_breadcrumb'))
+        <div class="bg-white border-b border-gray-100">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3">
+                <x-breadcrumb :items="array_values(array_filter([
+                    ['label' => 'Home', 'url' => route('home')],
+                    $tool->category ? ['label' => $tool->category->name, 'url' => route('categories.show', $tool->category->slug)] : null,
+                    ['label' => $tool->name],
+                ]))"/>
+            </div>
+        </div>
+        @endif
+
         @yield('content')
 
         {{-- Content sections injected for tool pages that don't render them inline --}}
