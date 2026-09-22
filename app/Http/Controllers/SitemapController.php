@@ -78,11 +78,9 @@ class SitemapController extends Controller
             'User-agent: *',
             'Allow: /',
             '',
-            '# Admin and auth',
-            'Disallow: /admin',
-            'Disallow: /login',
-            'Disallow: /logout',
-            '',
+            // The admin path is deliberately not listed here: robots.txt is
+            // public, so naming it would advertise it. Those pages carry a
+            // noindex meta tag instead.
             '# Internal search results and faceted list URLs',
             'Disallow: /search',
             'Disallow: /*?q=',

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Login — {{ \App\Models\Setting::get('site_name', 'Toolsearch') }}</title>
+    <meta name="robots" content="noindex, nofollow">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50 min-h-screen flex items-center justify-center font-sans">

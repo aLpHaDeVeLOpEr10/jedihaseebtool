@@ -47,9 +47,14 @@ Route::get('/pages/{page}', [HomeController::class, 'page'])->name('pages.show')
 |--------------------------------------------------------------------------
 */
 
-Route::middleware('guest')->group(function () {
-    Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'showLogin'])->name('login');
-    Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
+// The login form sits on an unguessable path from config/app.php
+// (LOGIN_PATH in .env), so /login returns 404. The admin panel keeps its
+// normal /admin URLs and is protected by the auth middleware.
+$loginPath = config('app.login_path');
+
+Route::middleware('guest')->group(function () use ($loginPath) {
+    Route::get($loginPath,  [\App\Http\Controllers\Auth\LoginController::class, 'showLogin'])->name('login');
+    Route::post($loginPath, [\App\Http\Controllers\Auth\LoginController::class, 'login']);
 });
 
 Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');

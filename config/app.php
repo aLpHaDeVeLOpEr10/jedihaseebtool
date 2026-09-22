@@ -7,6 +7,20 @@ return [
     'env'             => env('APP_ENV', 'production'),
     'debug'           => (bool) env('APP_DEBUG', false),
     'url'             => env('APP_URL', 'http://localhost'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Login Path
+    |--------------------------------------------------------------------------
+    |
+    | The URL segment that serves the admin login form. Kept in the
+    | environment so the real value is never committed: this repository is
+    | public. Set LOGIN_PATH in .env; the default below is only a fallback.
+    | The admin panel itself stays under /admin.
+    |
+    */
+
+    'login_path'      => env('LOGIN_PATH', 'login'),
     'timezone'        => 'UTC',
     'locale'          => 'en',
     'fallback_locale' => 'en',
