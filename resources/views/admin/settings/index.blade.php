@@ -3,7 +3,7 @@
 
 @section('content')
 <div x-data="{ tab: 'general' }">
-    <div class="flex gap-1 mb-6 border-b border-gray-200">
+    <div class="tab-scroll mb-6 border-b border-gray-200">
         @foreach([['general','General'],['seo','SEO'],['currency','Currency Rates']] as [$t,$l])
         <button @click="tab='{{ $t }}'" :class="tab==='{{ $t }}' ? 'border-brand-500 text-brand-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
                 class="px-4 py-2.5 text-sm font-medium border-b-2 transition-colors">{{ $l }}</button>
@@ -15,7 +15,7 @@
 
         {{-- General --}}
         <div x-show="tab === 'general'" class="grid lg:grid-cols-2 gap-6">
-            <div class="card p-6 space-y-4">
+            <div class="card p-4 sm:p-6 space-y-4">
                 <h2 class="font-semibold text-gray-900">Site Identity</h2>
                 <div>
                     <label class="form-label">Site Name *</label>
@@ -39,7 +39,7 @@
                     <input type="text" name="footer_text" value="{{ $settings['footer_text']->value ?? '' }}" class="form-input" placeholder="© 2024 Toolsearch. All rights reserved.">
                 </div>
             </div>
-            <div class="card p-6 space-y-4">
+            <div class="card p-4 sm:p-6 space-y-4">
                 <h2 class="font-semibold text-gray-900">Homepage</h2>
                 <div>
                     <label class="form-label">Hero Title</label>
@@ -70,7 +70,7 @@
         </div>
 
         {{-- SEO --}}
-        <div x-show="tab === 'seo'" x-cloak class="card p-6 max-w-2xl space-y-4">
+        <div x-show="tab === 'seo'" x-cloak class="card p-4 sm:p-6 max-w-2xl space-y-4">
             <h2 class="font-semibold text-gray-900">Default SEO Settings</h2>
             <div>
                 <label class="form-label">SEO Title Suffix</label>
@@ -84,29 +84,29 @@
         </div>
 
         <div class="mt-6">
-            <button type="submit" class="btn btn-primary btn-lg">Save Settings</button>
+            <button type="submit" class="btn btn-primary btn-lg w-full sm:w-auto">Save Settings</button>
         </div>
     </form>
 
     {{-- Currency Rates --}}
-    <div x-show="tab === 'currency'" x-cloak class="card p-6 max-w-3xl">
+    <div x-show="tab === 'currency'" x-cloak class="card p-4 sm:p-6 max-w-3xl">
         <h2 class="font-semibold text-gray-900 mb-2">Currency Exchange Rates</h2>
         <p class="text-sm text-gray-500 mb-5">Enter rates relative to USD (1 USD = X). Update regularly for accuracy.</p>
 
         <form action="{{ route('admin.settings.currency') }}" method="POST">
             @csrf
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-5" x-data="currencyEditor({{ json_encode($currencyRates) }})">
+            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-5" x-data="currencyEditor({{ json_encode($currencyRates) }})">
                 <input type="hidden" name="rates" :value="JSON.stringify(rates)">
 
                 <template x-for="(rate, currency) in rates" :key="currency">
                     <div class="flex items-center gap-2 bg-gray-50 rounded-xl p-3">
                         <span class="text-sm font-medium text-gray-700 w-10 flex-shrink-0" x-text="currency"></span>
                         <input type="number" x-model="rates[currency]" step="0.0001" min="0"
-                               class="form-input text-sm py-1">
+                               class="form-input text-sm py-1 min-w-0">
                     </div>
                 </template>
             </div>
-            <button type="submit" class="btn btn-primary">Update Exchange Rates</button>
+            <button type="submit" class="btn btn-primary w-full sm:w-auto">Update Exchange Rates</button>
         </form>
     </div>
 </div>

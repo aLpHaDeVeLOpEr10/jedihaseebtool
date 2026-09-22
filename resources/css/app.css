@@ -132,7 +132,7 @@
 
     /* Stats card */
     .stat-card {
-        @apply card p-6;
+        @apply card p-4 sm:p-6;
     }
 
     /* Section heading */
@@ -253,11 +253,33 @@
 
 /* Admin specific */
 .admin-sidebar {
-    @apply fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 flex flex-col z-30;
+    @apply fixed inset-y-0 left-0 w-64 max-w-[85vw] bg-white border-r border-gray-200 flex flex-col z-40;
 }
 
+/* The sidebar is an overlay below `lg`, so the content only gets pushed
+   aside once the sidebar is permanently docked. Without the breakpoint the
+   256px margin shoved every admin page off-screen on mobile. */
 .admin-content {
-    @apply ml-64 min-h-screen bg-gray-50;
+    @apply lg:ml-64 min-w-0 min-h-screen bg-gray-50;
+}
+
+/* Horizontally scrollable tab strips (tool editor, settings) — too many
+   tabs to fit a phone, so let them swipe instead of wrap or overflow. */
+.tab-scroll {
+    @apply flex gap-1 overflow-x-auto scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0;
+}
+
+.tab-scroll > button {
+    @apply whitespace-nowrap flex-shrink-0;
+}
+
+.scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
 }
 
 /* Tool result animation */
@@ -283,4 +305,36 @@
 /* Copy button feedback */
 .copy-success {
     @apply text-emerald-600;
+}
+
+/* iOS Safari zooms the viewport whenever a focused field's text is under
+   16px, and never zooms back out. Our controls are 14px by design, so bump
+   them to 16px on touch-primary phones only — pointer-less desktops and
+   tablets in landscape keep the tighter type. */
+@media (max-width: 639px) and (pointer: coarse) {
+    .form-input,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="url"],
+    input[type="search"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* Tap targets on touch devices: the WCAG 2.2 / platform minimum is ~44px,
+   and our `btn-sm` rows sit well under that. */
+@media (pointer: coarse) {
+    .btn-sm {
+        @apply min-h-[38px];
+    }
+
+    .nav-item {
+        @apply py-3;
+    }
 }

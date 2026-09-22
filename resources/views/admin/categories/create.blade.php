@@ -4,7 +4,7 @@
 <div class="max-w-2xl">
 <form action="{{ route('admin.categories.store') }}" method="POST" class="space-y-6">
     @csrf
-    <div class="card p-6 space-y-4">
+    <div class="card p-4 sm:p-6 space-y-4">
         <h2 class="font-semibold text-gray-900">Category Details</h2>
         <div class="grid sm:grid-cols-2 gap-4">
             <div>
@@ -40,7 +40,7 @@
             <label for="is_active" class="text-sm text-gray-700">Active (visible on website)</label>
         </div>
     </div>
-    <div class="card p-6 space-y-4">
+    <div class="card p-4 sm:p-6 space-y-4">
         <h2 class="font-semibold text-gray-900">SEO</h2>
         <div>
             <label class="form-label">SEO Title</label>
@@ -55,7 +55,7 @@
             <input type="text" name="seo_keywords" value="{{ old('seo_keywords') }}" class="form-input" placeholder="keyword1, keyword2">
         </div>
     </div>
-    <div class="flex gap-3">
+    <div class="flex flex-wrap items-center gap-3">
         <button type="submit" class="btn btn-primary">Create Category</button>
         <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Cancel</a>
     </div>

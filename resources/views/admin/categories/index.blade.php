@@ -8,14 +8,21 @@
 @section('content')
 <div class="card overflow-hidden">
     <div class="p-4 border-b border-gray-100">
-        <form action="{{ route('admin.categories.index') }}" method="GET" class="flex gap-3">
+        <form action="{{ route('admin.categories.index') }}" method="GET"
+              class="flex flex-col sm:flex-row gap-3">
             <input type="text" name="search" value="{{ request('search') }}"
                    placeholder="Search categories..." class="form-input flex-1">
-            <button type="submit" class="btn btn-primary">Search</button>
-            @if(request('search'))
-            <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Clear</a>
-            @endif
+            <div class="flex gap-2">
+                <button type="submit" class="btn btn-primary flex-1 sm:flex-none">Search</button>
+                @if(request('search'))
+                <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary flex-1 sm:flex-none">Clear</a>
+                @endif
+            </div>
         </form>
+        {{-- The header's "New Category" action is hidden on phones. --}}
+        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary w-full mt-3 sm:hidden">
+            + New Category
+        </a>
     </div>
 
     <div class="overflow-x-auto">
@@ -23,10 +30,10 @@
             <thead class="bg-gray-50 border-b border-gray-100">
                 <tr>
                     <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Category</th>
-                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Slug</th>
-                    <th class="text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Tools</th>
-                    <th class="text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Status</th>
-                    <th class="text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Order</th>
+                    <th class="hidden lg:table-cell text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Slug</th>
+                    <th class="hidden sm:table-cell text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Tools</th>
+                    <th class="hidden md:table-cell text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Status</th>
+                    <th class="hidden lg:table-cell text-center px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Order</th>
                     <th class="text-right px-4 py-3 text-xs font-semibold text-gray-500 uppercase">Actions</th>
                 </tr>
             </thead>
@@ -34,31 +41,39 @@
                 @forelse($categories as $cat)
                 <tr class="hover:bg-gray-50">
                     <td class="px-4 py-3">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">{{ $cat->icon }}</span>
-                            <div>
-                                <p class="font-medium text-gray-900">{{ $cat->name }}</p>
+                        <div class="flex items-start gap-3">
+                            <span class="text-2xl flex-shrink-0">{{ $cat->icon }}</span>
+                            <div class="min-w-0">
+                                <p class="font-medium text-gray-900 break-words">{{ $cat->name }}</p>
                                 @if($cat->description)
                                 <p class="text-xs text-gray-400 truncate max-w-xs">{{ $cat->description }}</p>
                                 @endif
+                                {{-- Columns hidden at this width are folded in here. --}}
+                                <p class="lg:hidden text-xs text-gray-400 font-mono break-all mt-0.5">{{ $cat->slug }}</p>
+                                <div class="md:hidden mt-1.5 flex items-center gap-2 flex-wrap">
+                                    <span class="badge {{ $cat->is_active ? 'badge-success' : 'badge-gray' }}">
+                                        {{ $cat->is_active ? 'Active' : 'Inactive' }}
+                                    </span>
+                                    <span class="sm:hidden text-xs text-gray-400">{{ $cat->tools_count }} tools</span>
+                                </div>
                             </div>
                         </div>
                     </td>
-                    <td class="px-4 py-3 font-mono text-xs text-gray-500">{{ $cat->slug }}</td>
-                    <td class="px-4 py-3 text-center">
+                    <td class="hidden lg:table-cell px-4 py-3 font-mono text-xs text-gray-500">{{ $cat->slug }}</td>
+                    <td class="hidden sm:table-cell px-4 py-3 text-center">
                         <a href="{{ route('admin.tools.index', ['category' => $cat->id]) }}"
                            class="badge badge-primary hover:bg-brand-200 transition-colors">
                             {{ $cat->tools_count }}
                         </a>
                     </td>
-                    <td class="px-4 py-3 text-center">
+                    <td class="hidden md:table-cell px-4 py-3 text-center">
                         <span class="badge {{ $cat->is_active ? 'badge-success' : 'badge-gray' }}">
                             {{ $cat->is_active ? 'Active' : 'Inactive' }}
                         </span>
                     </td>
-                    <td class="px-4 py-3 text-center text-gray-500">{{ $cat->sort_order }}</td>
+                    <td class="hidden lg:table-cell px-4 py-3 text-center text-gray-500">{{ $cat->sort_order }}</td>
                     <td class="px-4 py-3">
-                        <div class="flex items-center justify-end gap-2">
+                        <div class="flex items-center justify-end gap-2 flex-wrap">
                             <a href="{{ route('categories.show', $cat) }}" target="_blank"
                                class="btn btn-secondary btn-sm">View</a>
                             <a href="{{ route('admin.categories.edit', $cat) }}"

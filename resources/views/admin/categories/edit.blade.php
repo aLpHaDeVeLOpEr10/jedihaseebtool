@@ -4,7 +4,7 @@
 <div class="max-w-2xl">
 <form action="{{ route('admin.categories.update', $category) }}" method="POST" class="space-y-6">
     @csrf @method('PUT')
-    <div class="card p-6 space-y-4">
+    <div class="card p-4 sm:p-6 space-y-4">
         <h2 class="font-semibold text-gray-900">Category Details</h2>
         <div class="grid sm:grid-cols-2 gap-4">
             <div>
@@ -39,7 +39,7 @@
             <label for="is_active" class="text-sm">Active</label>
         </div>
     </div>
-    <div class="card p-6 space-y-4">
+    <div class="card p-4 sm:p-6 space-y-4">
         <h2 class="font-semibold text-gray-900">SEO</h2>
         <div>
             <label class="form-label">SEO Title</label>
@@ -54,7 +54,7 @@
             <input type="text" name="seo_keywords" value="{{ old('seo_keywords', $category->seo_keywords) }}" class="form-input">
         </div>
     </div>
-    <div class="flex gap-3">
+    <div class="flex flex-wrap items-center gap-3">
         <button type="submit" class="btn btn-primary">Save Changes</button>
         <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Cancel</a>
         <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="ml-auto"

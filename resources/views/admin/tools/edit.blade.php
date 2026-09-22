@@ -2,7 +2,7 @@
 @section('title', 'Edit: ' . $tool->name)
 
 @section('header_actions')
-<div class="flex gap-2">
+<div class="flex flex-wrap gap-2 justify-end">
     <a href="{{ route('tools.show', $tool->slug) }}" target="_blank" class="btn btn-secondary btn-sm">👁 View</a>
     <form action="{{ route('admin.tools.toggle-featured', $tool) }}" method="POST">
         @csrf
@@ -20,6 +20,24 @@
 @endsection
 
 @section('content')
+
+{{-- Phone-sized mirror of @section('header_actions'), which the layout hides
+     below `sm` so the page title is not crowded out. --}}
+<div class="sm:hidden flex flex-wrap gap-2 mb-4">
+    <a href="{{ route('tools.show', $tool->slug) }}" target="_blank" class="btn btn-secondary btn-sm">👁 View</a>
+    <form action="{{ route('admin.tools.toggle-featured', $tool) }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-secondary btn-sm">
+            {{ $tool->is_featured ? '★ Unfeature' : '☆ Feature' }}
+        </button>
+    </form>
+    <form action="{{ route('admin.tools.toggle-status', $tool) }}" method="POST">
+        @csrf
+        <button type="submit" class="btn {{ $tool->status === 'active' ? 'btn-secondary' : 'btn-success' }} btn-sm">
+            {{ $tool->status === 'active' ? 'Deactivate' : 'Activate' }}
+        </button>
+    </form>
+</div>
 
 @if(session('success'))
 <div class="alert alert-success mb-4 flex items-center gap-2">
@@ -41,7 +59,7 @@
 
 <div x-data="{ activeTab: 'basic' }">
     {{-- Tabs --}}
-    <div class="flex gap-1 mb-6 border-b border-gray-200">
+    <div class="tab-scroll mb-6 border-b border-gray-200">
         @foreach([['basic', 'Basic Info'], ['seo', 'SEO'], ['content', 'Content Sections'], ['inputs', 'Inputs & FAQs'], ['blade', 'Blade Template']] as [$tab, $label])
         <button type="button" @click="activeTab = '{{ $tab }}'"
                 :class="activeTab === '{{ $tab }}' ? 'border-brand-500 text-brand-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
@@ -57,7 +75,7 @@
         {{-- Basic Info Tab --}}
         <div x-show="activeTab === 'basic'" class="grid lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 space-y-6">
-                <div class="card p-6">
+                <div class="card p-4 sm:p-6">
                     <h2 class="font-semibold text-gray-900 mb-5">Basic Information</h2>
                     <div class="space-y-4">
                         <div class="grid sm:grid-cols-2 gap-4">
@@ -126,7 +144,7 @@
                 </div>
 
                 {{-- Engine Config --}}
-                <div class="card p-6">
+                <div class="card p-4 sm:p-6">
                     <h2 class="font-semibold text-gray-900 mb-5">Engine Configuration</h2>
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div>
@@ -149,7 +167,7 @@
             </div>
 
             <div class="space-y-6">
-                <div class="card p-5 sticky top-20">
+                <div class="card p-5 lg:sticky lg:top-20">
                     <h2 class="font-semibold text-gray-900 mb-4">Publish</h2>
                     <div class="space-y-4">
                         <div>
@@ -209,7 +227,7 @@
         <div x-show="activeTab === 'seo'" x-cloak class="space-y-6 max-w-3xl">
 
             {{-- Primary SEO --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-1">Primary SEO</h2>
                 <p class="text-xs text-gray-400 mb-5">Leave any field blank to use the auto-generated fallback. Values are saved as-is — no suffix is added automatically.</p>
                 <div class="space-y-4">
@@ -259,7 +277,7 @@
             </div>
 
             {{-- Open Graph --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-1">Open Graph (Facebook / LinkedIn)</h2>
                 <p class="text-xs text-gray-400 mb-5">Leave blank to fall back to primary SEO title / description above.</p>
                 <div class="space-y-4">
@@ -287,7 +305,7 @@
             </div>
 
             {{-- Twitter Card --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-1">Twitter Card</h2>
                 <p class="text-xs text-gray-400 mb-5">Leave blank to fall back to primary SEO title / description above.</p>
                 <div class="space-y-4">
@@ -307,11 +325,11 @@
             </div>
 
             {{-- Schema Markup --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-1">Schema Markup (JSON-LD)</h2>
                 <p class="text-xs text-gray-400 mb-5">Paste a valid JSON-LD block. It will be output inside a &lt;script type="application/ld+json"&gt; tag on the tool page.</p>
                 <div>
-                    <textarea name="schema_markup" rows="8" class="form-input font-mono text-xs leading-relaxed"
+                    <textarea name="schema_markup" rows="8" class="form-input font-mono text-xs leading-relaxed whitespace-pre overflow-x-auto"
                               placeholder='{
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -331,18 +349,18 @@
 
             <input type="hidden" name="contents" :value="JSON.stringify(sections)">
 
-            <div class="card p-6">
-                <div class="flex items-center justify-between mb-5">
+            <div class="card p-4 sm:p-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
                     <div>
                         <h2 class="font-semibold text-gray-900">Content Sections</h2>
                         <p class="text-sm text-gray-500 mt-1">Add rich content blocks that appear below the tool on the public page.</p>
                     </div>
-                    <button type="button" @click="addSection()" class="btn btn-secondary btn-sm">+ Add Section</button>
+                    <button type="button" @click="addSection()" class="btn btn-secondary btn-sm flex-shrink-0">+ Add Section</button>
                 </div>
 
                 <div class="space-y-5">
                     <template x-for="(section, index) in sections" :key="index">
-                        <div class="border border-gray-200 rounded-xl p-5 space-y-4 bg-gray-50">
+                        <div class="border border-gray-200 rounded-xl p-3 sm:p-5 space-y-4 bg-gray-50">
                             <div class="flex items-center justify-between">
                                 <span class="text-sm font-medium text-gray-700"
                                       x-text="'Section ' + (index + 1) + (section.title ? ': ' + section.title : '')"></span>
@@ -405,14 +423,14 @@
             <input type="hidden" name="inputs" :value="JSON.stringify(fields)">
             <input type="hidden" name="faqs" :value="JSON.stringify(faqs)">
 
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <div class="flex items-center justify-between mb-5">
                     <h2 class="font-semibold text-gray-900">Input Fields</h2>
                     <button type="button" @click="addField()" class="btn btn-secondary btn-sm">+ Add Field</button>
                 </div>
                 <div class="space-y-4">
                     <template x-for="(field, index) in fields" :key="index">
-                        <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                        <div class="border border-gray-200 rounded-xl p-3 sm:p-4 space-y-3">
                             <div class="flex items-center justify-between">
                                 <span class="text-sm font-medium text-gray-700" x-text="`Field ${index + 1}: ` + (field.field_label || 'Untitled')"></span>
                                 <button type="button" @click="removeField(index)" class="text-red-400 hover:text-red-600 text-sm">Remove</button>
@@ -464,14 +482,14 @@
                 </div>
             </div>
 
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <div class="flex items-center justify-between mb-5">
                     <h2 class="font-semibold text-gray-900">FAQs</h2>
                     <button type="button" @click="addFaq()" class="btn btn-secondary btn-sm">+ Add FAQ</button>
                 </div>
                 <div class="space-y-4">
                     <template x-for="(faq, index) in faqs" :key="index">
-                        <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                        <div class="border border-gray-200 rounded-xl p-3 sm:p-4 space-y-3">
                             <div class="flex justify-between">
                                 <span class="text-sm font-medium text-gray-700" x-text="`FAQ ${index + 1}`"></span>
                                 <button type="button" @click="removeFaq(index)" class="text-red-400 text-sm">Remove</button>
@@ -488,12 +506,12 @@
         </div>
 
         {{-- Blade Tab --}}
-        <div x-show="activeTab === 'blade'" x-cloak class="card p-6">
-            <div class="flex items-center justify-between mb-5">
-                <div>
+        <div x-show="activeTab === 'blade'" x-cloak class="card p-4 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+                <div class="min-w-0">
                     <h2 class="font-semibold text-gray-900">Blade Template</h2>
                     <p class="text-sm text-gray-500 mt-1">
-                        Path: <code class="font-mono text-xs bg-gray-100 px-2 py-0.5 rounded">resources/views/tools/generated/{{ $tool->slug }}.blade.php</code>
+                        Path: <code class="font-mono text-xs bg-gray-100 px-2 py-0.5 rounded break-all">resources/views/tools/generated/{{ $tool->slug }}.blade.php</code>
                     </p>
                 </div>
                 @if(!$bladeExists)
@@ -510,7 +528,7 @@
             <div>
                 <label class="form-label">Blade Content</label>
                 <textarea name="blade_content" rows="30"
-                          class="form-input font-mono text-xs leading-relaxed"
+                          class="form-input font-mono text-xs leading-relaxed whitespace-pre overflow-x-auto"
                           placeholder="Blade template content...">{{ $bladeContent }}</textarea>
                 <p class="form-help">This is the generated Blade template for this tool. Customize it as needed.</p>
             </div>

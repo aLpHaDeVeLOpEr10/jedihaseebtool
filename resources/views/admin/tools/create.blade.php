@@ -5,12 +5,12 @@
 <form action="{{ route('admin.tools.store') }}" method="POST" x-data="toolForm()" class="space-y-6">
     @csrf
 
-    <div class="grid lg:grid-cols-3 gap-6">
+    <div class="grid lg:grid-cols-3 gap-4 sm:gap-6">
         {{-- Main form --}}
         <div class="lg:col-span-2 space-y-6">
 
             {{-- Basic Info --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-5">Basic Information</h2>
                 <div class="space-y-4">
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -87,7 +87,7 @@
             </div>
 
             {{-- SEO --}}
-            <div class="card p-6">
+            <div class="card p-4 sm:p-6">
                 <h2 class="font-semibold text-gray-900 mb-5">SEO Settings</h2>
                 <div class="space-y-4">
                     <div>
@@ -109,8 +109,8 @@
             </div>
 
             {{-- Input Fields Builder --}}
-            <div class="card p-6" x-data="inputBuilder()">
-                <div class="flex items-center justify-between mb-5">
+            <div class="card p-4 sm:p-6" x-data="inputBuilder()">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h2 class="font-semibold text-gray-900">Input Fields</h2>
                     <button type="button" @click="addField()" class="btn btn-secondary btn-sm">+ Add Field</button>
                 </div>
@@ -118,7 +118,7 @@
 
                 <div class="space-y-4">
                     <template x-for="(field, index) in fields" :key="index">
-                        <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                        <div class="border border-gray-200 rounded-xl p-3 sm:p-4 space-y-3">
                             <div class="flex items-center justify-between">
                                 <span class="text-sm font-medium text-gray-700" x-text="`Field ${index + 1}`"></span>
                                 <button type="button" @click="removeField(index)"
@@ -180,8 +180,8 @@
             </div>
 
             {{-- FAQs Builder --}}
-            <div class="card p-6" x-data="faqBuilder()">
-                <div class="flex items-center justify-between mb-5">
+            <div class="card p-4 sm:p-6" x-data="faqBuilder()">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h2 class="font-semibold text-gray-900">FAQs</h2>
                     <button type="button" @click="addFaq()" class="btn btn-secondary btn-sm">+ Add FAQ</button>
                 </div>
@@ -189,7 +189,7 @@
 
                 <div class="space-y-4">
                     <template x-for="(faq, index) in faqs" :key="index">
-                        <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                        <div class="border border-gray-200 rounded-xl p-3 sm:p-4 space-y-3">
                             <div class="flex justify-between">
                                 <span class="text-sm font-medium text-gray-700" x-text="'FAQ ' + (index + 1)"></span>
                                 <button type="button" @click="removeFaq(index)"
@@ -211,7 +211,7 @@
 
         {{-- Sidebar --}}
         <div class="space-y-6">
-            <div class="card p-5 sticky top-20">
+            <div class="card p-5 lg:sticky lg:top-20">
                 <h2 class="font-semibold text-gray-900 mb-4">Publish Settings</h2>
                 <div class="space-y-4">
                     <div>
@@ -243,7 +243,7 @@
             </div>
 
             {{-- Engine Config --}}
-            <div class="card p-5">
+            <div class="card p-4 sm:p-5">
                 <h2 class="font-semibold text-gray-900 mb-4">Engine Config</h2>
                 <div class="space-y-3">
                     <div>

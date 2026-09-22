@@ -12,19 +12,33 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('head')
 </head>
-<body class="bg-gray-50 font-sans antialiased" x-data="{ sidebarOpen: false }">
+<body class="bg-gray-50 font-sans antialiased"
+      x-data="{ sidebarOpen: false }"
+      x-effect="document.body.classList.toggle('overflow-hidden', sidebarOpen && window.innerWidth < 1024)"
+      @keydown.escape.window="sidebarOpen = false"
+      @resize.window="if (window.innerWidth >= 1024) sidebarOpen = false">
 
     {{-- Sidebar --}}
-    <aside class="admin-sidebar transition-transform lg:translate-x-0"
-           :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'">
+    <aside class="admin-sidebar transition-transform -translate-x-full lg:translate-x-0"
+           :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
+           aria-label="Admin navigation">
 
         {{-- Logo --}}
         <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100">
             <x-logo-mark tile :tile-size="32" :size="22" />
-            <div>
-                <p class="font-bold text-gray-900 text-sm">{{ \App\Models\Setting::get('site_name', 'Toolsearch') }}</p>
+            <div class="min-w-0">
+                <p class="font-bold text-gray-900 text-sm truncate">{{ \App\Models\Setting::get('site_name', 'Toolsearch') }}</p>
                 <p class="text-xs text-gray-400">Admin Panel</p>
             </div>
+            {{-- Drawer close — the overlay is also tappable, but an explicit
+                 control is the discoverable way out on a phone. --}}
+            <button type="button" @click="sidebarOpen = false"
+                    class="ml-auto lg:hidden p-1 -mr-1 text-gray-400 hover:text-gray-600"
+                    aria-label="Close navigation">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
         </div>
 
         {{-- Navigation --}}
@@ -114,40 +128,49 @@
 
     {{-- Mobile overlay --}}
     <div x-show="sidebarOpen" @click="sidebarOpen = false"
-         class="fixed inset-0 bg-black/40 z-20 lg:hidden" x-cloak></div>
+         x-transition.opacity
+         class="fixed inset-0 bg-black/40 z-30 lg:hidden" x-cloak></div>
 
     {{-- Main content --}}
     <div class="admin-content">
         {{-- Top bar --}}
         <header class="bg-white border-b border-gray-200 sticky top-0 z-10">
-            <div class="flex items-center gap-4 px-6 h-16">
+            <div class="flex items-center gap-3 sm:gap-4 px-4 sm:px-6 h-16">
                 {{-- Mobile menu toggle --}}
-                <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden text-gray-500">
+                <button @click="sidebarOpen = !sidebarOpen"
+                        class="lg:hidden flex-shrink-0 -ml-1 p-1 text-gray-500"
+                        :aria-expanded="sidebarOpen.toString()"
+                        aria-label="Open navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
 
                 {{-- Breadcrumb / Page title --}}
-                <div class="flex-1">
-                    <h1 class="text-lg font-semibold text-gray-900">@yield('title', 'Dashboard')</h1>
+                <div class="flex-1 min-w-0">
+                    <h1 class="text-base sm:text-lg font-semibold text-gray-900 truncate">@yield('title', 'Dashboard')</h1>
                 </div>
 
-                {{-- Actions --}}
-                <div class="flex items-center gap-3">
-                    @yield('header_actions')
-                    <a href="{{ route('admin.tools.create') }}" class="btn btn-primary btn-sm">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {{-- Actions. Per-page actions are hidden on phones, where they
+                     would crowd out the title — each page repeats them in its
+                     own body for small screens. --}}
+                <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                    <div class="hidden sm:flex items-center gap-3">
+                        @yield('header_actions')
+                    </div>
+                    <a href="{{ route('admin.tools.create') }}" class="btn btn-primary btn-sm"
+                       aria-label="Add Tool">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                         </svg>
-                        Add Tool
+                        <span class="hidden sm:inline">Add Tool</span>
                     </a>
                 </div>
             </div>
         </header>
 
         {{-- Flash Messages --}}
-        <div class="px-6 pt-4">
+        <div class="px-4 sm:px-6 pt-4">
             @if(session('success'))
             <div class="alert-success alert mb-4 flex items-center gap-2" data-auto-dismiss="4000">
                 <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -173,7 +196,7 @@
         </div>
 
         {{-- Page content --}}
-        <main class="p-6">
+        <main class="p-4 sm:p-6">
             @yield('content')
         </main>
     </div>

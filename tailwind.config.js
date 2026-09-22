@@ -13,6 +13,11 @@ export default {
     ],
     theme: {
         extend: {
+            screens: {
+                // Small phones (iPhone SE / 320-479px) get a single column;
+                // this is the first width where two columns still breathe.
+                xs: '480px',
+            },
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
