@@ -1,28 +1,28 @@
 <nav class="bg-white border-b border-gray-100 sticky top-0 z-40 backdrop-blur-sm" x-data="{ open: false, search: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        {{-- Taller on desktop so the 65px lockup sits comfortably; the phone
-             bar stays compact and shows the square mark only. --}}
-        <div class="flex items-center justify-between h-16 sm:h-[81px]">
+        {{-- Sized around the 45px lockup; the phone bar stays compact and
+             shows the square mark only. --}}
+        <div class="flex items-center justify-between h-16 sm:h-[68px]">
             {{-- Logo --}}
             {{-- The lockup already contains the wordmark, so no text beside it.
                  On narrow screens only the square mark is shown. --}}
             <a href="{{ route('home') }}" class="flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', config('app.name')) }} — home">
-                <x-logo-mark variant="light" :height="65" class="hidden sm:block" />
+                <x-logo-mark variant="light" :height="45" class="hidden sm:block" />
                 <x-logo-mark variant="icon" :height="40" class="sm:hidden" />
             </a>
 
             {{-- Desktop Nav --}}
             <div class="hidden md:flex items-center gap-1">
-                <a href="{{ route('home') }}" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('home') ? 'text-brand-600 bg-brand-50' : '' }}">
+                <a href="{{ route('home') }}" class="px-3.5 py-2 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('home') ? 'text-brand-600 bg-brand-50' : '' }}">
                     Home
                 </a>
-                <a href="{{ route('tools.index') }}" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('tools*') ? 'text-brand-600 bg-brand-50' : '' }}">
+                <a href="{{ route('tools.index') }}" class="px-3.5 py-2 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('tools*') ? 'text-brand-600 bg-brand-50' : '' }}">
                     All Tools
                 </a>
-                <a href="{{ route('categories.index') }}" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('categories*') ? 'text-brand-600 bg-brand-50' : '' }}">
+                <a href="{{ route('categories.index') }}" class="px-3.5 py-2 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('categories*') ? 'text-brand-600 bg-brand-50' : '' }}">
                     Categories
                 </a>
-                <a href="{{ route('about') }}" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('about') ? 'text-brand-600 bg-brand-50' : '' }}">
+                <a href="{{ route('about') }}" class="px-3.5 py-2 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-all {{ request()->routeIs('about') ? 'text-brand-600 bg-brand-50' : '' }}">
                     About
                 </a>
             </div>
@@ -71,11 +71,11 @@
 
         {{-- Mobile Menu --}}
         <div x-show="open" x-cloak class="md:hidden pb-4 space-y-1">
-            <a href="{{ route('home') }}" class="block px-3 py-2 text-sm text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Home</a>
-            <a href="{{ route('tools.index') }}" class="block px-3 py-2 text-sm text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">All Tools</a>
-            <a href="{{ route('categories.index') }}" class="block px-3 py-2 text-sm text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Categories</a>
-            <a href="{{ route('about') }}" class="block px-3 py-2 text-sm text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">About</a>
-            <a href="{{ route('contact') }}" class="block px-3 py-2 text-sm text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Contact</a>
+            <a href="{{ route('home') }}" class="block px-3 py-2.5 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Home</a>
+            <a href="{{ route('tools.index') }}" class="block px-3 py-2.5 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">All Tools</a>
+            <a href="{{ route('categories.index') }}" class="block px-3 py-2.5 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Categories</a>
+            <a href="{{ route('about') }}" class="block px-3 py-2.5 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">About</a>
+            <a href="{{ route('contact') }}" class="block px-3 py-2.5 text-[15px] font-semibold text-gray-700 hover:text-brand-600 rounded-lg hover:bg-brand-50">Contact</a>
         </div>
     </div>
 </nav>
