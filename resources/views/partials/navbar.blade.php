@@ -2,9 +2,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex items-center justify-between h-16">
             {{-- Logo --}}
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5 font-bold text-gray-900 hover:text-brand-600 transition-colors">
-                <x-logo-mark tile :tile-size="32" :size="22" />
-                <span class="hidden sm:block">{{ \App\Models\Setting::get('site_name', config('app.name')) }}</span>
+            {{-- The lockup already contains the wordmark, so no text beside it.
+                 On narrow screens only the square mark is shown. --}}
+            <a href="{{ route('home') }}" class="flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', config('app.name')) }} — home">
+                <x-logo-mark variant="full" :height="34" class="hidden sm:block" />
+                <x-logo-mark :height="32" class="sm:hidden" />
             </a>
 
             {{-- Desktop Nav --}}

@@ -106,9 +106,10 @@
     @endif
 
     {{-- Favicon --}}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#4f46e5">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/logo-icon-96.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/logo-icon-512.png">
+    <link rel="apple-touch-icon" href="/images/logo-icon-180.png">
+    <meta name="theme-color" content="#2f26f5">
 
     {{-- Inter is self-hosted (see resources/css/app.css). Preloading the latin
     file starts the download in parallel with the stylesheet, so text

@@ -3,8 +3,10 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             {{-- Brand --}}
             <div class="md:col-span-1">
+                {{-- Dark background: the wordmark in the lockup is navy, so the
+                     square mark is paired with white type instead. --}}
                 <div class="flex items-center gap-2.5 mb-4">
-                    <x-logo-mark tile :tile-size="32" :size="22" />
+                    <x-logo-mark :height="32" />
                     <span class="font-bold text-white">{{ \App\Models\Setting::get('site_name', config('app.name')) }}</span>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed">

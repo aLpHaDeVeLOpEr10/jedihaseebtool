@@ -712,7 +712,7 @@ function studyTimer() {
         sendNotification(title, body) {
             if (!this.notifEnabled) return;
             if (!('Notification' in window) || Notification.permission !== 'granted') return;
-            try { new Notification(title, { body:body, icon:'/favicon.svg' }); } catch(e) {}
+            try { new Notification(title, { body:body, icon:'/images/logo-icon-96.png' }); } catch(e) {}
         },
 
         toggleNotif() {

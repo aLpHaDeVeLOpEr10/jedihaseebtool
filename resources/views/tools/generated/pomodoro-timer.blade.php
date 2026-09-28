@@ -586,7 +586,7 @@ function pomodoroTimer() {
                 long:  { title:'🛌 Long Break Over!',   body:"Refreshed? Let's get back to work." },
             };
             var m = msgs[this.mode] || msgs.work;
-            try { new Notification(m.title, { body: m.body, icon: '/favicon.svg' }); } catch(e) {}
+            try { new Notification(m.title, { body: m.body, icon: '/images/logo-icon-96.png' }); } catch(e) {}
         },
 
         toggleNotif() {

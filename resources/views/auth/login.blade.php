@@ -10,9 +10,8 @@
 <body class="bg-gray-50 min-h-screen flex items-center justify-center font-sans">
     <div class="w-full max-w-md px-4">
         <div class="text-center mb-8">
-            <a href="{{ route('home') }}" class="inline-flex items-center gap-2.5 font-bold text-gray-900 text-xl hover:text-brand-600 transition-colors">
-                <x-logo-mark tile :tile-size="40" :size="27" class="rounded-xl" />
-                {{ \App\Models\Setting::get('site_name', 'Toolsearch') }}
+            <a href="{{ route('home') }}" class="inline-flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', 'Toolsearch') }} — home">
+                <x-logo-mark variant="full" :height="44" />
             </a>
             <h1 class="text-2xl font-bold text-gray-900 mt-6 mb-1">Admin Login</h1>
             <p class="text-gray-500 text-sm">Sign in to manage your tools and settings</p>

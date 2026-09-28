@@ -25,7 +25,7 @@
 
         {{-- Logo --}}
         <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100">
-            <x-logo-mark tile :tile-size="32" :size="22" />
+            <x-logo-mark :height="32" />
             <div class="min-w-0">
                 <p class="font-bold text-gray-900 text-sm truncate">{{ \App\Models\Setting::get('site_name', 'Toolsearch') }}</p>
                 <p class="text-xs text-gray-400">Admin Panel</p>
