@@ -3,11 +3,10 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             {{-- Brand --}}
             <div class="md:col-span-1">
-                {{-- Dark background: the wordmark in the lockup is navy, so the
-                     square mark is paired with white type instead. --}}
-                <div class="flex items-center gap-2.5 mb-4">
-                    <x-logo-mark :height="40" />
-                    <span class="font-bold text-white">{{ \App\Models\Setting::get('site_name', config('app.name')) }}</span>
+                {{-- Dark background: the supplied dark lockup already carries a
+                     white wordmark, so no separate text is needed. --}}
+                <div class="mb-4">
+                    <x-logo-mark variant="dark" :height="46" />
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     {{ \App\Models\Setting::get('site_description', 'Your all-in-one platform for free online tools.') }}

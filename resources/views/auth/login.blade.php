@@ -11,7 +11,7 @@
     <div class="w-full max-w-md px-4">
         <div class="text-center mb-8">
             <a href="{{ route('home') }}" class="inline-flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', 'Toolsearch') }} — home">
-                <x-logo-mark variant="full" :height="60" />
+                <x-logo-mark variant="light" :height="60" />
             </a>
             <h1 class="text-2xl font-bold text-gray-900 mt-6 mb-1">Admin Login</h1>
             <p class="text-gray-500 text-sm">Sign in to manage your tools and settings</p>

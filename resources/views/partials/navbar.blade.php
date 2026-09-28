@@ -7,8 +7,8 @@
             {{-- The lockup already contains the wordmark, so no text beside it.
                  On narrow screens only the square mark is shown. --}}
             <a href="{{ route('home') }}" class="flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', config('app.name')) }} — home">
-                <x-logo-mark variant="full" :height="65" class="hidden sm:block" />
-                <x-logo-mark :height="40" class="sm:hidden" />
+                <x-logo-mark variant="light" :height="65" class="hidden sm:block" />
+                <x-logo-mark variant="icon" :height="40" class="sm:hidden" />
             </a>
 
             {{-- Desktop Nav --}}

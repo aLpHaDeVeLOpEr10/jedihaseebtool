@@ -1,22 +1,33 @@
 @props([
-    'variant'  => 'icon',   // 'icon' = square mark only, 'full' = mark + wordmark
-    'height'   => 32,       // rendered height in px
-    'class'    => '',
+    'variant' => 'light',   // 'light' = for light backgrounds (navy wordmark)
+                            // 'dark'  = for dark backgrounds (white wordmark)
+                            // 'icon'  = square mark only
+    'height'  => 65,        // rendered height in px; width follows automatically
+    'width'   => null,      // optional explicit width in px (overrides the ratio)
 ])
 
 @php
     $siteName = \App\Models\Setting::get('site_name', config('app.name', 'Toolsearch'));
-    $isFull   = $variant === 'full';
-    // Intrinsic sizes of the source files, used to reserve space so the logo
-    // cannot shift the layout while it loads.
-    $ratio    = $isFull ? 646 / 260 : 1;
-    $width    = (int) round($height * $ratio);
-    $src      = $isFull ? '/images/logo-full.png' : '/images/logo-icon-180.png';
+
+    // Supplied artwork, used unmodified. Both lockups are 1152x240; the square
+    // mark is cut from the same source for favicons and tight spaces.
+    $sources = [
+        'light' => ['src' => '/images/logo.png',            'w' => 1152, 'h' => 240],
+        'dark'  => ['src' => '/images/logo-footer.png',     'w' => 1152, 'h' => 240],
+        'icon'  => ['src' => '/images/logo-icon-180.png',   'w' => 180,  'h' => 180],
+    ];
+
+    $logo = $sources[$variant] ?? $sources['light'];
+
+    // Intrinsic dimensions are emitted so the browser reserves the right space
+    // and the logo cannot shift the layout while it loads.
+    $h = (int) $height;
+    $w = $width !== null ? (int) $width : (int) round($h * $logo['w'] / $logo['h']);
 @endphp
 
-<img src="{{ $src }}"
+<img src="{{ $logo['src'] }}"
      alt="{{ $siteName }}"
-     width="{{ $width }}"
-     height="{{ $height }}"
-     style="height:{{ $height }}px;width:auto"
-     {{ $attributes->merge(['class' => 'block shrink-0 ' . $class]) }}>
+     width="{{ $w }}"
+     height="{{ $h }}"
+     style="height:{{ $h }}px;width:{{ $width !== null ? $w . 'px' : 'auto' }}"
+     {{ $attributes->merge(['class' => 'block shrink-0']) }}>
