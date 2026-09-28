@@ -742,7 +742,7 @@ function diceRoller() {
                 8:  { border:'#10b981', bg:'#ecfdf5', text:'#065f46' },
                 10: { border:'#8b5cf6', bg:'#f5f3ff', text:'#5b21b6' },
                 12: { border:'#ef4444', bg:'#fef2f2', text:'#991b1b' },
-                20: { border:'#4f46e5', bg:'#eef2ff', text:'#312e81' },
+                20: { border:'#434CB6', bg:'#F4F5FA', text:'#262A5E' },
                 100:{ border:'#6b7280', bg:'#f9fafb', text:'#374151' },
             };
             return map[sides] || map[100];

@@ -16,7 +16,7 @@
 .bf-pill-btn.active           { background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.1); }
 .bf-pill-btn.active.orange    { color:#ea580c; }
 .bf-pill-btn.active.rose      { color:#e11d48; }
-.bf-pill-btn.active.brand     { color:#4f46e5; }
+.bf-pill-btn.active.brand     { color:#434CB6; }
 .bf-pill-btn.active.emerald   { color:#059669; }
 
 /* Hero */
@@ -28,7 +28,7 @@
 .bf-stat-lbl { font-size:.62rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.07em; }
 .bf-stat-val { font-size:1.25rem; font-weight:800; line-height:1.1; }
 .bf-stat-val.orange  { background:linear-gradient(135deg,#ea580c,#f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.bf-stat-val.brand   { background:linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.bf-stat-val.brand   { background:linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .bf-stat-val.emerald { background:linear-gradient(135deg,#059669,#10b981); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .bf-stat-val.rose    { background:linear-gradient(135deg,#e11d48,#f43f5e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .bf-stat-sub { font-size:.65rem; color:#94a3b8; }

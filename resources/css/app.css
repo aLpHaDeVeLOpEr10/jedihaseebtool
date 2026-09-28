@@ -208,7 +208,7 @@
 
     /* Hero gradient */
     .hero-gradient {
-        @apply bg-gradient-to-br from-brand-600 via-indigo-600 to-purple-700;
+        @apply bg-gradient-to-br from-brand-600 via-brand-700 to-[#5F4082];
     }
 }
 

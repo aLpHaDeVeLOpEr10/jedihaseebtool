@@ -21,7 +21,7 @@
     .print-card-front { font-size:15px; font-weight:600; color:#111827; margin-bottom:10px; border-bottom:1px solid #e5e7eb; padding-bottom:10px; }
     .print-card-a { font-size:12px; font-weight:600; color:#6b7280; margin-bottom:6px; }
     .print-card-back { font-size:14px; color:#374151; }
-    .print-tag { font-size:11px; color:#4f46e5; margin-top:8px; }
+    .print-tag { font-size:11px; color:#434CB6; margin-top:8px; }
     body { background:white !important; }
 }
 /* line-clamp polyfill for older browsers */
@@ -465,7 +465,7 @@
 
                             {{-- Back face --}}
                             <div class="fc-back fc-face"
-                                 style="background: linear-gradient(135deg, #4f46e5, #6366f1);">
+                                 style="background: linear-gradient(135deg, #434CB6, #5B62C5);">
                                 <div class="w-full">
                                     <p class="text-xs font-bold text-indigo-200 uppercase tracking-widest text-center mb-4">Answer</p>
                                     <p class="text-white font-semibold text-lg leading-relaxed text-center"

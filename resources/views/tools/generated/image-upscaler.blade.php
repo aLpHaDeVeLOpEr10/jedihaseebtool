@@ -11,28 +11,28 @@
    ══════════════════════════════════════════════════ */
 
 /* ── Drop zone ── */
-.ius-drop{border:2px dashed #a5b4fc;border-radius:18px;padding:3rem 2rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none;position:relative}
-.ius-drop:hover,.ius-drop.over{border-color:#4f46e5;background:#eef2ff}
-.ius-drop-icon{width:72px;height:72px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.ius-drop{border:2px dashed #AAAEE4;border-radius:18px;padding:3rem 2rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none;position:relative}
+.ius-drop:hover,.ius-drop.over{border-color:#434CB6;background:#F4F5FA}
+.ius-drop-icon{width:72px;height:72px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
 
 /* ── Scale option cards ── */
 .ius-scale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
 .ius-scale-card{border:2px solid #e5e7eb;border-radius:14px;padding:.875rem .75rem;text-align:center;cursor:pointer;transition:all .15s;background:#fff;user-select:none}
-.ius-scale-card:hover{border-color:#a5b4fc;background:#f5f3ff}
-.ius-scale-card.selected{border-color:#4f46e5;background:#eef2ff;box-shadow:0 0 0 3px rgba(79,70,229,.12)}
-.ius-scale-num{font-size:1.5rem;font-weight:800;color:#4f46e5;line-height:1}
+.ius-scale-card:hover{border-color:#AAAEE4;background:#f5f3ff}
+.ius-scale-card.selected{border-color:#434CB6;background:#F4F5FA;box-shadow:0 0 0 3px rgba(67,76,182,.12)}
+.ius-scale-num{font-size:1.5rem;font-weight:800;color:#434CB6;line-height:1}
 .ius-scale-lbl{font-size:.7rem;font-weight:500;color:#6b7280;margin-top:.25rem}
 .ius-scale-size{font-size:.65rem;color:#9ca3af;margin-top:.2rem;font-variant-numeric:tabular-nums}
 
 /* ── Algorithm select tabs ── */
 .ius-algo-tabs{display:flex;gap:.5rem;flex-wrap:wrap}
 .ius-algo-tab{padding:.35rem .875rem;font-size:.75rem;font-weight:500;color:#6b7280;cursor:pointer;border-radius:8px;border:1.5px solid #e5e7eb;background:#fff;transition:all .12s;white-space:nowrap}
-.ius-algo-tab:hover{background:#f5f3ff;border-color:#c4b5fd;color:#4f46e5}
-.ius-algo-tab.active{background:#eef2ff;border-color:#4f46e5;color:#4f46e5;font-weight:600}
+.ius-algo-tab:hover{background:#f5f3ff;border-color:#c4b5fd;color:#434CB6}
+.ius-algo-tab.active{background:#F4F5FA;border-color:#434CB6;color:#434CB6;font-weight:600}
 
 /* ── Progress bar ── */
 .ius-progress-track{height:6px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:.625rem 0}
-.ius-progress-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:999px;transition:width .1s linear;will-change:width}
+.ius-progress-fill{height:100%;background:linear-gradient(90deg,#434CB6,#7c3aed);border-radius:999px;transition:width .1s linear;will-change:width}
 
 /* ── Comparison viewer ── */
 .ius-compare-wrap{position:relative;overflow:hidden;border-radius:14px;cursor:col-resize;select:none;touch-action:pan-y;background:#f3f4f6}
@@ -43,11 +43,11 @@
 .ius-compare-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ius-compare-label{position:absolute;bottom:10px;padding:.2rem .6rem;border-radius:999px;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;pointer-events:none}
 .ius-compare-label-l{left:10px;background:rgba(0,0,0,.55);color:#fff}
-.ius-compare-label-r{right:10px;background:rgba(79,70,229,.85);color:#fff}
+.ius-compare-label-r{right:10px;background:rgba(67,76,182,.85);color:#fff}
 
 /* ── Spinner ── */
-.ius-spin{width:38px;height:38px;border:3.5px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:ius-rotate .8s linear infinite}
-.ius-spin-sm{width:16px;height:16px;border:2.5px solid rgba(79,70,229,.25);border-top-color:#4f46e5;border-radius:50%;animation:ius-rotate .7s linear infinite}
+.ius-spin{width:38px;height:38px;border:3.5px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:ius-rotate .8s linear infinite}
+.ius-spin-sm{width:16px;height:16px;border:2.5px solid rgba(67,76,182,.25);border-top-color:#434CB6;border-radius:50%;animation:ius-rotate .7s linear infinite}
 @keyframes ius-rotate{to{transform:rotate(360deg)}}
 
 /* ── Info/tip boxes ── */
@@ -61,7 +61,7 @@
 .ius-stat-lbl{font-size:.62rem;color:#9ca3af;margin-top:.15rem;text-align:center;text-transform:uppercase;letter-spacing:.05em}
 
 /* ── Section label ── */
-.ius-sec{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#4f46e5;margin-bottom:.5rem}
+.ius-sec{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#434CB6;margin-bottom:.5rem}
 
 /* ── Checkerboard (transparent bg preview) ── */
 .ius-checker{background-image:repeating-conic-gradient(#e5e7eb 0% 25%,#f9fafb 0% 50%);background-size:16px 16px}
@@ -84,7 +84,7 @@
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-7">
     <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">
+           style="background:linear-gradient(135deg,#5B62C5,#8b5cf6)">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <rect x="3" y="3" width="8" height="8" rx="1"/>
           <rect x="13" y="3" width="8" height="8" rx="1"/>
@@ -143,9 +143,9 @@
              @click="$refs.fileInput.click()"
              x-show="!srcFile">
           <div class="ius-drop-icon">
-            <svg width="30" height="30" fill="none" stroke="#6366f1" stroke-width="1.8" viewBox="0 0 24 24">
+            <svg width="30" height="30" fill="none" stroke="#5B62C5" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5" fill="#6366f1" stroke="none"/>
+              <circle cx="8.5" cy="8.5" r="1.5" fill="#5B62C5" stroke="none"/>
               <polyline points="21 15 16 10 5 21"/>
             </svg>
           </div>
@@ -243,7 +243,7 @@
             <input type="range" min="60" max="100" step="1"
                    x-model.number="quality"
                    class="w-full h-1.5 rounded-full appearance-none cursor-pointer"
-                   style="accent-color:#4f46e5">
+                   style="accent-color:#434CB6">
           </div>
         </div>
       </div>
@@ -271,8 +271,8 @@
       {{-- ── Idle state ── --}}
       <div class="card" x-show="!srcFile && !processing && !resultUrl">
         <div class="flex flex-col items-center justify-center py-20 px-6 text-center">
-          <div style="width:80px;height:80px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:22px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-            <svg width="36" height="36" fill="none" stroke="#6366f1" stroke-width="1.6" viewBox="0 0 24 24">
+          <div style="width:80px;height:80px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:22px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+            <svg width="36" height="36" fill="none" stroke="#5B62C5" stroke-width="1.6" viewBox="0 0 24 24">
               <rect x="3" y="3" width="8" height="8" rx="1.5"/>
               <rect x="13" y="3" width="8" height="8" rx="1.5"/>
               <rect x="3" y="13" width="8" height="8" rx="1.5"/>
@@ -318,7 +318,7 @@
               <span class="ius-stat-lbl">Original</span>
             </div>
             <svg width="16" height="16" fill="none" stroke="#9ca3af" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            <div class="ius-stat" style="border-color:#c7d2fe;background:#eef2ff">
+            <div class="ius-stat" style="border-color:#CDD0EE;background:#F4F5FA">
               <span class="ius-stat-val text-brand-700" x-text="outDimsLabel || '—'"></span>
               <span class="ius-stat-lbl" x-text="scale+'x Output'"></span>
             </div>
@@ -384,7 +384,7 @@
               {{-- Divider handle --}}
               <div class="ius-compare-handle" :style="'left:'+comparePos+'%'">
                 <div class="ius-compare-handle-btn">
-                  <svg width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6" transform="translate(6,0)"/></svg>
+                  <svg width="16" height="16" fill="none" stroke="#434CB6" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6" transform="translate(6,0)"/></svg>
                 </div>
               </div>
               {{-- Labels --}}

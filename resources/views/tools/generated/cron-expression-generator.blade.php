@@ -77,7 +77,7 @@
 /* ── Builder tabs ───────────────────────────────────────── */
 .cg-tabs { display:flex; overflow-x:auto; border-bottom:1px solid #e5e7eb; background:#f8fafc; gap:0; }
 .cg-tabs::-webkit-scrollbar { height:3px; }
-.cg-tabs::-webkit-scrollbar-thumb { background:#c7d2fe; border-radius:9999px; }
+.cg-tabs::-webkit-scrollbar-thumb { background:#CDD0EE; border-radius:9999px; }
 
 .cg-tab {
   flex-shrink:0; padding:.6rem 1.1rem; font-size:.75rem; font-weight:700; cursor:pointer;

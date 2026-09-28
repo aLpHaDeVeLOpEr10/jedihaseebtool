@@ -23,7 +23,7 @@
     cursor: pointer;
     transition: border-color .2s, background .2s;
 }
-.drop-zone.drag-over { border-color: #4f46e5; background: #eef2ff; }
+.drop-zone.drag-over { border-color: #434CB6; background: #F4F5FA; }
 
 /* ── Table ── */
 .csv-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
@@ -44,7 +44,7 @@
     transition: background .12s;
 }
 .csv-table th:hover { background: #f1f5f9; }
-.csv-table th.sorted { background: #eef2ff; color: #4f46e5; }
+.csv-table th.sorted { background: #F4F5FA; color: #434CB6; }
 .csv-table th.num    { text-align: right; }
 .csv-table th.rn     { width: 3rem; cursor: default; color: #94a3b8; }
 
@@ -96,7 +96,7 @@
 
 /* ── Sort arrow ── */
 .sort-arrow { display: inline-block; margin-left: .3rem; opacity: .4; font-size: .65rem; }
-.sort-arrow.active { opacity: 1; color: #4f46e5; }
+.sort-arrow.active { opacity: 1; color: #434CB6; }
 
 /* ── Loading spinner ── */
 @keyframes spin { to { transform: rotate(360deg); } }

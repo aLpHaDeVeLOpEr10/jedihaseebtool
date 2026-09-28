@@ -21,7 +21,7 @@
 .tx-stat-val.amber  { background:linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .tx-stat-val.rose   { background:linear-gradient(135deg,#e11d48,#f43f5e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .tx-stat-val.green  { background:linear-gradient(135deg,#059669,#10b981); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.tx-stat-val.brand  { background:linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.tx-stat-val.brand  { background:linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .tx-stat-sub { font-size:.65rem; color:#94a3b8; }
 
 /* Breakdown bar */

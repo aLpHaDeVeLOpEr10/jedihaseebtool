@@ -50,7 +50,7 @@
 .angle-dial-inner {
     position: absolute;
     width: 2px;
-    background: #4f46e5;
+    background: #434CB6;
     bottom: 50%;
     left: 50%;
     transform-origin: bottom center;
@@ -62,14 +62,14 @@
     position: absolute;
     width: 8px; height: 8px;
     border-radius: 50%;
-    background: #4f46e5;
+    background: #434CB6;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
 }
 
 /* ── Stop row drag-over highlight ── */
 .stop-row { transition: box-shadow 0.15s; }
-.stop-row:hover { box-shadow: 0 0 0 2px #c7d2fe; }
+.stop-row:hover { box-shadow: 0 0 0 2px #CDD0EE; }
 
 /* ── Preview checkerboard (for transparent stops) ── */
 .gg-checker {
@@ -181,7 +181,7 @@
                         <div class="flex-1">
                             <input type="range" x-model.number="angle" min="0" max="360" step="1"
                                    class="gg-range mb-2"
-                                   :style="'background:linear-gradient(to right, #4f46e5 0%, #4f46e5 '+angle/360*100+'%, #e5e7eb '+angle/360*100+'%, #e5e7eb 100%)'">
+                                   :style="'background:linear-gradient(to right, #434CB6 0%, #434CB6 '+angle/360*100+'%, #e5e7eb '+angle/360*100+'%, #e5e7eb 100%)'">
                             <div class="flex items-center gap-2">
                                 <input type="number" x-model.number="angle" min="0" max="360"
                                        class="form-input w-20 text-center font-mono text-sm">
@@ -245,7 +245,7 @@
                             <div class="flex items-center gap-2">
                                 <input type="range" x-model.number="conicAngle" min="0" max="360" step="1"
                                        class="gg-range flex-1"
-                                       :style="'background:linear-gradient(to right,#4f46e5 0%,#4f46e5 '+conicAngle/360*100+'%,#e5e7eb '+conicAngle/360*100+'%,#e5e7eb 100%)'">
+                                       :style="'background:linear-gradient(to right,#434CB6 0%,#434CB6 '+conicAngle/360*100+'%,#e5e7eb '+conicAngle/360*100+'%,#e5e7eb 100%)'">
                                 <input type="number" x-model.number="conicAngle" min="0" max="360"
                                        class="form-input w-20 text-center font-mono text-sm">
                                 <span class="text-sm text-gray-500">°</span>
@@ -304,7 +304,7 @@
                                            @blur="validateStopColor(stop)"
                                            maxlength="7"
                                            spellcheck="false"
-                                           placeholder="#4f46e5"
+                                           placeholder="#434CB6"
                                            class="form-input font-mono uppercase text-xs w-full py-1.5 px-2.5">
 
                                     {{-- Position slider --}}
@@ -525,7 +525,7 @@ function gradientGen() {
 
         /* ── Stops ── */
         stops: [
-            { id: 1, color: '#4f46e5', opacity: 100, position: 0   },
+            { id: 1, color: '#434CB6', opacity: 100, position: 0   },
             { id: 2, color: '#7c3aed', opacity: 100, position: 50  },
             { id: 3, color: '#ec4899', opacity: 100, position: 100 },
         ],
@@ -540,7 +540,7 @@ function gradientGen() {
 
         /* ── Presets ── */
         presets: [
-            { name:'Indigo Dream', type:'linear', angle:135, stops:[{color:'#4f46e5',op:100,pos:0},{color:'#7c3aed',op:100,pos:100}] },
+            { name:'Indigo Dream', type:'linear', angle:135, stops:[{color:'#434CB6',op:100,pos:0},{color:'#7c3aed',op:100,pos:100}] },
             { name:'Sunset',       type:'linear', angle:45,  stops:[{color:'#FF416C',op:100,pos:0},{color:'#FF4B2B',op:100,pos:100}] },
             { name:'Ocean',        type:'linear', angle:135, stops:[{color:'#0575E6',op:100,pos:0},{color:'#021B79',op:100,pos:100}] },
             { name:'Emerald',      type:'linear', angle:135, stops:[{color:'#11998e',op:100,pos:0},{color:'#38ef7d',op:100,pos:100}] },
@@ -550,7 +550,7 @@ function gradientGen() {
             { name:'Rose',         type:'linear', angle:135, stops:[{color:'#f43f5e',op:100,pos:0},{color:'#fb7185',op:100,pos:50},{color:'#fda4af',op:100,pos:100}] },
             { name:'Forest',       type:'linear', angle:135, stops:[{color:'#134e5e',op:100,pos:0},{color:'#71b280',op:100,pos:100}] },
             { name:'Royal',        type:'linear', angle:135, stops:[{color:'#141E30',op:100,pos:0},{color:'#243B55',op:100,pos:100}] },
-            { name:'Radial Glow',  type:'radial', radialShape:'circle', radialSize:'farthest-corner', radialPosition:'center', stops:[{color:'#6366f1',op:100,pos:0},{color:'#0f172a',op:100,pos:100}] },
+            { name:'Radial Glow',  type:'radial', radialShape:'circle', radialSize:'farthest-corner', radialPosition:'center', stops:[{color:'#5B62C5',op:100,pos:0},{color:'#0f172a',op:100,pos:100}] },
             { name:'Conic Spin',   type:'conic',  conicAngle:0, conicPosition:'center', stops:[{color:'#f43f5e',op:100,pos:0},{color:'#f59e0b',op:100,pos:33},{color:'#10b981',op:100,pos:66},{color:'#3b82f6',op:100,pos:100}] },
             { name:'Peach',        type:'linear', angle:90,  stops:[{color:'#ffecd2',op:100,pos:0},{color:'#fcb69f',op:100,pos:100}] },
             { name:'Midnight',     type:'linear', angle:135, stops:[{color:'#232526',op:100,pos:0},{color:'#414345',op:100,pos:100}] },
@@ -674,7 +674,7 @@ function gradientGen() {
         /* ════════ Random gradient ════════ */
 
         randomGradient() {
-            var palette = ['#FF6B6B','#FF8E53','#FFA07A','#FFD700','#98FB98','#4f46e5','#7c3aed',
+            var palette = ['#FF6B6B','#FF8E53','#FFA07A','#FFD700','#98FB98','#434CB6','#7c3aed',
                            '#ec4899','#06b6d4','#10b981','#f59e0b','#ef4444','#3b82f6','#8b5cf6',
                            '#14b8a6','#f43f5e','#84cc16','#0ea5e9','#FF61D2','#4FACFE','#00F2FE',
                            '#43E97B','#FF9A9E','#A1C4FD','#C2E9FB','#667EEA','#764BA2','#F093FB'];
@@ -706,7 +706,7 @@ function gradientGen() {
             this.conicAngle = 0;
             this.conicPosition = 'center';
             this.stops = [
-                { id: 1, color: '#4f46e5', opacity: 100, position: 0   },
+                { id: 1, color: '#434CB6', opacity: 100, position: 0   },
                 { id: 2, color: '#7c3aed', opacity: 100, position: 50  },
                 { id: 3, color: '#ec4899', opacity: 100, position: 100 },
             ];

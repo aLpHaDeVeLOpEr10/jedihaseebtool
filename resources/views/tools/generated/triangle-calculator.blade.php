@@ -8,7 +8,7 @@
 /* ── Triangle Calculator  prefix: tc- ── */
 .tc-big {
     font-size:1.9rem; font-weight:900; line-height:1;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    background:linear-gradient(135deg,#434CB6,#7c3aed);
     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     word-break:break-all;
 }
@@ -25,7 +25,7 @@
     padding:1rem .85rem; display:flex; flex-direction:column; align-items:center;
     gap:.35rem; text-align:center; transition:border-color .15s, box-shadow .15s, transform .15s;
 }
-.tc-stat:hover { border-color:#a5b4fc; box-shadow:0 4px 14px rgba(79,70,229,.08); transform:translateY(-1px); }
+.tc-stat:hover { border-color:#AAAEE4; box-shadow:0 4px 14px rgba(67,76,182,.08); transform:translateY(-1px); }
 .tc-lbl  { font-size:.65rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.07em; }
 .tc-sub  { font-size:.68rem; color:#94a3b8; }
 .tc-val  { font-size:.82rem; font-weight:600; color:#374151; }
@@ -35,8 +35,8 @@
 .tc-tab { padding:.4rem .85rem; font-size:.8rem; font-weight:600; border-radius:.6rem;
           border:1.5px solid #e2e8f0; background:#f8fafc; color:#64748b;
           cursor:pointer; transition:all .15s; }
-.tc-tab:hover { border-color:#a5b4fc; color:#4f46e5; background:#f5f3ff; }
-.tc-tab.active { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+.tc-tab:hover { border-color:#AAAEE4; color:#434CB6; background:#f5f3ff; }
+.tc-tab.active { background:#434CB6; color:#fff; border-color:#434CB6; }
 
 /* SVG card */
 .tc-svg-wrap {
@@ -64,9 +64,9 @@
 /* Angle unit toggle */
 .tc-unit-btn { padding:.3rem .75rem; font-size:.75rem; font-weight:600; border-radius:.5rem;
                border:1.5px solid #e2e8f0; cursor:pointer; transition:all .15s; }
-.tc-unit-btn.active { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+.tc-unit-btn.active { background:#434CB6; color:#fff; border-color:#434CB6; }
 .tc-unit-btn:not(.active) { background:#f8fafc; color:#64748b; }
-.tc-unit-btn:not(.active):hover { border-color:#a5b4fc; color:#4f46e5; }
+.tc-unit-btn:not(.active):hover { border-color:#AAAEE4; color:#434CB6; }
 </style>
 
 <div class="min-h-screen bg-gray-50" x-data="triCalc()" x-init="init()">
@@ -234,15 +234,15 @@
                                 {{-- Triangle fill --}}
                                 <polygon
                                     :points="result ? result.svgData.points : ''"
-                                    fill="rgba(99,102,241,0.12)"
-                                    stroke="#4f46e5"
+                                    fill="rgba(91,98,197,0.12)"
+                                    stroke="#434CB6"
                                     stroke-width="2"
                                     stroke-linejoin="round"/>
 
                                 {{-- Right angle marker --}}
                                 <path
                                     :d="result && result.svgData.rightAnglePath ? result.svgData.rightAnglePath : 'M0,0'"
-                                    fill="none" stroke="#4f46e5" stroke-width="1.5"
+                                    fill="none" stroke="#434CB6" stroke-width="1.5"
                                     :opacity="result && result.svgData.rightAnglePath ? 1 : 0"/>
 
                                 {{-- Vertex labels A B C --}}

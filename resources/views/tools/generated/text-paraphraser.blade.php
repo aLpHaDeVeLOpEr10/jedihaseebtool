@@ -14,9 +14,9 @@
     cursor: pointer; transition: all .13s; user-select: none; white-space: nowrap;
 }
 .mode-pill.active {
-    border-color: #4f46e5; background: #eef2ff; color: #4338ca;
+    border-color: #434CB6; background: #F4F5FA; color: #383F99;
 }
-.mode-pill:hover:not(.active) { border-color: #c7d2fe; background: #f8faff; }
+.mode-pill:hover:not(.active) { border-color: #CDD0EE; background: #f8faff; }
 
 /* ── Strength mini pills ── */
 .str-pill {
@@ -26,7 +26,7 @@
     font-size: .78rem; font-weight: 600; color: #64748b;
     cursor: pointer; transition: all .13s; user-select: none;
 }
-.str-pill.active { border-color: #4f46e5; background: #eef2ff; color: #4338ca; }
+.str-pill.active { border-color: #434CB6; background: #F4F5FA; color: #383F99; }
 .str-pill:hover:not(.active) { background: #f8faff; }
 
 /* ── Output area ── */

@@ -7,7 +7,7 @@
 <style>
 /* ══════════════════════════════════════════════
    Word Counter  —  prefix: wcnt-
-   Theme: Indigo (#4f46e5 / #6366f1 / #818cf8)
+   Theme: Indigo (#434CB6 / #5B62C5 / #7B81D3)
    Pure client-side, fully reactive via Alpine.js
 ══════════════════════════════════════════════ */
 
@@ -16,12 +16,12 @@
   width: 100%; min-height: 240px; resize: vertical;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: .95rem; line-height: 1.8; color: #1e293b;
-  caret-color: #4f46e5; border: none; outline: none;
+  caret-color: #434CB6; border: none; outline: none;
   padding: 1.1rem 1.25rem; background: transparent;
 }
-.wcnt-textarea::placeholder { color: #c7d2fe; }
+.wcnt-textarea::placeholder { color: #CDD0EE; }
 .wcnt-textarea::-webkit-scrollbar { width: 4px; }
-.wcnt-textarea::-webkit-scrollbar-thumb { background: #e0e7ff; border-radius: 9999px; }
+.wcnt-textarea::-webkit-scrollbar-thumb { background: #E9EAF7; border-radius: 9999px; }
 
 /* Toolbar action button */
 .wcnt-action {
@@ -36,33 +36,33 @@
 .wcnt-action-sample:hover:not(:disabled) { background:#15803d; color:#fff; border-color:#15803d; }
 .wcnt-action-clear  { background:#fef2f2; color:#dc2626; border-color:#fecaca; }
 .wcnt-action-clear:hover:not(:disabled) { background:#dc2626; color:#fff; border-color:#dc2626; }
-.wcnt-action-copy   { background:#eef2ff; color:#4f46e5; border-color:#c7d2fe; }
-.wcnt-action-copy:hover:not(:disabled) { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+.wcnt-action-copy   { background:#F4F5FA; color:#434CB6; border-color:#CDD0EE; }
+.wcnt-action-copy:hover:not(:disabled) { background:#434CB6; color:#fff; border-color:#434CB6; }
 .wcnt-action-copy.wcnt-copied { background:#dcfce7; color:#15803d; border-color:#86efac; }
 
 /* Stat card */
 .wcnt-stat {
-  background: #fff; border: 1.5px solid #e0e7ff; border-radius: 1.25rem;
+  background: #fff; border: 1.5px solid #E9EAF7; border-radius: 1.25rem;
   padding: 1.2rem 1rem; text-align: center;
   transition: transform .15s, box-shadow .15s;
 }
-.wcnt-stat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99,102,241,.12); }
-.wcnt-stat-num   { font-size: clamp(1.5rem,3.5vw,2.1rem); font-weight: 900; color: #312e81; line-height: 1; }
-.wcnt-stat-lbl   { font-size: .62rem; font-weight: 800; color: #6366f1; text-transform: uppercase; letter-spacing: .1em; margin-top: .4rem; }
+.wcnt-stat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(91,98,197,.12); }
+.wcnt-stat-num   { font-size: clamp(1.5rem,3.5vw,2.1rem); font-weight: 900; color: #262A5E; line-height: 1; }
+.wcnt-stat-lbl   { font-size: .62rem; font-weight: 800; color: #5B62C5; text-transform: uppercase; letter-spacing: .1em; margin-top: .4rem; }
 .wcnt-stat-sub   { font-size: .68rem; color: #94a3b8; margin-top: .15rem; }
 
 /* Featured (first) stat */
 .wcnt-stat-hero {
-  background: linear-gradient(135deg, #312e81, #4f46e5, #6366f1);
-  border-color: #4f46e5;
+  background: linear-gradient(135deg, #262A5E, #434CB6, #5B62C5);
+  border-color: #434CB6;
 }
 .wcnt-stat-hero .wcnt-stat-num { color: #fff; }
-.wcnt-stat-hero .wcnt-stat-lbl { color: #a5b4fc; }
-.wcnt-stat-hero .wcnt-stat-sub { color: #c7d2fe; }
+.wcnt-stat-hero .wcnt-stat-lbl { color: #AAAEE4; }
+.wcnt-stat-hero .wcnt-stat-sub { color: #CDD0EE; }
 
 /* Top-word frequency bar */
-.wcnt-bar-bg  { background: #e0e7ff; border-radius: 9999px; height: 5px; overflow: hidden; }
-.wcnt-bar-fg  { background: linear-gradient(90deg,#4f46e5,#818cf8); border-radius: 9999px; height: 5px; transition: width .4s ease; }
+.wcnt-bar-bg  { background: #E9EAF7; border-radius: 9999px; height: 5px; overflow: hidden; }
+.wcnt-bar-fg  { background: linear-gradient(90deg,#434CB6,#7B81D3); border-radius: 9999px; height: 5px; transition: width .4s ease; }
 
 /* Character-type breakdown bar */
 .wcnt-cbar-bg { background: #f1f5f9; border-radius: 9999px; height: 8px; overflow: hidden; }
@@ -70,7 +70,7 @@
 
 /* Live badge */
 .wcnt-live {
-  font-size: .6rem; font-weight: 800; color: #6366f1; background: #eef2ff;
+  font-size: .6rem; font-weight: 800; color: #5B62C5; background: #F4F5FA;
   padding: .15rem .55rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: .06em;
 }
 
@@ -78,9 +78,9 @@
 .wcnt-div {
   display: flex; align-items: center; gap: .6rem;
   font-size: .6rem; font-weight: 800; text-transform: uppercase;
-  letter-spacing: .1em; color: #6366f1;
+  letter-spacing: .1em; color: #5B62C5;
 }
-.wcnt-div::before,.wcnt-div::after { content:''; flex:1; height:1px; background:#e0e7ff; }
+.wcnt-div::before,.wcnt-div::after { content:''; flex:1; height:1px; background:#E9EAF7; }
 
 @keyframes wcntFadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 .wcnt-fadein { animation: wcntFadeIn .25s ease-out; }
@@ -310,7 +310,7 @@
 <script>
 /* ────────────────────────────────────────────────────────────
    Word Counter — Alpine.js component
-   CSS prefix: wcnt-  |  Theme: Indigo (#4f46e5)
+   CSS prefix: wcnt-  |  Theme: Indigo (#434CB6)
    All stats are getter-based: purely reactive to `this.text`.
    Reading speed : 225 wpm (average adult silent reading)
    Speaking speed: 130 wpm (average conversational speech)
@@ -454,13 +454,13 @@ function wcntCalc() {
       var other   = Math.max(0, total - letters - digits - spaces - newlines - punct);
 
       var rows = [
-        { label: 'Letters',     val: letters,  color: '#4f46e5', pct: 0 },
-        { label: 'Spaces',      val: spaces,   color: '#6366f1', pct: 0 },
-        { label: 'Digits',      val: digits,   color: '#818cf8', pct: 0 },
-        { label: 'Punctuation', val: punct,    color: '#a5b4fc', pct: 0 },
-        { label: 'Newlines',    val: newlines, color: '#c7d2fe', pct: 0 },
+        { label: 'Letters',     val: letters,  color: '#434CB6', pct: 0 },
+        { label: 'Spaces',      val: spaces,   color: '#5B62C5', pct: 0 },
+        { label: 'Digits',      val: digits,   color: '#7B81D3', pct: 0 },
+        { label: 'Punctuation', val: punct,    color: '#AAAEE4', pct: 0 },
+        { label: 'Newlines',    val: newlines, color: '#CDD0EE', pct: 0 },
       ];
-      if (other > 0) rows.push({ label: 'Other', val: other, color: '#e0e7ff', pct: 0 });
+      if (other > 0) rows.push({ label: 'Other', val: other, color: '#E9EAF7', pct: 0 });
 
       rows.forEach(function(r) { r.pct = Math.round(r.val / total * 100); });
       return rows.filter(function(r) { return r.val > 0; });

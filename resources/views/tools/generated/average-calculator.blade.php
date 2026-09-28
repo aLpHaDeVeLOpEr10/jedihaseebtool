@@ -10,7 +10,7 @@
     font-size: 2.4rem;
     font-weight: 900;
     line-height: 1;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, #434CB6, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -56,8 +56,8 @@
     transition: border-color .15s, box-shadow .15s, transform .15s;
 }
 .ac-stat:hover {
-    border-color: #a5b4fc;
-    box-shadow: 0 4px 16px rgba(79,70,229,.08);
+    border-color: #AAAEE4;
+    box-shadow: 0 4px 16px rgba(67,76,182,.08);
     transform: translateY(-1px);
 }
 
@@ -75,7 +75,7 @@
     border: 1px solid #e2e8f0;
     transition: background .12s;
 }
-.ac-pill:hover { background: #e0e9ff; border-color: #a5b4fc; color: #3730a3; }
+.ac-pill:hover { background: #E9EAF7; border-color: #AAAEE4; color: #2F3479; }
 .ac-pill.is-min { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
 .ac-pill.is-max { background: #dcfce7; border-color: #86efac; color: #14532d; }
 
@@ -130,7 +130,7 @@
 
 /* ── Range bar ── */
 .ac-range-bar-wrap { width: 100%; height: 6px; background: #f1f5f9; border-radius: 9999px; overflow: hidden; }
-.ac-range-fill      { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#4f46e5,#7c3aed); transition: width .4s ease; }
+.ac-range-fill      { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#434CB6,#7c3aed); transition: width .4s ease; }
 </style>
 
 <div class="min-h-screen bg-gray-50"

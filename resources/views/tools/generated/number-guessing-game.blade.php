@@ -53,7 +53,7 @@
 }
 .guess-item.high { background:#fff1f2; border-color:#fda4af; }
 .guess-item.low  { background:#f0fdf4; border-color:#86efac; }
-.guess-item.correct { background:#eef2ff; border-color:#a5b4fc; }
+.guess-item.correct { background:#F4F5FA; border-color:#AAAEE4; }
 
 /* ── Attempts bar colour ── */
 .bar-fill { transition: width .4s ease, background .4s; }
@@ -68,7 +68,7 @@
 }
 .guess-input::-webkit-outer-spin-button,
 .guess-input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; }
-.guess-input:focus { border-color:#4f46e5; }
+.guess-input:focus { border-color:#434CB6; }
 .guess-input.err  { border-color:#f43f5e; }
 
 /* ── Range badge ── */
@@ -76,7 +76,7 @@
     display:inline-flex; align-items:center; gap:.3rem;
     padding:.25rem .75rem; border-radius:9999px;
     font-size:.8rem; font-weight:600;
-    background:#eef2ff; color:#3730a3; border:1.5px solid #c7d2fe;
+    background:#F4F5FA; color:#2F3479; border:1.5px solid #CDD0EE;
 }
 
 /* ── Temp indicator dots ── */

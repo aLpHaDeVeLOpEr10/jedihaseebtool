@@ -13,8 +13,8 @@
     background: transparent; border-top: none; border-left: none; border-right: none;
     cursor: pointer; transition: color .12s, border-color .12s; white-space: nowrap;
 }
-.fc-tab:hover { color: #4f46e5; }
-.fc-tab-active { color: #4f46e5; border-bottom-color: #4f46e5; }
+.fc-tab:hover { color: #434CB6; }
+.fc-tab-active { color: #434CB6; border-bottom-color: #434CB6; }
 
 /* ── Operation pills ── */
 .fc-op {
@@ -23,8 +23,8 @@
     border: 1.5px solid #e2e8f0; font-size: .82rem; font-weight: 600;
     color: #475569; background: white; cursor: pointer; transition: all .12s;
 }
-.fc-op:hover { border-color: #a5b4fc; color: #4f46e5; background: #f0f4ff; }
-.fc-op-active { border-color: #4f46e5; background: #4f46e5; color: white; box-shadow: 0 2px 8px rgba(79,70,229,.25); }
+.fc-op:hover { border-color: #AAAEE4; color: #434CB6; background: #F4F5FA; }
+.fc-op-active { border-color: #434CB6; background: #434CB6; color: white; box-shadow: 0 2px 8px rgba(67,76,182,.25); }
 
 /* ── Convert type pills ── */
 .fc-cv {
@@ -33,8 +33,8 @@
     border: 1.5px solid #e2e8f0; font-size: .78rem; font-weight: 600;
     color: #475569; background: white; cursor: pointer; transition: all .12s; white-space: nowrap;
 }
-.fc-cv:hover { border-color: #a5b4fc; color: #4f46e5; background: #f0f4ff; }
-.fc-cv-active { border-color: #4f46e5; background: #4f46e5; color: white; }
+.fc-cv:hover { border-color: #AAAEE4; color: #434CB6; background: #F4F5FA; }
+.fc-cv-active { border-color: #434CB6; background: #434CB6; color: white; }
 
 /* ── Fraction input box ── */
 .fc-inp-box {
@@ -42,9 +42,9 @@
     background: white; border: 1.5px solid #e2e8f0; border-radius: .875rem;
     overflow: hidden; transition: border-color .15s, box-shadow .15s; min-width: 5rem;
 }
-.fc-inp-box:focus-within { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,.12); }
+.fc-inp-box:focus-within { border-color: #434CB6; box-shadow: 0 0 0 3px rgba(67,76,182,.12); }
 .fc-inp-box.fc-result-box-style {
-    border-color: #a5b4fc; background: #eef2ff;
+    border-color: #AAAEE4; background: #F4F5FA;
 }
 
 /* hide number spinners */
@@ -57,11 +57,11 @@
 .fc-num-input::-webkit-outer-spin-button,
 .fc-num-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .fc-num-input::placeholder { color: #cbd5e1; font-weight: 400; }
-.fc-num-input.fc-result-val { color: #4f46e5; }
+.fc-num-input.fc-result-val { color: #434CB6; }
 
 /* Fraction bar inside input */
 .fc-inp-bar { height: 2.5px; background: #475569; margin: 0 .55rem; }
-.fc-inp-bar.result { background: #4f46e5; }
+.fc-inp-bar.result { background: #434CB6; }
 
 /* ── Operator symbol ── */
 .fc-opsym { font-size: 2rem; font-weight: 200; color: #94a3b8; line-height: 1; user-select: none; }
@@ -71,11 +71,11 @@
 .fc-disp { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; }
 .fc-disp-n, .fc-disp-d {
     font-size: 2rem; font-weight: 900; line-height: 1; min-width: 2.5rem; text-align: center;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, #434CB6, #7c3aed);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.fc-disp-bar { width: 100%; min-width: 3rem; height: 3px; background: linear-gradient(90deg, #4f46e5, #7c3aed); border-radius: 2px; }
-.fc-disp-whole { font-size: 2.4rem; font-weight: 900; line-height: 1; background: linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.fc-disp-bar { width: 100%; min-width: 3rem; height: 3px; background: linear-gradient(90deg, #434CB6, #7c3aed); border-radius: 2px; }
+.fc-disp-whole { font-size: 2.4rem; font-weight: 900; line-height: 1; background: linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 /* Muted version for "before" side */
 .fc-disp-n.muted, .fc-disp-d.muted { background: linear-gradient(135deg,#94a3b8,#cbd5e1); -webkit-background-clip: text; background-clip: text; }
@@ -88,18 +88,18 @@
     padding: 1.1rem 1rem; text-align: center;
     transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-.fc-stat:hover { border-color: #a5b4fc; box-shadow: 0 4px 16px rgba(79,70,229,.08); transform: translateY(-1px); }
+.fc-stat:hover { border-color: #AAAEE4; box-shadow: 0 4px 16px rgba(67,76,182,.08); transform: translateY(-1px); }
 
 /* ── Step row ── */
 .fc-step {
     display: flex; align-items: flex-start; gap: .75rem;
     padding: .6rem .8rem; background: #f8fafc; border-radius: .75rem;
-    border-left: 3px solid #c7d2fe; font-size: .84rem; color: #334155; line-height: 1.55;
+    border-left: 3px solid #CDD0EE; font-size: .84rem; color: #334155; line-height: 1.55;
 }
 .fc-step-num {
     display: inline-flex; align-items: center; justify-content: center;
     min-width: 1.5rem; height: 1.5rem; border-radius: 9999px;
-    background: #4f46e5; color: white; font-size: .65rem; font-weight: 700; flex-shrink: 0; margin-top: .05rem;
+    background: #434CB6; color: white; font-size: .65rem; font-weight: 700; flex-shrink: 0; margin-top: .05rem;
 }
 
 /* ── Entrance animation ── */

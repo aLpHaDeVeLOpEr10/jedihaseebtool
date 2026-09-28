@@ -40,8 +40,8 @@
     background:
         repeating-linear-gradient(-45deg, transparent, transparent 7px,
                                    rgba(255,255,255,.07) 7px, rgba(255,255,255,.07) 14px),
-        linear-gradient(135deg, #4f46e5 0%, #6d28d9 100%);
-    border: 2px solid #4338ca;
+        linear-gradient(135deg, #434CB6 0%, #6d28d9 100%);
+    border: 2px solid #383F99;
     box-shadow: inset 0 1px 3px rgba(255,255,255,.15);
 }
 .mc-back::before {
@@ -114,7 +114,7 @@
     text-align: center;
 }
 .opt-btn:hover { border-color: #d1d5db; background: #f9fafb; }
-.opt-btn.sel   { border-color: #4f46e5; background: #eef2ff; color: #3730a3; }
+.opt-btn.sel   { border-color: #434CB6; background: #F4F5FA; color: #2F3479; }
 
 .theme-btn {
     display: flex; align-items: center; justify-content: center;
@@ -125,7 +125,7 @@
     white-space: nowrap;
 }
 .theme-btn:hover { border-color: #d1d5db; background: #f9fafb; }
-.theme-btn.sel   { border-color: #4f46e5; background: #eef2ff; color: #3730a3; }
+.theme-btn.sel   { border-color: #434CB6; background: #F4F5FA; color: #2F3479; }
 
 /* ─────────────────────────────────────────
    WON / ANIMATIONS

@@ -10,15 +10,15 @@
 <style>
 /* ══════════════════════════════════════════════════════════
    PDF Merger  —  prefix: pm-
-   Brand: indigo #4f46e5 (brand-600) — red is reserved for errors
+   Brand: indigo #434CB6 (brand-600) — red is reserved for errors
    Libraries: pdf-lib 1.17.1 (merge), pdf.js 3.11.174 (thumbnails)
    All processing is 100 % client-side — files are never uploaded.
 ══════════════════════════════════════════════════════════ */
 
 /* Drop zone */
-.pm-drop { border:2.5px dashed #c7d2fe; border-radius:1rem; padding:2.75rem 1.5rem; text-align:center; cursor:pointer; background:#eef2ff; transition:all .18s; user-select:none; }
-.pm-drop:hover, .pm-drop.pm-hover { border-color:#4f46e5; background:#e0e7ff; }
-.pm-drop:focus-visible { outline:3px solid rgba(79,70,229,.35); outline-offset:2px; }
+.pm-drop { border:2.5px dashed #CDD0EE; border-radius:1rem; padding:2.75rem 1.5rem; text-align:center; cursor:pointer; background:#F4F5FA; transition:all .18s; user-select:none; }
+.pm-drop:hover, .pm-drop.pm-hover { border-color:#434CB6; background:#E9EAF7; }
+.pm-drop:focus-visible { outline:3px solid rgba(67,76,182,.35); outline-offset:2px; }
 .pm-drop-sm { padding:.9rem 1rem; border-width:2px; }
 .pm-dz-icon { font-size:2.6rem; line-height:1; margin-bottom:.6rem; }
 .pm-dz-title { font-size:1rem; font-weight:700; color:#374151; }
@@ -27,70 +27,70 @@
 /* File rows */
 .pm-list { display:flex; flex-direction:column; gap:.6rem; }
 .pm-item { display:flex; gap:.85rem; align-items:stretch; border:1.5px solid #e5e7eb; border-radius:.9rem; background:#fff; padding:.65rem; transition:border-color .14s, box-shadow .14s, opacity .14s; }
-.pm-item:hover { border-color:#a5b4fc; box-shadow:0 4px 12px rgba(79,70,229,.08); }
+.pm-item:hover { border-color:#AAAEE4; box-shadow:0 4px 12px rgba(67,76,182,.08); }
 .pm-item.pm-dragging { opacity:.4; }
-.pm-item.pm-over { border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.18); }
+.pm-item.pm-over { border-color:#434CB6; box-shadow:0 0 0 3px rgba(67,76,182,.18); }
 .pm-item.pm-bad { border-color:#fecaca; background:#fef2f2; }
 
 .pm-handle { display:flex; align-items:center; color:#d1d5db; cursor:grab; font-size:1.1rem; padding:0 .1rem; }
 .pm-thumb { width:4.2rem; height:5.4rem; flex-shrink:0; border-radius:.45rem; border:1px solid #e5e7eb; background:#f8fafc; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; }
 .pm-thumb img { width:100%; height:100%; object-fit:contain; display:block; background:#fff; }
-.pm-thumb-num { position:absolute; top:.2rem; left:.2rem; background:rgba(79,70,229,.9); color:#fff; font-size:.6rem; font-weight:800; padding:.05rem .4rem; border-radius:9999px; }
+.pm-thumb-num { position:absolute; top:.2rem; left:.2rem; background:rgba(67,76,182,.9); color:#fff; font-size:.6rem; font-weight:800; padding:.05rem .4rem; border-radius:9999px; }
 
 .pm-body { flex:1; min-width:0; display:flex; flex-direction:column; gap:.4rem; }
 .pm-name { font-size:.85rem; font-weight:700; color:#1f2937; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .pm-meta { font-size:.7rem; color:#9ca3af; }
 .pm-controls { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
 .pm-range { flex:1; min-width:8rem; padding:.35rem .6rem; border:1.5px solid #e5e7eb; border-radius:.55rem; font-size:.75rem; color:#374151; outline:none; }
-.pm-range:focus { border-color:#818cf8; box-shadow:0 0 0 3px rgba(129,140,248,.15); }
+.pm-range:focus { border-color:#7B81D3; box-shadow:0 0 0 3px rgba(123,129,211,.15); }
 .pm-range.pm-invalid { border-color:#f87171; background:#fef2f2; }
 .pm-field-err { font-size:.68rem; color:#b91c1c; }
 
 .pm-side { display:flex; flex-direction:column; gap:.3rem; justify-content:center; }
 .pm-icon-btn { width:1.9rem; height:1.9rem; border-radius:.5rem; border:1.5px solid #e5e7eb; background:#fff; color:#6b7280; font-size:.8rem; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .12s; }
-.pm-icon-btn:hover:not(:disabled) { border-color:#818cf8; color:#4f46e5; background:#eef2ff; }
+.pm-icon-btn:hover:not(:disabled) { border-color:#7B81D3; color:#434CB6; background:#F4F5FA; }
 .pm-icon-btn:disabled { opacity:.35; cursor:not-allowed; }
 .pm-icon-btn.pm-del:hover { border-color:#ef4444; color:#fff; background:#ef4444; }
 .pm-chip { display:inline-flex; align-items:center; gap:.25rem; padding:.3rem .55rem; border-radius:.5rem; border:1.5px solid #e5e7eb; background:#fff; font-size:.7rem; font-weight:700; color:#6b7280; cursor:pointer; white-space:nowrap; }
-.pm-chip:hover { border-color:#818cf8; color:#4f46e5; }
+.pm-chip:hover { border-color:#7B81D3; color:#434CB6; }
 
 /* Toolbar */
 .pm-toolbar { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
 .pm-tbtn { padding:.35rem .65rem; border-radius:.55rem; border:1.5px solid #e5e7eb; background:#fff; font-size:.72rem; font-weight:700; color:#4b5563; cursor:pointer; transition:all .12s; }
-.pm-tbtn:hover { border-color:#818cf8; color:#4f46e5; }
+.pm-tbtn:hover { border-color:#7B81D3; color:#434CB6; }
 
 /* Settings */
 .pm-input { width:100%; padding:.55rem .8rem; border:1.5px solid #e5e7eb; border-radius:.7rem; font-size:.85rem; color:#374151; outline:none; }
-.pm-input:focus { border-color:#818cf8; box-shadow:0 0 0 3px rgba(129,140,248,.15); }
+.pm-input:focus { border-color:#7B81D3; box-shadow:0 0 0 3px rgba(123,129,211,.15); }
 .pm-suffix-wrap { display:flex; align-items:stretch; }
 .pm-suffix-wrap .pm-input { border-radius:.7rem 0 0 .7rem; }
 .pm-suffix { display:flex; align-items:center; padding:0 .75rem; background:#f8fafc; border:1.5px solid #e5e7eb; border-left:none; border-radius:0 .7rem .7rem 0; font-size:.8rem; font-weight:700; color:#6b7280; }
 .pm-check { display:flex; gap:.6rem; align-items:flex-start; padding:.6rem .75rem; border:1.5px solid #e5e7eb; border-radius:.75rem; cursor:pointer; }
-.pm-check:hover { border-color:#a5b4fc; }
-.pm-check input { margin-top:.15rem; width:1rem; height:1rem; accent-color:#4f46e5; flex-shrink:0; }
+.pm-check:hover { border-color:#AAAEE4; }
+.pm-check input { margin-top:.15rem; width:1rem; height:1rem; accent-color:#434CB6; flex-shrink:0; }
 
 /* Merge button */
-.pm-go { width:100%; padding:.95rem 1.5rem; border-radius:.9rem; border:none; font-size:1rem; font-weight:800; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:.5rem; background:linear-gradient(135deg,#3730a3,#4f46e5,#6366f1); box-shadow:0 4px 14px rgba(79,70,229,.35); transition:all .16s; }
-.pm-go:hover:not(:disabled) { box-shadow:0 6px 20px rgba(79,70,229,.5); transform:translateY(-1px); }
+.pm-go { width:100%; padding:.95rem 1.5rem; border-radius:.9rem; border:none; font-size:1rem; font-weight:800; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:.5rem; background:linear-gradient(135deg,#2F3479,#434CB6,#5B62C5); box-shadow:0 4px 14px rgba(67,76,182,.35); transition:all .16s; }
+.pm-go:hover:not(:disabled) { box-shadow:0 6px 20px rgba(67,76,182,.5); transform:translateY(-1px); }
 .pm-go:disabled { opacity:.45; cursor:not-allowed; box-shadow:none; transform:none; }
 
 /* Progress */
-.pm-prog { width:100%; height:.6rem; border-radius:9999px; background:#e0e7ff; overflow:hidden; }
-.pm-prog-fill { height:100%; border-radius:9999px; background:linear-gradient(90deg,#3730a3,#6366f1); transition:width .2s ease; }
+.pm-prog { width:100%; height:.6rem; border-radius:9999px; background:#E9EAF7; overflow:hidden; }
+.pm-prog-fill { height:100%; border-radius:9999px; background:linear-gradient(90deg,#2F3479,#5B62C5); transition:width .2s ease; }
 
 /* Alerts */
 .pm-error { display:flex; gap:.5rem; align-items:flex-start; padding:.7rem .9rem; border-radius:.75rem; background:#fef2f2; border:1.5px solid #fecaca; font-size:.8rem; color:#991b1b; font-weight:500; }
-.pm-privacy { display:flex; gap:.5rem; align-items:center; padding:.5rem .85rem; border-radius:.75rem; background:#eef2ff; border:1px solid #c7d2fe; font-size:.75rem; color:#3730a3; font-weight:500; }
+.pm-privacy { display:flex; gap:.5rem; align-items:center; padding:.5rem .85rem; border-radius:.75rem; background:#F4F5FA; border:1px solid #CDD0EE; font-size:.75rem; color:#2F3479; font-weight:500; }
 .pm-done { border:1.5px solid #86efac; background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-radius:1rem; padding:1.1rem 1.2rem; }
 .pm-dl { display:inline-flex; align-items:center; gap:.45rem; padding:.65rem 1.2rem; border-radius:.75rem; background:#16a34a; color:#fff; font-weight:800; font-size:.9rem; text-decoration:none; border:none; cursor:pointer; }
 .pm-dl:hover { background:#15803d; color:#fff; }
 
-.pm-pill { display:inline-flex; align-items:center; gap:.3rem; padding:.2rem .6rem; border-radius:9999px; font-size:.68rem; font-weight:700; background:#eef2ff; color:#3730a3; border:1.5px solid #c7d2fe; }
+.pm-pill { display:inline-flex; align-items:center; gap:.3rem; padding:.2rem .6rem; border-radius:9999px; font-size:.68rem; font-weight:700; background:#F4F5FA; color:#2F3479; border:1.5px solid #CDD0EE; }
 
 /* Utilities used on this page that are not in the prebuilt Tailwind bundle */
 .w-14 { width:3.5rem; } .h-14 { height:3.5rem; }
 .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top:.625rem; }
-.hover\:bg-brand-100:hover { background-color:#e0e9ff; }
+.hover\:bg-brand-100:hover { background-color:#E9EAF7; }
 
 @keyframes pmSpin { to { transform:rotate(360deg); } }
 .pm-spin { display:inline-block; width:1em; height:1em; border-radius:50%; border:2px solid currentColor; border-top-color:transparent; animation:pmSpin .6s linear infinite; flex-shrink:0; }
@@ -108,7 +108,7 @@
   <div class="bg-white border-b border-gray-100">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <div class="flex items-center gap-4 mb-4">
-        <div class="text-3xl w-14 h-14 flex items-center justify-center rounded-xl" style="background:#e0e7ff">
+        <div class="text-3xl w-14 h-14 flex items-center justify-center rounded-xl" style="background:#E9EAF7">
           {{ $tool->icon ?? '📄' }}
         </div>
         <div>
@@ -186,7 +186,7 @@
                   <div class="pm-handle" aria-hidden="true">⠿</div>
 
                   <div class="pm-thumb">
-                    <span x-show="f.status === 'loading'" class="pm-spin" style="color:#818cf8;width:1.3rem;height:1.3rem"></span>
+                    <span x-show="f.status === 'loading'" class="pm-spin" style="color:#7B81D3;width:1.3rem;height:1.3rem"></span>
                     <img x-show="f.thumb" :src="f.thumb" :alt="'First page of ' + f.name" :style="'transform:rotate(' + f.rotation + 'deg)'">
                     <span x-show="f.status !== 'loading' && !f.thumb" class="text-2xl" x-text="f.status === 'error' ? '⚠️' : '📄'"></span>
                     <span class="pm-thumb-num" x-text="idx + 1"></span>
@@ -197,7 +197,7 @@
                     <p class="pm-meta">
                       <span x-text="formatSize(f.size)"></span>
                       <span x-show="f.pages > 0" x-text="' · ' + f.pages + ' page' + (f.pages !== 1 ? 's' : '')"></span>
-                      <span x-show="f.status === 'ready' && f.pages > 0 && selectedCount(f) !== f.pages" style="color:#4f46e5;font-weight:700" x-text="' · using ' + selectedCount(f)"></span>
+                      <span x-show="f.status === 'ready' && f.pages > 0 && selectedCount(f) !== f.pages" style="color:#434CB6;font-weight:700" x-text="' · using ' + selectedCount(f)"></span>
                     </p>
 
                     <template x-if="f.status === 'error'">
@@ -234,7 +234,7 @@
                  @keydown.enter.prevent="$refs.fileInput.click()"
                  @keydown.space.prevent="$refs.fileInput.click()"
                  aria-label="Add more PDF files">
-              <span class="text-sm font-semibold" style="color:#4f46e5">＋ Add more PDFs</span>
+              <span class="text-sm font-semibold" style="color:#434CB6">＋ Add more PDFs</span>
             </div>
           </div>
 
@@ -277,7 +277,7 @@
           <div x-show="merging" x-transition>
             <div class="flex justify-between text-sm text-gray-600 mb-2">
               <span x-text="progressLabel"></span>
-              <span class="font-bold" style="color:#4f46e5" x-text="progress + '%'"></span>
+              <span class="font-bold" style="color:#434CB6" x-text="progress + '%'"></span>
             </div>
             <div class="pm-prog" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
               <div class="pm-prog-fill" :style="'width:' + progress + '%'"></div>
@@ -360,21 +360,21 @@
         <div class="card p-5">
           <h2 class="text-sm font-semibold text-gray-700 mb-3">How to Merge PDFs</h2>
           <ol class="space-y-2.5 text-xs text-gray-600">
-            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">1.</span><span>Add two or more PDF files by dropping them in or clicking to browse.</span></li>
-            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">2.</span><span>Drag files (or use ▲ ▼) to set the order.</span></li>
-            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">3.</span><span>Optionally choose page ranges or rotate a file.</span></li>
-            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#4f46e5">4.</span><span>Click <strong>Merge</strong> and download your combined PDF.</span></li>
+            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#434CB6">1.</span><span>Add two or more PDF files by dropping them in or clicking to browse.</span></li>
+            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#434CB6">2.</span><span>Drag files (or use ▲ ▼) to set the order.</span></li>
+            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#434CB6">3.</span><span>Optionally choose page ranges or rotate a file.</span></li>
+            <li class="flex gap-2"><span class="font-bold flex-shrink-0" style="color:#434CB6">4.</span><span>Click <strong>Merge</strong> and download your combined PDF.</span></li>
           </ol>
         </div>
 
         <div class="card p-5">
           <h3 class="text-sm font-semibold text-gray-700 mb-3">Page Range Examples</h3>
           <ul class="space-y-2 text-xs text-gray-600">
-            <li><code class="font-mono font-bold" style="color:#3730a3">(empty)</code> — all pages</li>
-            <li><code class="font-mono font-bold" style="color:#3730a3">1-3</code> — pages 1 to 3</li>
-            <li><code class="font-mono font-bold" style="color:#3730a3">1, 4, 7</code> — specific pages</li>
-            <li><code class="font-mono font-bold" style="color:#3730a3">5-</code> — page 5 to the end</li>
-            <li><code class="font-mono font-bold" style="color:#3730a3">10-1</code> — pages in reverse order</li>
+            <li><code class="font-mono font-bold" style="color:#2F3479">(empty)</code> — all pages</li>
+            <li><code class="font-mono font-bold" style="color:#2F3479">1-3</code> — pages 1 to 3</li>
+            <li><code class="font-mono font-bold" style="color:#2F3479">1, 4, 7</code> — specific pages</li>
+            <li><code class="font-mono font-bold" style="color:#2F3479">5-</code> — page 5 to the end</li>
+            <li><code class="font-mono font-bold" style="color:#2F3479">10-1</code> — pages in reverse order</li>
           </ul>
         </div>
 

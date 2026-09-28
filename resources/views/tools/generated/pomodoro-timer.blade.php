@@ -396,7 +396,7 @@ function pomodoroTimer() {
             return { work:'Focus', short:'Short Break', long:'Long Break' }[this.mode];
         },
         get modeColor() {
-            return { work:'#4f46e5', short:'#10b981', long:'#0ea5e9' }[this.mode];
+            return { work:'#434CB6', short:'#10b981', long:'#0ea5e9' }[this.mode];
         },
         get modeTextClass() {
             return { work:'text-brand-600', short:'text-emerald-600', long:'text-sky-600' }[this.mode];

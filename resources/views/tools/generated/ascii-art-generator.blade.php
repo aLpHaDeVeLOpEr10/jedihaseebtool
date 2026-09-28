@@ -57,7 +57,7 @@
     transition: transform .15s, border-color .15s;
 }
 .theme-swatch:hover       { transform: scale(1.1); }
-.theme-swatch.is-active   { border-color: #4f46e5; transform: scale(1.12); }
+.theme-swatch.is-active   { border-color: #434CB6; transform: scale(1.12); }
 
 /* ── Preview size buttons ── */
 .psize-btn {
@@ -72,9 +72,9 @@
     transition: all .12s;
 }
 .psize-btn.is-active {
-    border-color: #4f46e5;
-    background: #eef2ff;
-    color: #3730a3;
+    border-color: #434CB6;
+    background: #F4F5FA;
+    color: #2F3479;
 }
 
 /* ── Spinner ── */

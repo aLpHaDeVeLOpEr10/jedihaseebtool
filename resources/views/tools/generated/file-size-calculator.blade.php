@@ -29,18 +29,18 @@
     transition: background .15s, border-color .15s;
 }
 .conv-row.is-active {
-    background: #eef2ff;
-    border-color: #a5b4fc;
+    background: #F4F5FA;
+    border-color: #AAAEE4;
 }
 .conv-row:not(.is-active):hover {
     background: #f8fafc;
 }
-.conv-row.is-dec { border-left: 3px solid #4f46e5; }
+.conv-row.is-dec { border-left: 3px solid #434CB6; }
 .conv-row.is-bin { border-left: 3px solid #0891b2; }
 
 /* ── Transfer time bar ── */
 .speed-bar-wrap { width: 100%; background: #f1f5f9; border-radius: 9999px; height: 6px; overflow: hidden; }
-.speed-bar-fill { height: 100%; border-radius: 9999px; background: #4f46e5; transition: width .4s ease; }
+.speed-bar-fill { height: 100%; border-radius: 9999px; background: #434CB6; transition: width .4s ease; }
 
 /* ── Drop zone ── */
 .drop-zone {
@@ -52,8 +52,8 @@
     cursor: pointer;
 }
 .drop-zone.drag-over {
-    border-color: #4f46e5;
-    background: #eef2ff;
+    border-color: #434CB6;
+    background: #F4F5FA;
 }
 
 /* ── File inspector card ── */
@@ -63,13 +63,13 @@
     overflow: hidden;
     transition: border-color .15s;
 }
-.file-card:hover { border-color: #c7d2fe; }
+.file-card:hover { border-color: #CDD0EE; }
 
 /* ── Storage result big number ── */
 .big-result {
     font-size: 3rem; font-weight: 900;
     line-height: 1;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, #434CB6, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -844,7 +844,7 @@ function fileSizeCalc() {
                 { label:'4G / LTE',        speed:'20 Mbps',  bps:20e6,  color:'#fbbf24' },
                 { label:'Cable 50 Mbps',   speed:'50 Mbps',  bps:50e6,  color:'#34d399' },
                 { label:'Fiber 100 Mbps',  speed:'100 Mbps', bps:100e6, color:'#22d3ee' },
-                { label:'Fiber 500 Mbps',  speed:'500 Mbps', bps:500e6, color:'#818cf8' },
+                { label:'Fiber 500 Mbps',  speed:'500 Mbps', bps:500e6, color:'#7B81D3' },
                 { label:'Gigabit 1 Gbps',  speed:'1 Gbps',   bps:1e9,   color:'#a78bfa' },
                 { label:'10 Gigabit',      speed:'10 Gbps',  bps:10e9,  color:'#c084fc' },
             ].map(function(c) {

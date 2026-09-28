@@ -27,7 +27,7 @@
 .hcc-tabs::-webkit-scrollbar{display:none}
 .hcc-tab{display:inline-flex;align-items:center;gap:.375rem;padding:.5rem .875rem;font-size:.75rem;font-weight:600;color:#8b8fa8;border:none;background:transparent;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0}
 .hcc-tab:hover{color:#cdd6f4}
-.hcc-tab.active{color:#cdd6f4;border-bottom-color:#4f46e5}
+.hcc-tab.active{color:#cdd6f4;border-bottom-color:#434CB6}
 .hcc-tab-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .hcc-dot-html{background:#f97316}
 .hcc-dot-css{background:#3b82f6}
@@ -48,7 +48,7 @@
 
 /* ── Drag divider ── */
 .hcc-divider{width:5px;background:#383a4e;cursor:col-resize;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .15s;position:relative;user-select:none}
-.hcc-divider:hover,.hcc-divider.dragging{background:#4f46e5}
+.hcc-divider:hover,.hcc-divider.dragging{background:#434CB6}
 .hcc-divider-grip{display:flex;flex-direction:column;gap:3px;position:absolute}
 .hcc-divider-grip span{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)}
 
@@ -64,7 +64,7 @@
 .hcc-win-dot.green{background:#28c840}
 .hcc-preview-title{font-size:.7rem;font-weight:600;color:#94a3b8;letter-spacing:.04em;margin-left:.375rem}
 .hcc-preview-btn{display:inline-flex;align-items:center;padding:.25rem .375rem;border-radius:5px;border:1px solid transparent;background:transparent;cursor:pointer;color:#9ca3af;transition:all .12s;font-size:.75rem}
-.hcc-preview-btn:hover{background:#f3f4f6;color:#4f46e5;border-color:#e0e7ff}
+.hcc-preview-btn:hover{background:#f3f4f6;color:#434CB6;border-color:#E9EAF7}
 
 /* ── Preview iframe ── */
 .hcc-preview-frame{flex:1;border:none;width:100%;display:block;background:#fff}
@@ -80,7 +80,7 @@
 .hcc-console{background:#1a1b26;border-radius:12px;border:1px solid #383a4e;overflow:hidden;margin-top:.75rem}
 .hcc-console-header{display:flex;align-items:center;justify-content:space-between;padding:.5rem .875rem;background:#1e1f2e;border-bottom:1px solid #383a4e;cursor:pointer;user-select:none}
 .hcc-console-title{font-size:.72rem;font-weight:700;color:#6b7280;letter-spacing:.06em;text-transform:uppercase}
-.hcc-console-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;font-size:.65rem;font-weight:700;background:#4f46e5;color:#fff;margin-left:.375rem}
+.hcc-console-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;font-size:.65rem;font-weight:700;background:#434CB6;color:#fff;margin-left:.375rem}
 .hcc-console-body{max-height:160px;overflow-y:auto;padding:.375rem 0}
 .hcc-console-body::-webkit-scrollbar{width:4px}
 .hcc-console-body::-webkit-scrollbar-thumb{background:#383a4e;border-radius:2px}
@@ -96,14 +96,14 @@
 .hcc-console-empty{text-align:center;padding:1.25rem;font-size:.75rem;color:#4a4c5e}
 
 /* ── Buttons (tool-specific overrides) ── */
-.hcc-btn-run{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:1.5px solid #4338ca;border-radius:9px;padding:.4rem .9rem;font-size:.8125rem;font-weight:600;display:inline-flex;align-items:center;gap:.375rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 6px rgba(79,70,229,.25)}
-.hcc-btn-run:hover{background:linear-gradient(135deg,#4338ca,#6d28d9);box-shadow:0 3px 10px rgba(79,70,229,.35)}
+.hcc-btn-run{background:linear-gradient(135deg,#434CB6,#7c3aed);color:#fff;border:1.5px solid #383F99;border-radius:9px;padding:.4rem .9rem;font-size:.8125rem;font-weight:600;display:inline-flex;align-items:center;gap:.375rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 6px rgba(67,76,182,.25)}
+.hcc-btn-run:hover{background:linear-gradient(135deg,#383F99,#6d28d9);box-shadow:0 3px 10px rgba(67,76,182,.35)}
 .hcc-btn-run:active{transform:scale(.97)}
 .hcc-btn-auto{border-radius:9px;padding:.35rem .75rem;font-size:.75rem;font-weight:600;display:inline-flex;align-items:center;gap:.375rem;cursor:pointer;border:1.5px solid;transition:all .15s}
 .hcc-btn-auto.on{background:#f0fdf4;border-color:#86efac;color:#15803d}
 .hcc-btn-auto.off{background:#f9fafb;border-color:#e5e7eb;color:#6b7280}
 .hcc-btn{border-radius:9px;padding:.35rem .75rem;font-size:.75rem;font-weight:500;display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;border:1.5px solid #e5e7eb;background:#fff;color:#374151;transition:all .12s;white-space:nowrap}
-.hcc-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#4f46e5}
+.hcc-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#434CB6}
 
 /* ── Templates dropdown ── */
 .hcc-templates-wrap{position:relative}
@@ -139,7 +139,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex items-center gap-4 mb-4">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"
-           style="background:linear-gradient(135deg,#e0e7ff,#ede9fe)">
+           style="background:linear-gradient(135deg,#E9EAF7,#ede9fe)">
         {{ $tool->icon }}
       </div>
       <div>
@@ -478,7 +478,7 @@ var HCC_DEFAULTS = {
     '',
     'body {',
     '  font-family: "Segoe UI", sans-serif;',
-    '  background: linear-gradient(135deg, #f0f4ff 0%, #e8e0ff 100%);',
+    '  background: linear-gradient(135deg, #F4F5FA 0%, #e8e0ff 100%);',
     '  min-height: 100vh;',
     '  display: flex;',
     '  align-items: center;',
@@ -490,14 +490,14 @@ var HCC_DEFAULTS = {
     '  background: #fff;',
     '  border-radius: 18px;',
     '  padding: 40px 48px;',
-    '  box-shadow: 0 6px 32px rgba(79,70,229,.14);',
+    '  box-shadow: 0 6px 32px rgba(67,76,182,.14);',
     '  text-align: center;',
     '  max-width: 440px;',
     '  width: 100%;',
     '}',
     '',
     'h1 {',
-    '  color: #4f46e5;',
+    '  color: #434CB6;',
     '  font-size: 2rem;',
     '  margin-bottom: 12px;',
     '}',
@@ -509,7 +509,7 @@ var HCC_DEFAULTS = {
     '}',
     '',
     'button {',
-    '  background: #4f46e5;',
+    '  background: #434CB6;',
     '  color: #fff;',
     '  border: none;',
     '  padding: 12px 28px;',
@@ -519,7 +519,7 @@ var HCC_DEFAULTS = {
     '  transition: background .2s, transform .1s;',
     '}',
     '',
-    'button:hover { background: #4338ca; }',
+    'button:hover { background: #383F99; }',
     'button:active { transform: scale(.97); }',
     '',
     '#output {',
@@ -559,7 +559,7 @@ var HCC_TEMPLATES = [
     name: 'CSS Animation',
     desc: 'Bouncing balls animation',
     html: '<div class="stage">\n  <div class="ball b1"></div>\n  <div class="ball b2"></div>\n  <div class="ball b3"></div>\n</div>',
-    css: 'body { background: #0f172a; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }\n.stage { display: flex; gap: 16px; align-items: flex-end; height: 100px; }\n.ball { width: 24px; height: 24px; border-radius: 50%; animation: bounce .8s ease-in-out infinite alternate; }\n.b1 { background: #4f46e5; }\n.b2 { background: #7c3aed; animation-delay: .2s; }\n.b3 { background: #a855f7; animation-delay: .4s; }\n@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-80px); } }',
+    css: 'body { background: #0f172a; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }\n.stage { display: flex; gap: 16px; align-items: flex-end; height: 100px; }\n.ball { width: 24px; height: 24px; border-radius: 50%; animation: bounce .8s ease-in-out infinite alternate; }\n.b1 { background: #434CB6; }\n.b2 { background: #7c3aed; animation-delay: .2s; }\n.b3 { background: #a855f7; animation-delay: .4s; }\n@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-80px); } }',
     js: 'console.log("Animation running!");'
   },
   {
@@ -567,7 +567,7 @@ var HCC_TEMPLATES = [
     name: 'Counter App',
     desc: 'Interactive counter with JS',
     html: '<div class="app">\n  <h2>Counter</h2>\n  <div class="counter">\n    <button id="dec">−</button>\n    <span id="val">0</span>\n    <button id="inc">+</button>\n  </div>\n  <button id="reset" class="reset">Reset</button>\n</div>',
-    css: 'body{background:#f0f4ff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;font-family:sans-serif}\n.app{background:#fff;border-radius:20px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(79,70,229,.15)}\nh2{color:#4f46e5;margin-bottom:24px;font-size:1.5rem}\n.counter{display:flex;align-items:center;gap:20px;margin-bottom:20px}\nbutton{background:#4f46e5;color:#fff;border:none;width:44px;height:44px;border-radius:12px;font-size:1.5rem;cursor:pointer;transition:background .2s}\nbutton:hover{background:#4338ca}\n#val{font-size:3rem;font-weight:700;color:#1f2937;min-width:80px}\n.reset{width:auto;padding:10px 28px;font-size:.9rem;background:#e5e7eb;color:#374151}\n.reset:hover{background:#d1d5db}',
+    css: 'body{background:#F4F5FA;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;font-family:sans-serif}\n.app{background:#fff;border-radius:20px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(67,76,182,.15)}\nh2{color:#434CB6;margin-bottom:24px;font-size:1.5rem}\n.counter{display:flex;align-items:center;gap:20px;margin-bottom:20px}\nbutton{background:#434CB6;color:#fff;border:none;width:44px;height:44px;border-radius:12px;font-size:1.5rem;cursor:pointer;transition:background .2s}\nbutton:hover{background:#383F99}\n#val{font-size:3rem;font-weight:700;color:#1f2937;min-width:80px}\n.reset{width:auto;padding:10px 28px;font-size:.9rem;background:#e5e7eb;color:#374151}\n.reset:hover{background:#d1d5db}',
     js: 'let n = 0;\nconst val = document.getElementById("val");\ndocument.getElementById("inc").onclick = () => { n++; update(); };\ndocument.getElementById("dec").onclick = () => { n--; update(); };\ndocument.getElementById("reset").onclick = () => { n = 0; update(); };\nfunction update() {\n  val.textContent = n;\n  val.style.color = n > 0 ? "#059669" : n < 0 ? "#dc2626" : "#1f2937";\n  console.log("Counter:", n);\n}'
   },
   {

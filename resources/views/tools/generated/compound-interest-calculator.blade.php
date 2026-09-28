@@ -15,7 +15,7 @@
     font-weight: 900;
     line-height: 1;
     letter-spacing: -.02em;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #434CB6 0%, #7c3aed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -32,7 +32,7 @@
     gap: .35rem; text-align: center;
     transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-.ci-stat:hover { border-color: #a5b4fc; box-shadow: 0 4px 16px rgba(79,70,229,.08); transform: translateY(-1px); }
+.ci-stat:hover { border-color: #AAAEE4; box-shadow: 0 4px 16px rgba(67,76,182,.08); transform: translateY(-1px); }
 .ci-stat-lbl { font-size: .65rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .07em; }
 .ci-stat-val {
     font-size: 1.55rem; font-weight: 800;
@@ -53,7 +53,7 @@
     display: flex;
     background: #f1f5f9;
 }
-.ci-breakdown-principal { background: #4f46e5; }
+.ci-breakdown-principal { background: #434CB6; }
 .ci-breakdown-contrib   { background: #7c3aed; }
 .ci-breakdown-interest  { background: #10b981; }
 .ci-legend-dot {
@@ -73,7 +73,7 @@
     text-align: right; padding: .5rem .75rem;
     border-bottom: 1px solid #f1f5f9; color: #374151; font-variant-numeric: tabular-nums;
 }
-.ci-table td:first-child { text-align: center; font-weight: 600; color: #6366f1; }
+.ci-table td:first-child { text-align: center; font-weight: 600; color: #5B62C5; }
 .ci-table tr:last-child td { border-bottom: none; font-weight: 700; }
 .ci-table tr:hover td { background: #f5f3ff; }
 .ci-table .ci-td-interest { color: #059669; font-weight: 600; }
@@ -106,7 +106,7 @@
     font-size: .75rem; font-weight: 600; color: #64748b;
     cursor: pointer; transition: all .15s; border: none; background: none;
 }
-.ci-toggle-btn.active { background: white; color: #4f46e5; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.ci-toggle-btn.active { background: white; color: #434CB6; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
 
 /* ── Entrance ── */
 @keyframes ciIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
@@ -130,7 +130,7 @@
 .ci-insight { display: flex; align-items: center; gap: .75rem; padding: .65rem .9rem;
     background: #f5f3ff; border-radius: .75rem; border: 1px solid #ddd6fe; }
 .ci-insight-icon { font-size: 1.25rem; flex-shrink: 0; }
-.ci-insight-val { font-weight: 800; color: #4f46e5; }
+.ci-insight-val { font-weight: 800; color: #434CB6; }
 </style>
 
 <div class="min-h-screen bg-gray-50"
@@ -364,7 +364,7 @@
                         </div>
                         <div class="flex flex-wrap gap-4 text-xs">
                             <div class="flex items-center gap-1.5">
-                                <span class="ci-legend-dot" style="background:#4f46e5"></span>
+                                <span class="ci-legend-dot" style="background:#434CB6"></span>
                                 <span class="text-gray-600">Principal <strong class="text-gray-800" x-text="result ? fmtC(result.principal) : ''"></strong>
                                 (<span x-text="result ? fmtPct(result.principalPct) : ''"></span>)</span>
                             </div>
@@ -414,11 +414,11 @@
                                  class="w-full" style="min-height:150px; display:block;">
                                 <defs>
                                     <linearGradient id="ciAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.25"/>
-                                        <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.02"/>
+                                        <stop offset="0%" stop-color="#434CB6" stop-opacity="0.25"/>
+                                        <stop offset="100%" stop-color="#434CB6" stop-opacity="0.02"/>
                                     </linearGradient>
                                     <linearGradient id="ciLineGrad" x1="0" y1="0" x2="1" y2="0">
-                                        <stop offset="0%" stop-color="#4f46e5"/>
+                                        <stop offset="0%" stop-color="#434CB6"/>
                                         <stop offset="100%" stop-color="#7c3aed"/>
                                     </linearGradient>
                                 </defs>
@@ -438,12 +438,12 @@
                                         {{-- Area fill --}}
                                         <path :d="result.chart.areaPath" fill="url(#ciAreaGrad)"/>
                                         {{-- Principal line --}}
-                                        <path :d="result.chart.principalPath" fill="none" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="4 3"/>
+                                        <path :d="result.chart.principalPath" fill="none" stroke="#CDD0EE" stroke-width="1.5" stroke-dasharray="4 3"/>
                                         {{-- Balance line --}}
                                         <path :d="result.chart.linePath" fill="none" stroke="url(#ciLineGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         {{-- Data point dots --}}
                                         <template x-for="pt in result.chart.points" :key="pt.x">
-                                            <circle :cx="pt.x" :cy="pt.y" r="3" fill="#4f46e5" stroke="white" stroke-width="1.5"/>
+                                            <circle :cx="pt.x" :cy="pt.y" r="3" fill="#434CB6" stroke="white" stroke-width="1.5"/>
                                         </template>
                                         {{-- X axis labels --}}
                                         <template x-for="xl in result.chart.xLabels" :key="xl.x">
@@ -455,11 +455,11 @@
                         </div>
                         <p class="text-xs text-gray-400 mt-2 flex items-center gap-3">
                             <span class="inline-flex items-center gap-1">
-                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#4f46e5" stroke-width="2.5"/></svg>
+                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#434CB6" stroke-width="2.5"/></svg>
                                 Balance
                             </span>
                             <span class="inline-flex items-center gap-1">
-                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#CDD0EE" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
                                 Principal
                             </span>
                         </p>

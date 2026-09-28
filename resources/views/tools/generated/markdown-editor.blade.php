@@ -15,7 +15,7 @@
     .panel-scroll::-webkit-scrollbar { width: 4px; }
     .panel-scroll::-webkit-scrollbar-track { background: transparent; }
     .panel-scroll::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 9999px; }
-    .panel-scroll::-webkit-scrollbar-thumb:hover { background: #c7d2fe; }
+    .panel-scroll::-webkit-scrollbar-thumb:hover { background: #CDD0EE; }
 
     /* Toolbar button active / hover state */
     .tb-btn {
@@ -26,8 +26,8 @@
         background: transparent; border: none; line-height: 1.2;
         font-family: inherit;
     }
-    .tb-btn:hover  { background: #e0e7ff; color: #4f46e5; }
-    .tb-btn:active { background: #c7d2fe; color: #3730a3; }
+    .tb-btn:hover  { background: #E9EAF7; color: #434CB6; }
+    .tb-btn:active { background: #CDD0EE; color: #2F3479; }
     .tb-sep { width: 1px; height: 20px; background: #e5e7eb; flex-shrink: 0; }
 </style>
 @endsection
@@ -446,7 +446,7 @@ function markdownEditor() {
                 '    pre{background:#111827;color:#f3f4f6;padding:1rem;border-radius:.5rem;overflow-x:auto}',
                 '    code{background:#eff6ff;color:#1d4ed8;padding:.1em .3em;border-radius:.25rem}',
                 '    pre code{background:transparent;color:inherit;padding:0}',
-                '    blockquote{border-left:4px solid #818cf8;margin:0;padding:0 1rem;color:#6b7280}',
+                '    blockquote{border-left:4px solid #7B81D3;margin:0;padding:0 1rem;color:#6b7280}',
                 '    table{border-collapse:collapse;width:100%}',
                 '    th,td{border:1px solid #e5e7eb;padding:.5rem .75rem}',
                 '    th{background:#f9fafb}',

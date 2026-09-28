@@ -17,14 +17,14 @@
 .pyc-sep{width:1px;height:20px;background:#e5e7eb;flex-shrink:0}
 
 /* ── Run button ── */
-.pyc-run{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:1.5px solid #4338ca;border-radius:9px;padding:.42rem 1.15rem;font-size:.8125rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(79,70,229,.28);white-space:nowrap}
-.pyc-run:hover:not(:disabled){background:linear-gradient(135deg,#4338ca,#6d28d9);box-shadow:0 4px 14px rgba(79,70,229,.38);transform:translateY(-1px)}
+.pyc-run{background:linear-gradient(135deg,#434CB6,#7c3aed);color:#fff;border:1.5px solid #383F99;border-radius:9px;padding:.42rem 1.15rem;font-size:.8125rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(67,76,182,.28);white-space:nowrap}
+.pyc-run:hover:not(:disabled){background:linear-gradient(135deg,#383F99,#6d28d9);box-shadow:0 4px 14px rgba(67,76,182,.38);transform:translateY(-1px)}
 .pyc-run:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
 .pyc-run:active:not(:disabled){transform:scale(.97)!important}
 
 /* ── Generic toolbar buttons ── */
 .pyc-btn{border-radius:9px;padding:.38rem .75rem;font-size:.75rem;font-weight:500;display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;border:1.5px solid #e5e7eb;background:#fff;color:#374151;transition:all .12s;white-space:nowrap}
-.pyc-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#4f46e5}
+.pyc-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#434CB6}
 .pyc-btn.copied{border-color:#a7f3d0;color:#059669;background:#f0fdf4}
 
 /* ── Templates dropdown ── */
@@ -61,14 +61,14 @@
 .pyc-stdin-wrap{border-top:1px solid #383a4e;flex-shrink:0}
 .pyc-stdin-toggle{display:flex;align-items:center;justify-content:space-between;padding:.35rem .875rem;cursor:pointer;user-select:none;background:#1e1f2e}
 .pyc-stdin-label{font-size:.68rem;font-weight:600;color:#6272a4;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:.375rem}
-.pyc-stdin-has{background:#4f46e5;color:#fff;font-size:.55rem;padding:.1rem .4rem;border-radius:99px;font-weight:700}
+.pyc-stdin-has{background:#434CB6;color:#fff;font-size:.55rem;padding:.1rem .4rem;border-radius:99px;font-weight:700}
 .pyc-stdin-body{overflow:hidden}
 .pyc-stdin-ta{width:100%;background:#1a1b26;color:#8be9fd;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:.75rem;line-height:1.5;border:none;outline:none;resize:none;padding:.625rem .875rem;box-sizing:border-box;height:78px;border-top:1px solid #2d2f45;display:block}
 .pyc-stdin-ta::placeholder{color:#44475a}
 
 /* ── Drag divider ── */
 .pyc-divider{width:5px;background:#1e1f2e;cursor:col-resize;flex-shrink:0;display:flex;align-items:center;justify-content:center;user-select:none;transition:background .15s}
-.pyc-divider:hover,.pyc-divider.active{background:#4f46e5}
+.pyc-divider:hover,.pyc-divider.active{background:#434CB6}
 .pyc-divider-dots{display:flex;flex-direction:column;gap:3px}
 .pyc-divider-dots span{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2)}
 
@@ -108,7 +108,7 @@
 /* Spinners */
 .pyc-spin-w{width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:pyc-spin .7s linear infinite;flex-shrink:0}
 .pyc-spin-p{width:12px;height:12px;border:2px solid rgba(124,58,237,.3);border-top-color:#7c3aed;border-radius:50%;animation:pyc-spin .7s linear infinite}
-.pyc-spin-lg{width:36px;height:36px;border:3px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:pyc-spin .8s linear infinite}
+.pyc-spin-lg{width:36px;height:36px;border:3px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:pyc-spin .8s linear infinite}
 @keyframes pyc-spin{to{transform:rotate(360deg)}}
 
 /* Mobile */

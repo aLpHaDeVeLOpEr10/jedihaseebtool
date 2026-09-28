@@ -73,7 +73,7 @@
     flex-shrink: 0;
     transition: border-color .15s;
 }
-.color-swatch:hover { border-color: #4f46e5; }
+.color-swatch:hover { border-color: #434CB6; }
 .color-swatch input[type="color"] {
     position: absolute; inset: 0;
     width: 130%; height: 130%;
@@ -135,7 +135,7 @@
 .copy-flash { animation: flashGreen .6s ease 3; }
 
 /* ── Range input ── */
-input[type="range"] { accent-color: #4f46e5; cursor: pointer; }
+input[type="range"] { accent-color: #434CB6; cursor: pointer; }
 </style>
 
 <div class="min-h-screen bg-gray-50"
@@ -431,7 +431,7 @@ input[type="range"] { accent-color: #4f46e5; cursor: pointer; }
                                 <button type="button"
                                         @click="textColor = c"
                                         class="palette-dot"
-                                        :style="'background:' + c + ';' + (textColor === c ? 'border-color:#4f46e5;transform:scale(1.15)' : 'border-color:transparent')"
+                                        :style="'background:' + c + ';' + (textColor === c ? 'border-color:#434CB6;transform:scale(1.15)' : 'border-color:transparent')"
                                         :title="c">
                                 </button>
                             </template>
@@ -459,7 +459,7 @@ input[type="range"] { accent-color: #4f46e5; cursor: pointer; }
                                 <button type="button"
                                         @click="bgColor = c"
                                         class="palette-dot"
-                                        :style="'background:' + c + ';box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);' + (bgColor === c ? 'border-color:#4f46e5;transform:scale(1.15)' : 'border-color:transparent')"
+                                        :style="'background:' + c + ';box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);' + (bgColor === c ? 'border-color:#434CB6;transform:scale(1.15)' : 'border-color:transparent')"
                                         :title="c">
                                 </button>
                             </template>
@@ -700,7 +700,7 @@ function fontPreview() {
         SIZE_PRESETS: [12, 14, 16, 18, 24, 32, 48, 64, 96],
 
         TEXT_PALETTE: [
-            '#111827', '#374151', '#4f46e5', '#1d4ed8', '#0f766e',
+            '#111827', '#374151', '#434CB6', '#1d4ed8', '#0f766e',
             '#15803d', '#b45309', '#dc2626', '#9333ea', '#ffffff',
         ],
 

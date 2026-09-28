@@ -12,7 +12,7 @@
 /* Big gradient number */
 .st-big {
     font-size: 2rem; font-weight: 900; line-height: 1;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(135deg, #434CB6, #7c3aed);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text; word-break: break-all;
 }
@@ -32,7 +32,7 @@
     align-items: center; gap: .4rem; text-align: center;
     transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-.st-stat:hover { border-color:#a5b4fc; box-shadow:0 4px 16px rgba(79,70,229,.08); transform:translateY(-1px); }
+.st-stat:hover { border-color:#AAAEE4; box-shadow:0 4px 16px rgba(67,76,182,.08); transform:translateY(-1px); }
 .st-label  { font-size:.68rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.07em; }
 .st-sublabel { font-size:.7rem; color:#94a3b8; }
 .st-mode-text { font-size:1rem; font-weight:700; color:#475569; line-height:1.2; word-break:break-all; }
@@ -43,12 +43,12 @@
     font-size:.75rem; font-weight:500; font-variant-numeric:tabular-nums;
     background:#f1f5f9; color:#334155; border:1px solid #e2e8f0; transition:background .12s;
 }
-.st-pill:hover { background:#e0e9ff; border-color:#a5b4fc; color:#3730a3; }
+.st-pill:hover { background:#E9EAF7; border-color:#AAAEE4; color:#2F3479; }
 .st-pill.is-min { background:#fef3c7; border-color:#fcd34d; color:#92400e; }
 .st-pill.is-max { background:#dcfce7; border-color:#86efac; color:#14532d; }
 .st-pill.is-q1  { background:#e0f2fe; border-color:#7dd3fc; color:#075985; }
 .st-pill.is-q3  { background:#fae8ff; border-color:#e879f9; color:#701a75; }
-.st-pill.is-med { background:#ede9fe; border-color:#a78bfa; color:#3730a3; font-weight:700; }
+.st-pill.is-med { background:#ede9fe; border-color:#a78bfa; color:#2F3479; font-weight:700; }
 
 /* Invalid token */
 .st-invalid-token {
@@ -81,23 +81,23 @@
 .st-bp-track   { position:relative; height:28px; }
 .st-bp-axis    { position:absolute; top:50%; left:0; right:0; height:2px; background:#e2e8f0; transform:translateY(-50%); border-radius:9999px; }
 .st-bp-whisker { position:absolute; top:50%; height:2px; background:#94a3b8; transform:translateY(-50%); }
-.st-bp-box     { position:absolute; top:0; bottom:0; background:rgba(79,70,229,.12); border:2px solid #4f46e5; border-radius:4px; }
-.st-bp-med     { position:absolute; top:-2px; bottom:-2px; width:3px; background:#4f46e5; border-radius:2px; transform:translateX(-50%); }
+.st-bp-box     { position:absolute; top:0; bottom:0; background:rgba(67,76,182,.12); border:2px solid #434CB6; border-radius:4px; }
+.st-bp-med     { position:absolute; top:-2px; bottom:-2px; width:3px; background:#434CB6; border-radius:2px; transform:translateX(-50%); }
 .st-bp-dot     { position:absolute; top:50%; width:10px; height:10px; border-radius:9999px; transform:translate(-50%,-50%); }
 .st-bp-dot.min { background:#f59e0b; border:2px solid #fff; box-shadow:0 0 0 1.5px #f59e0b; }
 .st-bp-dot.max { background:#10b981; border:2px solid #fff; box-shadow:0 0 0 1.5px #10b981; }
-.st-bp-dot.med { background:#4f46e5; border:2px solid #fff; box-shadow:0 0 0 1.5px #4f46e5; z-index:2; }
+.st-bp-dot.med { background:#434CB6; border:2px solid #fff; box-shadow:0 0 0 1.5px #434CB6; z-index:2; }
 /* labels */
 .st-bp-labels  { position:relative; height:1.6rem; margin-top:.3rem; }
 .st-bp-lbl     { position:absolute; font-size:.65rem; font-weight:600; transform:translateX(-50%); white-space:nowrap; }
 .st-bp-lbl.min { color:#d97706; }
 .st-bp-lbl.q1  { color:#0891b2; }
-.st-bp-lbl.med { color:#4f46e5; }
+.st-bp-lbl.med { color:#434CB6; }
 .st-bp-lbl.q3  { color:#7c3aed; }
 .st-bp-lbl.max { color:#059669; }
 
 /* ── Frequency table ── */
-.st-freq-bar  { height:8px; border-radius:9999px; background:linear-gradient(90deg,#4f46e5,#7c3aed); transition:width .4s; }
+.st-freq-bar  { height:8px; border-radius:9999px; background:linear-gradient(90deg,#434CB6,#7c3aed); transition:width .4s; }
 .st-freq-row  { display:grid; grid-template-columns:auto 1fr auto; gap:.75rem; align-items:center; padding:.35rem 0; border-bottom:1px solid #f3f4f6; }
 .st-freq-val  { font-size:.78rem; font-weight:700; color:#374151; font-variant-numeric:tabular-nums; min-width:3.5rem; }
 .st-freq-pct  { font-size:.72rem; color:#6b7280; min-width:3rem; text-align:right; }

@@ -136,7 +136,7 @@
                             <input type="range" x-model.number="form.count"
                                    min="3" max="20" step="1"
                                    class="w-full h-1.5 bg-gray-200 rounded-full appearance-none cursor-pointer"
-                                   style="accent-color:#4f46e5">
+                                   style="accent-color:#434CB6">
                             <div class="flex justify-between text-xs text-gray-400 mt-1">
                                 <span>3</span><span>10</span><span>20</span>
                             </div>
@@ -250,7 +250,7 @@
                     {{-- Quiz header --}}
                     <div class="card mb-4 overflow-hidden">
                         <div class="px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-                             style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)">
+                             style="background: linear-gradient(135deg, #434CB6 0%, #5B62C5 100%)">
                             <div>
                                 <h2 class="text-lg font-bold text-white" x-text="quiz ? quiz.title : ''"></h2>
                                 <div class="flex flex-wrap items-center gap-2 mt-1">

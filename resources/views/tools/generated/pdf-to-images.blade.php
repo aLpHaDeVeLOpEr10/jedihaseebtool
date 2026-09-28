@@ -9,7 +9,7 @@
 <style>
 /* ══════════════════════════════════════════════════════════
    PDF to Images  —  prefix: pi-
-   Brand: indigo #4f46e5 (brand-600)
+   Brand: indigo #434CB6 (brand-600)
    Modes: "Extract Pages" (page-render) | "Extract Images" (embedded)
    Libraries: PDF.js 3.11.174 · JSZip 3.10.1 (lazy)
    All processing is 100 % client-side.
@@ -17,19 +17,19 @@
 
 /* ── Drop zone ─────────────────────────────────────────── */
 .pi-drop {
-  border: 2.5px dashed #c7d2fe;
+  border: 2.5px dashed #CDD0EE;
   border-radius: 1rem;
   padding: 2.25rem 1.5rem;
   text-align: center;
   cursor: pointer;
   transition: all .18s;
-  background: #eef2ff;
+  background: #F4F5FA;
   position: relative;
   user-select: none;
 }
 .pi-drop:hover, .pi-drop.pi-drag-over {
-  border-color: #4f46e5;
-  background: #e0e7ff;
+  border-color: #434CB6;
+  background: #E9EAF7;
   transform: scale(1.01);
 }
 .pi-drop.pi-has-file { border-color: #16a34a; background: #f0fdf4; }
@@ -40,32 +40,32 @@
 /* ── Mode tabs ──────────────────────────────────────────── */
 .pi-tabs {
   display: flex; border-radius: .875rem; overflow: hidden;
-  border: 1.5px solid #e0e7ff; background: #eef2ff;
+  border: 1.5px solid #E9EAF7; background: #F4F5FA;
   padding: .3rem; gap: .3rem;
 }
 .pi-tab {
   flex: 1; padding: .55rem .75rem; border-radius: .6rem;
   font-size: .82rem; font-weight: 700; cursor: pointer;
   transition: all .15s; border: none; background: transparent;
-  color: #6366f1;
+  color: #5B62C5;
 }
 .pi-tab.pi-tab-active {
-  background: #fff; color: #4338ca;
-  box-shadow: 0 1px 4px rgba(79,70,229,.18);
+  background: #fff; color: #383F99;
+  box-shadow: 0 1px 4px rgba(67,76,182,.18);
 }
-.pi-tab:hover:not(.pi-tab-active) { background: #c7d2fe44; }
+.pi-tab:hover:not(.pi-tab-active) { background: #CDD0EE44; }
 
 /* ── Settings row ───────────────────────────────────────── */
 .pi-select {
   width: 100%; padding: .5rem .85rem;
-  border: 1.5px solid #e0e7ff; border-radius: .75rem;
+  border: 1.5px solid #E9EAF7; border-radius: .75rem;
   font-size: .82rem; font-weight: 600; color: #374151;
   background: #fff; outline: none; cursor: pointer;
   transition: border-color .14s;
 }
-.pi-select:focus { border-color: #818cf8; box-shadow: 0 0 0 3px rgba(99,102,241,.12); }
+.pi-select:focus { border-color: #7B81D3; box-shadow: 0 0 0 3px rgba(91,98,197,.12); }
 
-.pi-range { width: 100%; height: 6px; border-radius: 9999px; accent-color: #4f46e5; cursor: pointer; }
+.pi-range { width: 100%; height: 6px; border-radius: 9999px; accent-color: #434CB6; cursor: pointer; }
 
 .pi-opt-lbl { font-size: .78rem; font-weight: 600; color: #374151; }
 .pi-opt-sub { font-size: .67rem; color: #9ca3af; margin-top: .1rem; }
@@ -73,11 +73,11 @@
 /* ── Progress ───────────────────────────────────────────── */
 .pi-progress-track {
   width: 100%; height: .65rem; border-radius: 9999px;
-  background: #e0e7ff; overflow: hidden;
+  background: #E9EAF7; overflow: hidden;
 }
 .pi-progress-fill {
   height: 100%; border-radius: 9999px;
-  background: linear-gradient(90deg, #4338ca, #4f46e5, #6366f1);
+  background: linear-gradient(90deg, #383F99, #434CB6, #5B62C5);
   transition: width .3s ease; position: relative; overflow: hidden;
 }
 .pi-progress-fill::after {
@@ -112,9 +112,9 @@
   width: 100%; margin-top: .5rem; padding: .35rem .5rem;
   border-radius: .55rem; font-size: .7rem; font-weight: 700;
   cursor: pointer; transition: all .14s;
-  border: 1.5px solid #c7d2fe; background: #eef2ff; color: #4338ca;
+  border: 1.5px solid #CDD0EE; background: #F4F5FA; color: #383F99;
 }
-.pi-dl-btn:hover { background: #4338ca; color: #fff; border-color: #4338ca; }
+.pi-dl-btn:hover { background: #383F99; color: #fff; border-color: #383F99; }
 
 /* ── Download All button ────────────────────────────────── */
 .pi-zip-btn {
@@ -133,19 +133,19 @@
   font-size: 1rem; font-weight: 800; cursor: pointer;
   display: flex; align-items: center; justify-content: center; gap: .5rem;
   transition: all .16s;
-  background: linear-gradient(135deg, #3730a3, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, #2F3479, #434CB6, #5B62C5);
   color: #fff; border: none;
-  box-shadow: 0 4px 14px rgba(79,70,229,.38);
+  box-shadow: 0 4px 14px rgba(67,76,182,.38);
 }
-.pi-go-btn:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(79,70,229,.55); transform: translateY(-1px); }
+.pi-go-btn:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(67,76,182,.55); transform: translateY(-1px); }
 .pi-go-btn:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* ── Privacy / info badges ──────────────────────────────── */
 .pi-privacy {
   display: flex; align-items: center; gap: .5rem;
   padding: .5rem .85rem; border-radius: .75rem;
-  background: #eef2ff; border: 1px solid #c7d2fe;
-  font-size: .75rem; color: #3730a3; font-weight: 500;
+  background: #F4F5FA; border: 1px solid #CDD0EE;
+  font-size: .75rem; color: #2F3479; font-weight: 500;
 }
 
 /* ── Error / warning ────────────────────────────────────── */
@@ -190,7 +190,7 @@
   display: inline-flex; align-items: center; gap: .3rem;
   padding: .25rem .65rem; border-radius: 9999px;
   font-size: .7rem; font-weight: 700;
-  background: #eef2ff; color: #3730a3; border: 1.5px solid #c7d2fe;
+  background: #F4F5FA; color: #2F3479; border: 1.5px solid #CDD0EE;
 }
 
 @media (max-width: 640px) {
@@ -653,7 +653,7 @@
 <script>
 /* ─────────────────────────────────────────────────────────────────
    PDF to Images — Alpine.js component  (prefix: pi-)
-   Brand: indigo (#4f46e5)
+   Brand: indigo (#434CB6)
 
    Mode A — "Extract Pages" (page render):
      pdfjsLib.getDocument() → for each page: getViewport + canvas.render

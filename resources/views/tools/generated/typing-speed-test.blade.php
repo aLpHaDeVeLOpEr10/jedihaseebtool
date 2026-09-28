@@ -9,11 +9,11 @@
 .char-correct  { color: #059669; }
 .char-incorrect{ color: #fff; background: #ef4444; border-radius: 2px; }
 .char-untyped  { color: #9ca3af; }
-.char-cursor   { color: #9ca3af; border-left: 2px solid #4f46e5;
+.char-cursor   { color: #9ca3af; border-left: 2px solid #434CB6;
                  animation: blink 1s step-end infinite; }
 
 @keyframes blink {
-    0%, 100% { border-left-color: #4f46e5; }
+    0%, 100% { border-left-color: #434CB6; }
     50%       { border-left-color: transparent; }
 }
 
@@ -103,7 +103,7 @@
                             <circle cx="28" cy="28" r="24"
                                     fill="none" stroke-width="4"
                                     stroke-linecap="round"
-                                    :stroke="timerPct > 40 ? '#4f46e5' : timerPct > 20 ? '#f59e0b' : '#ef4444'"
+                                    :stroke="timerPct > 40 ? '#434CB6' : timerPct > 20 ? '#f59e0b' : '#ef4444'"
                                     :stroke-dasharray="150.8"
                                     :stroke-dashoffset="150.8 * (1 - timerPct / 100)"
                                     class="timer-ring"/>
@@ -198,7 +198,7 @@
             <div class="card overflow-hidden">
                 {{-- Header --}}
                 <div class="px-6 py-5 text-center"
-                     style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)">
+                     style="background: linear-gradient(135deg, #434CB6 0%, #5B62C5 100%)">
                     <p class="text-4xl mb-1">
                         <span x-text="wpm >= 60 ? '🏆' : wpm >= 40 ? '🎉' : wpm >= 20 ? '👍' : '💪'"></span>
                     </p>

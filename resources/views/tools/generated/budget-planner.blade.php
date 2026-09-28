@@ -189,7 +189,7 @@
                 {{-- Savings Goals --}}
                 <div class="card">
                     <div class="px-5 py-3.5 border-b border-gray-100 flex items-center justify-between"
-                         style="background:linear-gradient(to right,#eef2ff,#f5f3ff)">
+                         style="background:linear-gradient(to right,#F4F5FA,#f5f3ff)">
                         <div class="flex items-center gap-2">
                             <span class="text-lg">🎯</span>
                             <div>

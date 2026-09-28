@@ -11,8 +11,8 @@
 
 /* ── Spin button pulse while spinning ── */
 @keyframes spinPulse {
-    0%,100%{ box-shadow:0 0 0 0 rgba(79,70,229,.4); }
-    50%     { box-shadow:0 0 0 12px rgba(79,70,229,0); }
+    0%,100%{ box-shadow:0 0 0 0 rgba(67,76,182,.4); }
+    50%     { box-shadow:0 0 0 12px rgba(67,76,182,0); }
 }
 .spinning-glow { animation:spinPulse 1s ease-in-out infinite; }
 
@@ -430,7 +430,7 @@
    CONSTANTS
 ───────────────────────────────────────────────────── */
 var WHEEL_COLORS = [
-    '#4f46e5','#f59e0b','#10b981','#ef4444',
+    '#434CB6','#f59e0b','#10b981','#ef4444',
     '#8b5cf6','#06b6d4','#f97316','#ec4899',
     '#84cc16','#14b8a6','#a855f7','#64748b',
     '#dc2626','#0891b2','#65a30d','#db2777',
@@ -467,8 +467,8 @@ function wheelOfFortune() {
         currentAngle: 0,
         isSpinning:   false,
         winner:       null,
-        winnerColor:  '#4f46e5',
-        winnerBg:     '#eef2ff',
+        winnerColor:  '#434CB6',
+        winnerBg:     '#F4F5FA',
         showResult:   false,
         copiedResult: false,
         _cpTimer:     null,
@@ -777,7 +777,7 @@ function wheelOfFortune() {
 
             ctx.beginPath();
             ctx.arc(cx, cy, 6, 0, 2 * Math.PI);
-            ctx.fillStyle   = '#4f46e5';
+            ctx.fillStyle   = '#434CB6';
             ctx.fill();
 
             /* ── Pointer (drawn on canvas, always on top) ── */
@@ -804,7 +804,7 @@ function wheelOfFortune() {
             ctx.lineTo(px + (pw - 5), py0 + 4);
             ctx.lineTo(px,            py1 - 6);
             ctx.closePath();
-            ctx.fillStyle = '#4f46e5';
+            ctx.fillStyle = '#434CB6';
             ctx.fill();
         },
 
@@ -813,7 +813,7 @@ function wheelOfFortune() {
         _burst() {
             var box = this.$refs.confettiBox;
             if (!box) return;
-            var colors = ['#4f46e5','#f59e0b','#10b981','#ef4444','#8b5cf6','#ec4899','#06b6d4'];
+            var colors = ['#434CB6','#f59e0b','#10b981','#ef4444','#8b5cf6','#ec4899','#06b6d4'];
             for (var i = 0; i < 30; i++) {
                 (function(i) {
                     setTimeout(function() {

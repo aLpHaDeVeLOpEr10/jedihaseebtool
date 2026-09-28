@@ -11,9 +11,9 @@
    ══════════════════════════════════════════════════ */
 
 /* ── Drop zone ── */
-.mp3-drop{border:2px dashed #a5b4fc;border-radius:18px;padding:2.5rem 2rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
-.mp3-drop:hover,.mp3-drop.over{border-color:#4f46e5;background:#eef2ff}
-.mp3-drop-icon{width:72px;height:72px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem}
+.mp3-drop{border:2px dashed #AAAEE4;border-radius:18px;padding:2.5rem 2rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
+.mp3-drop:hover,.mp3-drop.over{border-color:#434CB6;background:#F4F5FA}
+.mp3-drop-icon{width:72px;height:72px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem}
 
 /* ── Waveform ── */
 .mp3-wave-wrap{position:relative;border-radius:14px;overflow:hidden;background:#1e1e2e;cursor:crosshair;user-select:none;touch-action:none}
@@ -21,12 +21,12 @@
 .mp3-wave-overlay{position:absolute;inset:0;pointer-events:none}
 
 /* Trim region overlay */
-.mp3-trim-region{position:absolute;top:0;bottom:0;background:rgba(79,70,229,.12);border-left:2px solid #4f46e5;border-right:2px solid #4f46e5;pointer-events:none}
+.mp3-trim-region{position:absolute;top:0;bottom:0;background:rgba(67,76,182,.12);border-left:2px solid #434CB6;border-right:2px solid #434CB6;pointer-events:none}
 
 /* Handles */
 .mp3-handle{position:absolute;top:0;bottom:0;width:14px;transform:translateX(-50%);cursor:ew-resize;z-index:10;pointer-events:all;display:flex;align-items:center;justify-content:center;touch-action:none}
-.mp3-handle-bar{width:4px;height:60%;border-radius:3px;background:#4f46e5;box-shadow:0 0 0 2px rgba(79,70,229,.4),0 2px 8px rgba(0,0,0,.3);position:relative}
-.mp3-handle-bar::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.mp3-handle-bar{width:4px;height:60%;border-radius:3px;background:#434CB6;box-shadow:0 0 0 2px rgba(67,76,182,.4),0 2px 8px rgba(0,0,0,.3);position:relative}
+.mp3-handle-bar::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)}
 
 /* Playhead */
 .mp3-playhead{position:absolute;top:0;bottom:0;width:2px;background:#ef4444;transform:translateX(-50%);pointer-events:none;z-index:8;box-shadow:0 0 4px rgba(239,68,68,.6)}
@@ -38,11 +38,11 @@
 /* ── Transport controls ── */
 .mp3-transport{display:flex;align-items:center;gap:.625rem;flex-wrap:wrap}
 .mp3-ctrl-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid #e5e7eb;background:#fff;color:#374151;cursor:pointer;transition:all .13s;flex-shrink:0}
-.mp3-ctrl-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#4f46e5}
-.mp3-ctrl-btn.active{background:#4f46e5;border-color:#4f46e5;color:#fff}
+.mp3-ctrl-btn:hover{background:#f5f3ff;border-color:#c4b5fd;color:#434CB6}
+.mp3-ctrl-btn.active{background:#434CB6;border-color:#434CB6;color:#fff}
 .mp3-ctrl-btn.danger:hover{background:#fef2f2;border-color:#fca5a5;color:#dc2626}
-.mp3-play-btn{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#4f46e5,#7c3aed);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;box-shadow:0 3px 10px rgba(79,70,229,.35);flex-shrink:0}
-.mp3-play-btn:hover{box-shadow:0 5px 16px rgba(79,70,229,.45);transform:scale(1.05)}
+.mp3-play-btn{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#434CB6,#7c3aed);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;box-shadow:0 3px 10px rgba(67,76,182,.35);flex-shrink:0}
+.mp3-play-btn:hover{box-shadow:0 5px 16px rgba(67,76,182,.45);transform:scale(1.05)}
 .mp3-play-btn:active{transform:scale(.97)}
 .mp3-play-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .mp3-time-display{font-family:monospace;font-size:.8rem;color:#6b7280;display:flex;align-items:center;gap:.25rem;min-width:110px}
@@ -50,30 +50,30 @@
 
 /* ── Trim time inputs ── */
 .mp3-time-input{width:100%;font-family:monospace;font-size:.85rem;font-weight:600;text-align:center;border:1.5px solid #e5e7eb;border-radius:9px;padding:.45rem .5rem;color:#1f2937;background:#fff;transition:border-color .15s;outline:none}
-.mp3-time-input:focus{border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,.1)}
+.mp3-time-input:focus{border-color:#434CB6;box-shadow:0 0 0 3px rgba(67,76,182,.1)}
 .mp3-time-input.err{border-color:#ef4444}
 
 /* ── Range sliders ── */
 .mp3-range{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:999px;outline:none;cursor:pointer;transition:opacity .15s}
-.mp3-range::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:#4f46e5;border:2.5px solid #fff;box-shadow:0 1px 5px rgba(79,70,229,.4);cursor:pointer}
-.mp3-range::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:#4f46e5;border:2.5px solid #fff;cursor:pointer}
-.mp3-vol-range{background:linear-gradient(to right,#4f46e5 var(--pct,100%),#e5e7eb var(--pct,100%))}
+.mp3-range::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:#434CB6;border:2.5px solid #fff;box-shadow:0 1px 5px rgba(67,76,182,.4);cursor:pointer}
+.mp3-range::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:#434CB6;border:2.5px solid #fff;cursor:pointer}
+.mp3-vol-range{background:linear-gradient(to right,#434CB6 var(--pct,100%),#e5e7eb var(--pct,100%))}
 .mp3-fade-range{background:linear-gradient(to right,#7c3aed var(--pct,0%),#e5e7eb var(--pct,0%))}
 
 /* ── Section label ── */
-.mp3-sec{font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#4f46e5;margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem}
+.mp3-sec{font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#434CB6;margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem}
 
 /* ── Info box ── */
 .mp3-info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.5rem .75rem;font-size:.76rem;color:#1d4ed8;display:flex;gap:.4rem;align-items:flex-start}
 
 /* ── Spinner ── */
-.mp3-spin{width:18px;height:18px;border:2.5px solid rgba(79,70,229,.25);border-top-color:#4f46e5;border-radius:50%;animation:mp3-rot .7s linear infinite;flex-shrink:0}
-.mp3-spin-lg{width:40px;height:40px;border:3.5px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:mp3-rot .8s linear infinite}
+.mp3-spin{width:18px;height:18px;border:2.5px solid rgba(67,76,182,.25);border-top-color:#434CB6;border-radius:50%;animation:mp3-rot .7s linear infinite;flex-shrink:0}
+.mp3-spin-lg{width:40px;height:40px;border:3.5px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:mp3-rot .8s linear infinite}
 @keyframes mp3-rot{to{transform:rotate(360deg)}}
 
 /* ── Progress bar ── */
 .mp3-prog-track{height:5px;background:#e5e7eb;border-radius:999px;overflow:hidden}
-.mp3-prog-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:999px;transition:width .1s}
+.mp3-prog-fill{height:100%;background:linear-gradient(90deg,#434CB6,#7c3aed);border-radius:999px;transition:width .1s}
 
 /* ── Result card ── */
 .mp3-result{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:1px solid #a7f3d0;border-radius:14px;padding:1.25rem}
@@ -101,7 +101,7 @@
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-7">
     <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">
+           style="background:linear-gradient(135deg,#5B62C5,#8b5cf6)">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <path d="M9 18V5l12-2v13"/>
           <circle cx="6" cy="18" r="3"/>
@@ -153,7 +153,7 @@
            @drop.prevent="onDrop($event)"
            @click="$refs.fileInput.click()">
         <div class="mp3-drop-icon">
-          <svg width="32" height="32" fill="none" stroke="#6366f1" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg width="32" height="32" fill="none" stroke="#5B62C5" stroke-width="1.8" viewBox="0 0 24 24">
             <path d="M9 18V5l12-2v13"/>
             <circle cx="6" cy="18" r="3"/>
             <circle cx="18" cy="16" r="3"/>
@@ -202,8 +202,8 @@
     {{-- File info bar --}}
     <div class="card px-4 py-3 flex items-center gap-3">
       <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">
-        <svg width="16" height="16" fill="none" stroke="#6366f1" stroke-width="2" viewBox="0 0 24 24">
+           style="background:linear-gradient(135deg,#E9EAF7,#CDD0EE)">
+        <svg width="16" height="16" fill="none" stroke="#5B62C5" stroke-width="2" viewBox="0 0 24 24">
           <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
         </svg>
       </div>
@@ -736,7 +736,7 @@ function mp3Editor() {
           /* Gradient inside trim: purple → indigo */
           var grad = ctx.createLinearGradient(x, midY - amp, x, midY + amp);
           grad.addColorStop(0, 'rgba(124,58,237,.9)');
-          grad.addColorStop(0.5, 'rgba(79,70,229,1)');
+          grad.addColorStop(0.5, 'rgba(67,76,182,1)');
           grad.addColorStop(1, 'rgba(124,58,237,.9)');
           ctx.fillStyle = grad;
         } else {

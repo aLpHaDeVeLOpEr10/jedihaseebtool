@@ -16,8 +16,8 @@
     background: transparent; border-top: none; border-left: none; border-right: none;
     cursor: pointer; transition: color .12s, border-color .12s; white-space: nowrap;
 }
-.ri-tab:hover { color: #4f46e5; }
-.ri-tab-active { color: #4f46e5; border-bottom-color: #4f46e5; }
+.ri-tab:hover { color: #434CB6; }
+.ri-tab-active { color: #434CB6; border-bottom-color: #434CB6; }
 
 /* ── Hero ROI ── */
 .ri-hero-pct {
@@ -26,7 +26,7 @@
     transition: color .3s;
 }
 .ri-hero-pct.positive {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 60%, #a78bfa 100%);
+    background: linear-gradient(135deg, #434CB6 0%, #7c3aed 60%, #a78bfa 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .ri-hero-pct.negative {
@@ -40,10 +40,10 @@
     padding: 1rem .9rem; display: flex; flex-direction: column; align-items: center;
     gap: .3rem; text-align: center; transition: all .15s;
 }
-.ri-stat:hover { border-color: #c7d2fe; box-shadow: 0 4px 16px rgba(79,70,229,.07); transform: translateY(-1px); }
+.ri-stat:hover { border-color: #CDD0EE; box-shadow: 0 4px 16px rgba(67,76,182,.07); transform: translateY(-1px); }
 .ri-stat-lbl { font-size: .62rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .07em; }
 .ri-stat-val { font-size: 1.3rem; font-weight: 800; word-break: break-all; }
-.ri-stat-val.brand  { background: linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.ri-stat-val.brand  { background: linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .ri-stat-val.green  { background: linear-gradient(135deg,#059669,#10b981); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .ri-stat-val.red    { background: linear-gradient(135deg,#dc2626,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .ri-stat-val.amber  { background: linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -73,8 +73,8 @@
     padding: .9rem .75rem; border-radius: .9rem; border: 1.5px solid #e2e8f0;
     text-align: center; background: #fff; transition: all .15s;
 }
-.ri-whatif:hover { border-color: #c7d2fe; box-shadow: 0 2px 10px rgba(79,70,229,.07); }
-.ri-whatif.current { border-color: #4f46e5; background: #eef2ff; }
+.ri-whatif:hover { border-color: #CDD0EE; box-shadow: 0 2px 10px rgba(67,76,182,.07); }
+.ri-whatif.current { border-color: #434CB6; background: #F4F5FA; }
 .ri-whatif-roi { font-size: 1.15rem; font-weight: 900; }
 .ri-whatif-sub { font-size: .63rem; color: #6b7280; margin-top: .15rem; }
 
@@ -86,7 +86,7 @@
 .ri-yt th:first-child { text-align: center; }
 .ri-yt td { padding: .45rem .7rem; border-bottom: 1px solid #f1f5f9; text-align: right;
     font-variant-numeric: tabular-nums; color: #374151; }
-.ri-yt td:first-child { text-align: center; font-weight: 600; color: #4f46e5; }
+.ri-yt td:first-child { text-align: center; font-weight: 600; color: #434CB6; }
 .ri-yt tr:hover td { background: #f5f3ff; }
 .ri-yt tr:last-child td { border-bottom: none; font-weight: 700; }
 .ri-yt .ri-td-g { color: #059669; font-weight: 600; }
@@ -107,7 +107,7 @@
 .ri-toggle { display: flex; background: #f1f5f9; border-radius: .5rem; padding: .15rem; gap: .1rem; }
 .ri-toggle-btn { flex: 1; padding: .28rem .6rem; border-radius: .35rem; font-size: .72rem; font-weight: 600;
     color: #64748b; cursor: pointer; border: none; background: none; transition: all .15s; white-space: nowrap; }
-.ri-toggle-btn.active { background: white; color: #4f46e5; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.ri-toggle-btn.active { background: white; color: #434CB6; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 
 /* ── Section divider ── */
 .ri-div { display: flex; align-items: center; gap: .6rem;
@@ -126,7 +126,7 @@
 .ri-metric-val { font-size: .88rem; font-weight: 700; color: #1f2937; font-variant-numeric: tabular-nums; }
 .ri-metric-divider { border-top: 1.5px solid #e5e7eb; padding-top: .6rem; margin-top: .2rem; }
 .ri-metric-divider .ri-metric-lbl { font-weight: 700; color: #1f2937; }
-.ri-metric-divider .ri-metric-val { color: #4f46e5; font-size: .95rem; }
+.ri-metric-divider .ri-metric-val { color: #434CB6; font-size: .95rem; }
 
 /* ── Shimmer ── */
 @keyframes riShim { 0%{background-position:-600px 0} 100%{background-position:600px 0} }
@@ -140,8 +140,8 @@
 
 /* ── Insight box ── */
 .ri-insight { display: flex; align-items: flex-start; gap: .75rem; padding: .7rem .9rem;
-    border-radius: .75rem; background: #f5f3ff; border: 1px solid #e0e7ff; }
-.ri-insight-val { font-weight: 800; color: #4f46e5; }
+    border-radius: .75rem; background: #f5f3ff; border: 1px solid #E9EAF7; }
+.ri-insight-val { font-weight: 800; color: #434CB6; }
 </style>
 
 <div class="min-h-screen bg-gray-50"
@@ -396,7 +396,7 @@
                         {{-- Hero card: ROI % + gauge --}}
                         <div class="card overflow-hidden">
                             <div :style="result.roi >= 0
-                                    ? 'background:linear-gradient(135deg,#eef2ff 0%,#ede9fe 100%)'
+                                    ? 'background:linear-gradient(135deg,#F4F5FA 0%,#ede9fe 100%)'
                                     : 'background:linear-gradient(135deg,#fef2f2 0%,#fee2e2 100%)'"
                                  class="px-6 py-5">
                                 <div class="flex flex-col sm:flex-row items-center gap-4">
@@ -409,7 +409,7 @@
                                                     <stop offset="17%"  stop-color="#f59e0b"/>
                                                     <stop offset="40%"  stop-color="#84cc16"/>
                                                     <stop offset="70%"  stop-color="#10b981"/>
-                                                    <stop offset="100%" stop-color="#4f46e5"/>
+                                                    <stop offset="100%" stop-color="#434CB6"/>
                                                 </linearGradient>
                                             </defs>
                                             {{-- Background arc --}}
@@ -461,7 +461,7 @@
                                 <div class="ri-scale-cell" :class="{active: result.levelIdx===4}"
                                      style="background:#059669">Strong<br><span style="font-size:.55rem;opacity:.8">50–100%</span></div>
                                 <div class="ri-scale-cell" :class="{active: result.levelIdx===5}"
-                                     style="background:#4f46e5">Excellent<br><span style="font-size:.55rem;opacity:.8">100%+</span></div>
+                                     style="background:#434CB6">Excellent<br><span style="font-size:.55rem;opacity:.8">100%+</span></div>
                             </div>
                         </div>
 
@@ -533,7 +533,7 @@
                             <p class="text-sm font-semibold text-gray-700 mb-2">Campaign Metrics</p>
                             <div class="space-y-0.5">
                                 <div class="ri-metric">
-                                    <span class="flex items-center gap-2"><span class="ri-metric-dot" style="background:#4f46e5"></span><span class="ri-metric-lbl">Ad Spend</span></span>
+                                    <span class="flex items-center gap-2"><span class="ri-metric-dot" style="background:#434CB6"></span><span class="ri-metric-lbl">Ad Spend</span></span>
                                     <span class="ri-metric-val" x-text="fmtC(result.investment)"></span>
                                 </div>
                                 <div class="ri-metric">
@@ -652,7 +652,7 @@
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                 <template x-for="wi in result.whatIf" :key="wi.multiplier">
                                     <div class="ri-whatif" :class="{current: wi.isCurrent}">
-                                        <div class="ri-whatif-roi" :style="'color:' + (wi.roi >= 0 ? '#4f46e5' : '#ef4444')"
+                                        <div class="ri-whatif-roi" :style="'color:' + (wi.roi >= 0 ? '#434CB6' : '#ef4444')"
                                              x-text="(wi.roi >= 0 ? '+' : '') + wi.roi.toFixed(1) + '%'"></div>
                                         <div class="ri-whatif-sub">
                                             <div x-text="fmtC(wi.gain) + ' profit'"></div>
@@ -696,7 +696,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="card p-4" style="background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-color:#c7d2fe">
+                    <div class="card p-4" style="background:linear-gradient(135deg,#F4F5FA,#f5f3ff);border-color:#CDD0EE">
                         <p class="text-sm font-semibold text-indigo-700 mb-2">📐 ROI Formulas</p>
                         <div class="space-y-1 text-xs text-gray-600 font-mono">
                             <p>Standard ROI  = (Net Profit ÷ Investment) × 100</p>
@@ -1000,7 +1000,7 @@ function roiCalc() {
             else if (roi < 10)  color = '#f59e0b';
             else if (roi < 50)  color = '#84cc16';
             else if (roi < 100) color = '#10b981';
-            else                color = '#4f46e5';
+            else                color = '#434CB6';
 
             return { arcPath: arcPath, needleX: needleX, needleY: needleY, color: color };
         },
@@ -1022,7 +1022,7 @@ function roiCalc() {
                 { name: 'Gov\'t Bonds (10yr)', roi: 4.8,  color: '#64748b' },
                 { name: 'Real Estate (avg)',   roi: 8.6,  color: '#f59e0b' },
                 { name: 'S&P 500 (10yr avg)', roi: 10.2,  color: '#10b981' },
-                { name: 'Your ROI (CAGR)',     roi: userCAGR, color: '#4f46e5', isUser: true },
+                { name: 'Your ROI (CAGR)',     roi: userCAGR, color: '#434CB6', isUser: true },
             ];
             var maxROI = Math.max(15, Math.max.apply(null, data.map(function(d){ return Math.abs(d.roi); })));
             return data.map(function(d) {

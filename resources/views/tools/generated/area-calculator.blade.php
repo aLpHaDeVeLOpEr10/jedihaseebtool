@@ -12,48 +12,48 @@
 
 /* Hero */
 .ar-hero { font-size:clamp(2.8rem,6vw,4.5rem); font-weight:900; line-height:1; letter-spacing:-.04em;
-           background:linear-gradient(135deg,#3730a3 0%,#4f46e5 55%,#6366f1 100%);
+           background:linear-gradient(135deg,#2F3479 0%,#434CB6 55%,#5B62C5 100%);
            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
 /* Shape selector */
 .ar-shape-card { display:flex; flex-direction:column; align-items:center; gap:.3rem; padding:.65rem .3rem;
-                  border:2px solid #e0e7ff; border-radius:.875rem; cursor:pointer; background:#fff;
+                  border:2px solid #E9EAF7; border-radius:.875rem; cursor:pointer; background:#fff;
                   transition:all .15s; text-align:center; min-width:0; }
-.ar-shape-card:hover  { border-color:#a5b4fc; background:#eef2ff; transform:translateY(-1px); }
-.ar-shape-card.active { border-color:#4f46e5; background:linear-gradient(135deg,#eef2ff,#e0e7ff);
-                         box-shadow:0 4px 14px rgba(79,70,229,.18); }
+.ar-shape-card:hover  { border-color:#AAAEE4; background:#F4F5FA; transform:translateY(-1px); }
+.ar-shape-card.active { border-color:#434CB6; background:linear-gradient(135deg,#F4F5FA,#E9EAF7);
+                         box-shadow:0 4px 14px rgba(67,76,182,.18); }
 .ar-shape-icon { font-size:1.4rem; line-height:1; }
 .ar-shape-lbl  { font-size:.58rem; font-weight:700; color:#6b7280; text-transform:uppercase;
                   letter-spacing:.06em; line-height:1.2; }
-.ar-shape-card.active .ar-shape-lbl { color:#3730a3; }
+.ar-shape-card.active .ar-shape-lbl { color:#2F3479; }
 
 /* Unit pill */
 .ar-unit-pill { display:flex; flex-wrap:wrap; background:#f5f3ff; border-radius:.625rem; padding:.2rem; gap:.1rem; }
 .ar-unit-btn  { flex:1; min-width:40px; padding:.32rem .5rem; border-radius:.45rem; font-size:.75rem;
                 font-weight:700; color:#6b7280; cursor:pointer; border:none; background:none;
                 transition:all .15s; text-align:center; white-space:nowrap; }
-.ar-unit-btn.active { background:#fff; color:#4f46e5; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+.ar-unit-btn.active { background:#fff; color:#434CB6; box-shadow:0 1px 4px rgba(0,0,0,.1); }
 
 /* Method tabs (triangle) */
 .ar-method-tab { flex:1; padding:.38rem .6rem; border-radius:.45rem; font-size:.72rem; font-weight:700;
                   color:#6b7280; cursor:pointer; border:none; background:none; transition:all .15s; text-align:center; }
-.ar-method-tab.active { background:#fff; color:#4f46e5; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+.ar-method-tab.active { background:#fff; color:#434CB6; box-shadow:0 1px 4px rgba(0,0,0,.1); }
 
 /* Input with suffix */
 .ar-inp-wrap   { display:flex; align-items:stretch; }
-.ar-inp-suffix { display:flex; align-items:center; padding:0 .75rem; background:#eef2ff;
+.ar-inp-suffix { display:flex; align-items:center; padding:0 .75rem; background:#F4F5FA;
                   border:1px solid #d1d5db; border-left:none; border-radius:0 .75rem .75rem 0;
-                  font-size:.8rem; font-weight:700; color:#4338ca; white-space:nowrap; }
+                  font-size:.8rem; font-weight:700; color:#383F99; white-space:nowrap; }
 .ar-inp-wrap .form-input { border-radius:.75rem 0 0 .75rem !important; }
 
 /* Stat tile */
-.ar-tile { background:#fff; border:1.5px solid #e0e7ff; border-radius:1.125rem;
+.ar-tile { background:#fff; border:1.5px solid #E9EAF7; border-radius:1.125rem;
             padding:.85rem .7rem; display:flex; flex-direction:column; align-items:center;
             gap:.2rem; text-align:center; transition:all .15s; min-width:0; }
-.ar-tile:hover { border-color:#a5b4fc; box-shadow:0 4px 16px rgba(79,70,229,.07); transform:translateY(-1px); }
+.ar-tile:hover { border-color:#AAAEE4; box-shadow:0 4px 16px rgba(67,76,182,.07); transform:translateY(-1px); }
 .ar-tile-lbl { font-size:.58rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.08em; }
 .ar-tile-val { font-size:1rem; font-weight:900; line-height:1.15; word-break:break-all; }
-.ar-tile-val.indigo { background:linear-gradient(135deg,#3730a3,#6366f1);
+.ar-tile-val.indigo { background:linear-gradient(135deg,#2F3479,#5B62C5);
                        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .ar-tile-val.violet { background:linear-gradient(135deg,#5b21b6,#7c3aed);
                        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -70,20 +70,20 @@
 /* Section divider */
 .ar-div { display:flex; align-items:center; gap:.6rem; color:#94a3b8; font-size:.62rem;
            font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
-.ar-div::before,.ar-div::after { content:''; flex:1; height:1px; background:#e0e7ff; }
+.ar-div::before,.ar-div::after { content:''; flex:1; height:1px; background:#E9EAF7; }
 
 /* Formula code */
-.ar-formula { font-family:monospace; font-size:.78rem; background:#eef2ff; color:#3730a3;
+.ar-formula { font-family:monospace; font-size:.78rem; background:#F4F5FA; color:#2F3479;
                padding:.3rem .7rem; border-radius:.5rem; display:inline-block; }
 
 /* SVG diagram container */
-.ar-diagram { background:linear-gradient(135deg,#fafaff,#f0f0ff); border:1.5px solid #e0e7ff;
+.ar-diagram { background:linear-gradient(135deg,#fafaff,#f0f0ff); border:1.5px solid #E9EAF7;
                border-radius:1.25rem; overflow:hidden; }
 
 /* Extra stat row */
 .ar-extra-row { display:flex; align-items:center; justify-content:space-between; gap:.5rem;
                  padding:.45rem .75rem; border-radius:.625rem; font-size:.82rem; }
-.ar-extra-row:hover { background:#eef2ff; }
+.ar-extra-row:hover { background:#F4F5FA; }
 
 /* Animate in */
 @keyframes arIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
@@ -96,7 +96,7 @@
     {{-- Header --}}
     <div class="text-center mb-8">
       <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4"
-           style="background:linear-gradient(135deg,#4338ca,#4f46e5)">
+           style="background:linear-gradient(135deg,#383F99,#434CB6)">
         <span class="text-3xl">📐</span>
       </div>
       <h1 class="text-3xl font-bold text-gray-900">Area Calculator</h1>
@@ -176,7 +176,7 @@
         {{-- Calculate button --}}
         <button @click="compute()"
                 class="btn btn-primary w-full py-3 text-base font-bold"
-                style="background:linear-gradient(135deg,#4338ca,#4f46e5)">
+                style="background:linear-gradient(135deg,#383F99,#434CB6)">
           Calculate Area
         </button>
 
@@ -192,89 +192,89 @@
 
             {{-- Square --}}
             <svg x-show="shape==='square'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <rect x="55" y="10" width="130" height="130" fill="#eef2ff" stroke="#4f46e5" stroke-width="2" rx="2"/>
-              <text x="120" y="155" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">s</text>
-              <text x="194" y="80" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">s</text>
-              <line x1="55" y1="150" x2="185" y2="150" stroke="#6366f1" stroke-width="1" stroke-dasharray="3 2"/>
-              <line x1="198" y1="10" x2="198" y2="140" stroke="#6366f1" stroke-width="1" stroke-dasharray="3 2"/>
+              <rect x="55" y="10" width="130" height="130" fill="#F4F5FA" stroke="#434CB6" stroke-width="2" rx="2"/>
+              <text x="120" y="155" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">s</text>
+              <text x="194" y="80" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">s</text>
+              <line x1="55" y1="150" x2="185" y2="150" stroke="#5B62C5" stroke-width="1" stroke-dasharray="3 2"/>
+              <line x1="198" y1="10" x2="198" y2="140" stroke="#5B62C5" stroke-width="1" stroke-dasharray="3 2"/>
             </svg>
 
             {{-- Rectangle --}}
             <svg x-show="shape==='rectangle'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <rect x="15" y="25" width="210" height="110" fill="#eef2ff" stroke="#4f46e5" stroke-width="2" rx="2"/>
-              <text x="120" y="155" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">length (l)</text>
-              <text x="236" y="82" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">w</text>
-              <line x1="15" y1="148" x2="225" y2="148" stroke="#6366f1" stroke-width="1" stroke-dasharray="3 2"/>
-              <line x1="233" y1="25" x2="233" y2="135" stroke="#6366f1" stroke-width="1" stroke-dasharray="3 2"/>
+              <rect x="15" y="25" width="210" height="110" fill="#F4F5FA" stroke="#434CB6" stroke-width="2" rx="2"/>
+              <text x="120" y="155" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">length (l)</text>
+              <text x="236" y="82" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">w</text>
+              <line x1="15" y1="148" x2="225" y2="148" stroke="#5B62C5" stroke-width="1" stroke-dasharray="3 2"/>
+              <line x1="233" y1="25" x2="233" y2="135" stroke="#5B62C5" stroke-width="1" stroke-dasharray="3 2"/>
             </svg>
 
             {{-- Circle --}}
             <svg x-show="shape==='circle'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <circle cx="120" cy="78" r="68" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <circle cx="120" cy="78" r="3" fill="#4f46e5"/>
-              <line x1="120" y1="78" x2="188" y2="78" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <text x="157" y="70" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">r</text>
+              <circle cx="120" cy="78" r="68" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <circle cx="120" cy="78" r="3" fill="#434CB6"/>
+              <line x1="120" y1="78" x2="188" y2="78" stroke="#434CB6" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="157" y="70" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">r</text>
             </svg>
 
             {{-- Triangle base+height --}}
             <svg x-show="shape==='triangle' && triMethod==='bh'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <polygon points="120,12 215,140 25,140" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <line x1="120" y1="12" x2="120" y2="140" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">b</text>
-              <text x="132" y="78" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">h</text>
+              <polygon points="120,12 215,140 25,140" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <line x1="120" y1="12" x2="120" y2="140" stroke="#7B81D3" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">b</text>
+              <text x="132" y="78" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">h</text>
             </svg>
 
             {{-- Triangle 3 sides --}}
             <svg x-show="shape==='triangle' && triMethod==='3s'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <polygon points="95,12 220,140 20,140" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <text x="46" y="82" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">a</text>
-              <text x="170" y="82" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">b</text>
-              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">c</text>
+              <polygon points="95,12 220,140 20,140" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <text x="46" y="82" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">a</text>
+              <text x="170" y="82" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">b</text>
+              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">c</text>
             </svg>
 
             {{-- Triangle SAS --}}
             <svg x-show="shape==='triangle' && triMethod==='sas'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <polygon points="30,135 210,135 80,20" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <path d="M 60,135 A 30,30 0 0 0 44,111" fill="none" stroke="#6366f1" stroke-width="1.5"/>
-              <text x="30" y="157" text-anchor="start" font-size="11" fill="#3730a3" font-weight="700">C°</text>
-              <text x="45" y="82" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">a</text>
-              <text x="165" y="88" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">b</text>
+              <polygon points="30,135 210,135 80,20" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <path d="M 60,135 A 30,30 0 0 0 44,111" fill="none" stroke="#5B62C5" stroke-width="1.5"/>
+              <text x="30" y="157" text-anchor="start" font-size="11" fill="#2F3479" font-weight="700">C°</text>
+              <text x="45" y="82" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">a</text>
+              <text x="165" y="88" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">b</text>
             </svg>
 
             {{-- Parallelogram --}}
             <svg x-show="shape==='parallelogram'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <polygon points="40,135 195,135 200,25 45,25" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <line x1="118" y1="25" x2="118" y2="135" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <text x="118" y="157" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">b</text>
-              <text x="130" y="84" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">h</text>
+              <polygon points="40,135 195,135 200,25 45,25" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <line x1="118" y1="25" x2="118" y2="135" stroke="#7B81D3" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <text x="118" y="157" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">b</text>
+              <text x="130" y="84" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">h</text>
             </svg>
 
             {{-- Trapezoid --}}
             <svg x-show="shape==='trapezoid'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <polygon points="25,135 215,135 175,25 65,25" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <line x1="120" y1="25" x2="120" y2="135" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <text x="120" y="18" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">a</text>
-              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">b</text>
-              <text x="131" y="86" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">h</text>
+              <polygon points="25,135 215,135 175,25 65,25" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <line x1="120" y1="25" x2="120" y2="135" stroke="#7B81D3" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <text x="120" y="18" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">a</text>
+              <text x="120" y="157" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">b</text>
+              <text x="131" y="86" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">h</text>
             </svg>
 
             {{-- Ellipse --}}
             <svg x-show="shape==='ellipse'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <ellipse cx="120" cy="78" rx="105" ry="62" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <circle cx="120" cy="78" r="3" fill="#4f46e5"/>
-              <line x1="120" y1="78" x2="225" y2="78" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <line x1="120" y1="78" x2="120" y2="16" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <text x="173" y="70" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">a</text>
-              <text x="131" y="46" text-anchor="start" font-size="13" fill="#3730a3" font-weight="700">b</text>
+              <ellipse cx="120" cy="78" rx="105" ry="62" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <circle cx="120" cy="78" r="3" fill="#434CB6"/>
+              <line x1="120" y1="78" x2="225" y2="78" stroke="#434CB6" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="120" y1="78" x2="120" y2="16" stroke="#5B62C5" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="173" y="70" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">a</text>
+              <text x="131" y="46" text-anchor="start" font-size="13" fill="#2F3479" font-weight="700">b</text>
             </svg>
 
             {{-- Sector --}}
             <svg x-show="shape==='sector'" viewBox="0 0 240 160" class="w-full max-w-xs h-40">
-              <path d="M 55,138 L 215,138 A 160,160 0 0 0 107,22 Z" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
-              <path d="M 80,138 A 25,25 0 0 0 67,117" fill="none" stroke="#6366f1" stroke-width="1.5"/>
-              <text x="55" y="157" text-anchor="start" font-size="11" fill="#3730a3" font-weight="700">θ°</text>
-              <text x="140" y="148" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">r</text>
-              <text x="83" y="86" text-anchor="middle" font-size="13" fill="#3730a3" font-weight="700">r</text>
+              <path d="M 55,138 L 215,138 A 160,160 0 0 0 107,22 Z" fill="#F4F5FA" stroke="#434CB6" stroke-width="2"/>
+              <path d="M 80,138 A 25,25 0 0 0 67,117" fill="none" stroke="#5B62C5" stroke-width="1.5"/>
+              <text x="55" y="157" text-anchor="start" font-size="11" fill="#2F3479" font-weight="700">θ°</text>
+              <text x="140" y="148" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">r</text>
+              <text x="83" y="86" text-anchor="middle" font-size="13" fill="#2F3479" font-weight="700">r</text>
             </svg>
 
           </div>
@@ -297,7 +297,7 @@
           <div class="space-y-5 ar-in">
 
             {{-- Hero result --}}
-            <div class="rounded-2xl p-6 text-white" style="background:linear-gradient(135deg,#3730a3,#4f46e5,#6366f1)">
+            <div class="rounded-2xl p-6 text-white" style="background:linear-gradient(135deg,#2F3479,#434CB6,#5B62C5)">
               <div class="flex items-start justify-between flex-wrap gap-4">
                 <div>
                   <p class="text-indigo-200 text-sm font-medium mb-1">Area</p>

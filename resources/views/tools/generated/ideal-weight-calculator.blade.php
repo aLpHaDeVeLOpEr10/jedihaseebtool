@@ -16,7 +16,7 @@
 .iw-pill-btn.active         { background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.1); }
 .iw-pill-btn.active.sky     { color:#0284c7; }
 .iw-pill-btn.active.rose    { color:#e11d48; }
-.iw-pill-btn.active.brand   { color:#4f46e5; }
+.iw-pill-btn.active.brand   { color:#434CB6; }
 .iw-pill-btn.active.emerald { color:#059669; }
 
 /* Hero */
@@ -28,7 +28,7 @@
 .iw-stat-lbl { font-size:.62rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.07em; }
 .iw-stat-val { font-size:1.25rem; font-weight:800; line-height:1.1; }
 .iw-stat-val.sky     { background:linear-gradient(135deg,#0284c7,#0ea5e9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.iw-stat-val.brand   { background:linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.iw-stat-val.brand   { background:linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .iw-stat-val.emerald { background:linear-gradient(135deg,#059669,#10b981); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .iw-stat-val.rose    { background:linear-gradient(135deg,#e11d48,#f43f5e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .iw-stat-val.amber   { background:linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -398,7 +398,7 @@
                                         <span class="text-sm font-bold text-indigo-600" x-text="result.bmiMidDisplay"></span>
                                     </div>
                                     <div class="iw-cbar-track" style="height:12px">
-                                        <div class="iw-cbar-fill" :style="'width:'+result.bmiMidBarPct+'%;background:#6366f1'"></div>
+                                        <div class="iw-cbar-fill" :style="'width:'+result.bmiMidBarPct+'%;background:#5B62C5'"></div>
                                     </div>
                                 </div>
                             </div>

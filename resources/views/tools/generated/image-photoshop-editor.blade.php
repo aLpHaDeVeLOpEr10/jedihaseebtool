@@ -7,15 +7,15 @@
 
 <style>
 /* ── Image Editor Styles (prefix: ie-) ── */
-.ie-hero{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4338ca 100%);border-bottom:1px solid #3730a3;padding:2rem 0}
+.ie-hero{background:linear-gradient(135deg,#1e1b4b 0%,#262A5E 50%,#383F99 100%);border-bottom:1px solid #2F3479;padding:2rem 0}
 .ie-hero h1{color:#fff}
-.ie-hero p{color:#c7d2fe}
-.ie-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#e0e7ff;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
+.ie-hero p{color:#CDD0EE}
+.ie-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#E9EAF7;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
 
 /* ── Upload drop zone ── */
-.ie-drop{border:2px dashed #a5b4fc;border-radius:14px;padding:3rem 2rem;text-align:center;cursor:pointer;background:#f5f3ff;transition:all .2s}
-.ie-drop:hover,.ie-drop.active{border-color:#4f46e5;background:#eef2ff}
-.ie-drop-icon{width:56px;height:56px;background:#e0e7ff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.ie-drop{border:2px dashed #AAAEE4;border-radius:14px;padding:3rem 2rem;text-align:center;cursor:pointer;background:#f5f3ff;transition:all .2s}
+.ie-drop:hover,.ie-drop.active{border-color:#434CB6;background:#F4F5FA}
+.ie-drop-icon{width:56px;height:56px;background:#E9EAF7;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
 
 /* ── Editor wrapper ── */
 .ie-editor{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -35,7 +35,7 @@
 /* ── Tabs ── */
 .ie-tabs{display:flex;border-bottom:1px solid #e5e7eb;background:#f8fafc}
 .ie-tab{flex:1;padding:.5rem .25rem;font-size:.75rem;font-weight:600;color:#6b7280;cursor:pointer;border:none;background:transparent;border-bottom:2.5px solid transparent;transition:all .15s;text-align:center}
-.ie-tab.active{color:#4f46e5;border-bottom-color:#4f46e5;background:#fff}
+.ie-tab.active{color:#434CB6;border-bottom-color:#434CB6;background:#fff}
 .ie-tab:hover:not(.active){color:#374151;background:#f3f4f6}
 
 /* ── Panel content ── */
@@ -45,44 +45,44 @@
 .ie-slider-row{margin-bottom:.875rem}
 .ie-slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
 .ie-slider-label{font-size:.75rem;font-weight:600;color:#374151}
-.ie-slider-val{font-size:.75rem;font-weight:600;color:#4f46e5;min-width:36px;text-align:right}
-.ie-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#4f46e5 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
-.ie-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 1px 4px rgba(79,70,229,.4);cursor:pointer}
-.ie-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 1px 4px rgba(79,70,229,.4);cursor:pointer;border:none}
+.ie-slider-val{font-size:.75rem;font-weight:600;color:#434CB6;min-width:36px;text-align:right}
+.ie-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#434CB6 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
+.ie-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 1px 4px rgba(67,76,182,.4);cursor:pointer}
+.ie-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 1px 4px rgba(67,76,182,.4);cursor:pointer;border:none}
 
 /* ── Filter grid ── */
 .ie-filter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.375rem}
 .ie-filter-btn{border:2px solid #e5e7eb;border-radius:8px;padding:.25rem;cursor:pointer;background:#fff;transition:all .12s;text-align:center}
-.ie-filter-btn:hover{border-color:#a5b4fc}
-.ie-filter-btn.active{border-color:#4f46e5;background:#eef2ff}
+.ie-filter-btn:hover{border-color:#AAAEE4}
+.ie-filter-btn.active{border-color:#434CB6;background:#F4F5FA}
 .ie-filter-thumb{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;display:block;margin-bottom:.2rem}
 .ie-filter-name{font-size:.65rem;font-weight:600;color:#374151}
-.ie-filter-btn.active .ie-filter-name{color:#4f46e5}
+.ie-filter-btn.active .ie-filter-name{color:#434CB6}
 
 /* ── Transform buttons ── */
 .ie-transform-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem}
 .ie-tr-btn{display:flex;align-items:center;justify-content:center;gap:.375rem;padding:.5rem;border:1.5px solid #e5e7eb;border-radius:8px;font-size:.8rem;font-weight:500;color:#374151;cursor:pointer;background:#fff;transition:all .12s}
-.ie-tr-btn:hover{border-color:#a5b4fc;color:#4338ca;background:#eef2ff}
-.ie-tr-btn.active{border-color:#4f46e5;background:#eef2ff;color:#4338ca}
+.ie-tr-btn:hover{border-color:#AAAEE4;color:#383F99;background:#F4F5FA}
+.ie-tr-btn.active{border-color:#434CB6;background:#F4F5FA;color:#383F99}
 
 /* ── Section label ── */
-.ie-sec-lbl{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5;margin:.875rem 0 .4rem}
+.ie-sec-lbl{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#434CB6;margin:.875rem 0 .4rem}
 .ie-sec-lbl:first-child{margin-top:0}
 
 /* ── Text controls ── */
 .ie-txt-input{width:100%;padding:.45rem .625rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;background:#fff;transition:border-color .15s}
-.ie-txt-input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 2px rgba(79,70,229,.1)}
+.ie-txt-input:focus{outline:none;border-color:#434CB6;box-shadow:0 0 0 2px rgba(67,76,182,.1)}
 .ie-row2{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.5rem}
 .ie-color-swatch{width:32px;height:32px;border-radius:6px;border:1.5px solid #e5e7eb;cursor:pointer;padding:2px}
 .ie-select{width:100%;padding:.4rem .625rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;background:#fff}
-.ie-select:focus{outline:none;border-color:#4f46e5}
+.ie-select:focus{outline:none;border-color:#434CB6}
 
 /* ── Toolbar buttons ── */
 .ie-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.375rem .75rem;border-radius:7px;border:1.5px solid #e5e7eb;font-size:.8rem;font-weight:500;color:#374151;cursor:pointer;background:#fff;transition:all .12s;white-space:nowrap}
-.ie-btn:hover:not(:disabled){border-color:#a5b4fc;color:#4338ca;background:#eef2ff}
+.ie-btn:hover:not(:disabled){border-color:#AAAEE4;color:#383F99;background:#F4F5FA}
 .ie-btn:disabled{opacity:.4;cursor:not-allowed}
-.ie-btn-primary{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-color:#4f46e5;color:#fff}
-.ie-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#4338ca,#6d28d9);border-color:#4338ca;color:#fff}
+.ie-btn-primary{background:linear-gradient(135deg,#434CB6,#7c3aed);border-color:#434CB6;color:#fff}
+.ie-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#383F99,#6d28d9);border-color:#383F99;color:#fff}
 .ie-btn-danger{border-color:#fca5a5;color:#dc2626}
 .ie-btn-danger:hover:not(:disabled){background:#fef2f2;border-color:#ef4444}
 .ie-btn-green{background:linear-gradient(135deg,#16a34a,#15803d);border-color:#16a34a;color:#fff}
@@ -97,10 +97,10 @@
 /* ── Resize inputs ── */
 .ie-dim-row{display:grid;grid-template-columns:1fr auto 1fr;gap:.375rem;align-items:end}
 .ie-lock-btn{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:1.5px solid #e5e7eb;border-radius:6px;cursor:pointer;background:#fff;flex-shrink:0}
-.ie-lock-btn.on{border-color:#4f46e5;background:#eef2ff;color:#4f46e5}
-.ie-lock-btn:hover{border-color:#a5b4fc}
+.ie-lock-btn.on{border-color:#434CB6;background:#F4F5FA;color:#434CB6}
+.ie-lock-btn:hover{border-color:#AAAEE4}
 .ie-num-input{width:100%;padding:.4rem .5rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;background:#fff}
-.ie-num-input:focus{outline:none;border-color:#4f46e5}
+.ie-num-input:focus{outline:none;border-color:#434CB6}
 
 /* ── Text items list ── */
 .ie-text-item{display:flex;align-items:center;gap:.375rem;padding:.3rem .375rem;background:#f9fafb;border-radius:6px;border:1px solid #f3f4f6;margin-bottom:.3rem;font-size:.75rem;color:#374151}
@@ -110,7 +110,7 @@
 .ie-del-btn:hover{background:#fee2e2;color:#dc2626}
 
 /* ── Spinner ── */
-.ie-spin{width:16px;height:16px;border:2px solid rgba(79,70,229,.2);border-top-color:#4f46e5;border-radius:50%;animation:ie-rotate .7s linear infinite}
+.ie-spin{width:16px;height:16px;border:2px solid rgba(67,76,182,.2);border-top-color:#434CB6;border-radius:50%;animation:ie-rotate .7s linear infinite}
 @keyframes ie-rotate{to{transform:rotate(360deg)}}
 </style>
 
@@ -118,7 +118,7 @@
 <div class="ie-hero">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
     <div class="flex items-start gap-4">
-      <div style="width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#5B62C5,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
           <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
         </svg>
@@ -131,7 +131,7 @@
             Browser-Only &middot; Privacy-First
           </span>
         </div>
-        <p class="text-sm max-w-2xl" style="color:#c7d2fe">{{ $tool->description }}</p>
+        <p class="text-sm max-w-2xl" style="color:#CDD0EE">{{ $tool->description }}</p>
       </div>
     </div>
   </div>
@@ -152,7 +152,7 @@
         @click="$refs.fileInput.click()"
       >
         <div class="ie-drop-icon">
-          <svg width="28" height="28" fill="none" stroke="#4f46e5" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg width="28" height="28" fill="none" stroke="#434CB6" stroke-width="1.8" viewBox="0 0 24 24">
             <path d="M15 10l-4-4-4 4M11 6v8"/><rect x="3" y="14" width="18" height="7" rx="2"/>
           </svg>
         </div>
@@ -416,7 +416,7 @@
           <div style="padding:.4rem .875rem;background:#111827;display:flex;align-items:center;justify-content:space-between;font-size:.7rem;color:#6b7280;gap:.5rem;flex-wrap:wrap">
             <span>Canvas: <strong style="color:#d1d5db" x-text="canvasInfo"></strong></span>
             <span x-show="cropMode && cropRect">
-              Crop: <strong style="color:#a5b4fc" x-text="cropInfo"></strong>
+              Crop: <strong style="color:#AAAEE4" x-text="cropInfo"></strong>
             </span>
           </div>
         </div>

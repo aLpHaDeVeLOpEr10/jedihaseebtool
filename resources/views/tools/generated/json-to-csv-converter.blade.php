@@ -78,7 +78,7 @@
     transition: all .13s; user-select: none;
 }
 .radio-pill.active {
-    border-color: #4f46e5; background: #eef2ff; color: #4338ca;
+    border-color: #434CB6; background: #F4F5FA; color: #383F99;
 }
 
 /* ── Idle placeholder ── */
@@ -94,7 +94,7 @@
 .step-arrow {
     display: flex; align-items: center; justify-content: center;
     width: 2rem; height: 2rem; border-radius: 9999px;
-    background: #eef2ff; color: #4f46e5; font-size: .8rem; font-weight: 700;
+    background: #F4F5FA; color: #434CB6; font-size: .8rem; font-weight: 700;
     flex-shrink: 0;
 }
 </style>

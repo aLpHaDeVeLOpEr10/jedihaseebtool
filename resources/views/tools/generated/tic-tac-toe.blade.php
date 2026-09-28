@@ -18,19 +18,19 @@
     aspect-ratio: 1 / 1;
 }
 .cell-empty  { background: #f9fafb; border-color: #e5e7eb; cursor: pointer; }
-.cell-empty:hover  { background: #eef2ff; border-color: #a5b4fc; }
+.cell-empty:hover  { background: #F4F5FA; border-color: #AAAEE4; }
 .cell-empty-idle   { background: #f9fafb; border-color: #e5e7eb; cursor: default; }
-.cell-x      { background: #eef2ff; border-color: #a5b4fc; cursor: default; }
+.cell-x      { background: #F4F5FA; border-color: #AAAEE4; cursor: default; }
 .cell-o      { background: #fff1f2; border-color: #fda4af; cursor: default; }
-.cell-win-x  { background: #e0e7ff; border-color: #6366f1; cursor: default;
+.cell-win-x  { background: #E9EAF7; border-color: #5B62C5; cursor: default;
                animation: winPulse .85s ease-in-out infinite; }
 .cell-win-o  { background: #ffe4e6; border-color: #f43f5e; cursor: default;
                animation: winPulse .85s ease-in-out infinite; }
 .cell-dim    { opacity: .3; }
 
 @keyframes winPulse {
-    0%,100% { box-shadow: 0 0 0 2px rgba(99,102,241,.25); }
-    50%      { box-shadow: 0 0 0 8px rgba(99,102,241,.05); }
+    0%,100% { box-shadow: 0 0 0 2px rgba(91,98,197,.25); }
+    50%      { box-shadow: 0 0 0 8px rgba(91,98,197,.05); }
 }
 
 /* ── Symbol pop-in ── */
@@ -194,7 +194,7 @@
                      class="flex items-center gap-2.5 status-in">
                     <span class="w-5 h-5 rounded-full flex-shrink-0 transition-colors duration-200"
                           :style="currentPlayer === 'X'
-                              ? 'background:#4f46e5'
+                              ? 'background:#434CB6'
                               : 'background:#f43f5e'">
                     </span>
                     <span class="font-semibold text-gray-700 text-lg" x-text="statusMsg"></span>

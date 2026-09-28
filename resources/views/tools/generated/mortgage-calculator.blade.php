@@ -13,7 +13,7 @@
 .mc-hero-amount {
     font-size: clamp(2.2rem,5vw,3.2rem);
     font-weight: 900; line-height: 1; letter-spacing: -.025em;
-    background: linear-gradient(135deg,#4f46e5 0%,#7c3aed 60%,#a78bfa 100%);
+    background: linear-gradient(135deg,#434CB6 0%,#7c3aed 60%,#a78bfa 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     word-break: break-all;
 }
@@ -24,10 +24,10 @@
     padding: 1rem .9rem; display: flex; flex-direction: column; align-items: center;
     gap: .3rem; text-align: center; transition: all .15s;
 }
-.mc-stat:hover { border-color: #c7d2fe; box-shadow: 0 4px 16px rgba(79,70,229,.07); transform: translateY(-1px); }
+.mc-stat:hover { border-color: #CDD0EE; box-shadow: 0 4px 16px rgba(67,76,182,.07); transform: translateY(-1px); }
 .mc-stat-lbl { font-size: .62rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .07em; }
 .mc-stat-val { font-size: 1.3rem; font-weight: 800; word-break: break-all; }
-.mc-stat-val.brand  { background: linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.mc-stat-val.brand  { background: linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .mc-stat-val.cyan   { background: linear-gradient(135deg,#0891b2,#06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .mc-stat-val.amber  { background: linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .mc-stat-val.rose   { background: linear-gradient(135deg,#e11d48,#f43f5e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -43,7 +43,7 @@
 .mc-line-val { font-size: .88rem; font-weight: 700; color: #1f2937; font-variant-numeric: tabular-nums; }
 .mc-line-total { border-top: 1.5px solid #e5e7eb; margin-top: .25rem; padding-top: .65rem; }
 .mc-line-total .mc-line-lbl { font-weight: 700; color: #1f2937; font-size: .88rem; }
-.mc-line-total .mc-line-val { font-size: 1rem; color: #4f46e5; }
+.mc-line-total .mc-line-val { font-size: 1rem; color: #434CB6; }
 
 /* ── Donut chart ── */
 .mc-donut-wrap { position: relative; }
@@ -64,14 +64,14 @@
 /* ── Term pill buttons ── */
 .mc-term-pill { padding: .35rem .8rem; border-radius: 9999px; font-size: .75rem; font-weight: 700;
     border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280; cursor: pointer; transition: all .15s; }
-.mc-term-pill:hover { border-color: #a5b4fc; color: #4f46e5; }
-.mc-term-pill.active { background: #4f46e5; border-color: #4f46e5; color: #fff; box-shadow: 0 2px 8px rgba(79,70,229,.3); }
+.mc-term-pill:hover { border-color: #AAAEE4; color: #434CB6; }
+.mc-term-pill.active { background: #434CB6; border-color: #434CB6; color: #fff; box-shadow: 0 2px 8px rgba(67,76,182,.3); }
 
 /* ── Toggle $/% ── */
 .mc-toggle { display: flex; background: #f1f5f9; border-radius: .5rem; padding: .15rem; gap: .1rem; }
 .mc-toggle-btn { padding: .25rem .6rem; border-radius: .35rem; font-size: .7rem; font-weight: 700; color: #64748b;
     cursor: pointer; border: none; background: none; transition: all .15s; }
-.mc-toggle-btn.active { background: white; color: #4f46e5; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.mc-toggle-btn.active { background: white; color: #434CB6; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 
 /* ── Section header ── */
 .mc-section { font-size: .6rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: .12em;
@@ -97,8 +97,8 @@
 .mc-rate-table th:first-child { text-align: center; }
 .mc-rate-table td { padding: .5rem .75rem; border-bottom: 1px solid #f1f5f9; text-align: right; font-variant-numeric: tabular-nums; color: #374151; }
 .mc-rate-table td:first-child { text-align: center; font-weight: 700; }
-.mc-rate-table tr.mc-current td { background: #eef2ff; }
-.mc-rate-table tr.mc-current td:first-child { color: #4f46e5; }
+.mc-rate-table tr.mc-current td { background: #F4F5FA; }
+.mc-rate-table tr.mc-current td:first-child { color: #434CB6; }
 .mc-rate-table tr:last-child td { border-bottom: none; }
 
 /* ── Amortization table ── */
@@ -107,7 +107,7 @@
     letter-spacing: .07em; padding: .45rem .65rem; border-bottom: 1.5px solid #e2e8f0; text-align: right; background: #f8fafc; }
 .mc-amort-table th:first-child { text-align: center; }
 .mc-amort-table td { padding: .45rem .65rem; border-bottom: 1px solid #f1f5f9; text-align: right; font-variant-numeric: tabular-nums; color: #374151; }
-.mc-amort-table td:first-child { text-align: center; font-weight: 600; color: #4f46e5; }
+.mc-amort-table td:first-child { text-align: center; font-weight: 600; color: #434CB6; }
 .mc-amort-table tr:hover td { background: #f5f3ff; }
 .mc-amort-table tr:last-child td { border-bottom: none; font-weight: 700; }
 .mc-amort-table .mc-td-int { color: #dc2626; }
@@ -229,7 +229,7 @@
                                 <span class="mc-pre" x-text="currency"></span>
                                 <input type="text" readonly :value="fmtNum(loanAmount)"
                                        class="form-input bg-gray-50 cursor-default font-semibold"
-                                       style="color:#4f46e5">
+                                       style="color:#434CB6">
                             </div>
                             <p class="form-help">Home price minus down payment.</p>
                         </div>
@@ -414,7 +414,7 @@
 
                         {{-- Hero total payment --}}
                         <div class="card overflow-hidden">
-                            <div style="background:linear-gradient(135deg,#eef2ff 0%,#ede9fe 100%);" class="px-6 py-5">
+                            <div style="background:linear-gradient(135deg,#F4F5FA 0%,#ede9fe 100%);" class="px-6 py-5">
                                 <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Total Monthly Payment</p>
                                 <p class="mc-hero-amount" x-text="fmtC(result.totalMonthly)"></p>
                                 <p class="text-xs text-gray-500 mt-2">
@@ -472,7 +472,7 @@
                                     <div class="mc-legend-item border-t border-gray-100 mt-1 pt-1.5">
                                         <span class="mc-legend-dot" style="background:transparent;border:2px solid #9ca3af"></span>
                                         <span class="mc-legend-name font-bold text-gray-800">Total</span>
-                                        <span class="mc-legend-val" style="color:#4f46e5;font-size:.92rem" x-text="fmtC(result.totalMonthly)"></span>
+                                        <span class="mc-legend-val" style="color:#434CB6;font-size:.92rem" x-text="fmtC(result.totalMonthly)"></span>
                                         <span class="mc-legend-pct">100%</span>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@
                             <div class="space-y-0.5">
                                 <div class="mc-line">
                                     <span class="flex items-center gap-2">
-                                        <span class="mc-line-dot" style="background:#4f46e5"></span>
+                                        <span class="mc-line-dot" style="background:#434CB6"></span>
                                         <span class="mc-line-lbl">Loan Principal</span>
                                     </span>
                                     <span class="mc-line-val" x-text="fmtC(result.loanAmount)"></span>
@@ -684,7 +684,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="card p-4" style="background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-color:#c7d2fe">
+                    <div class="card p-4" style="background:linear-gradient(135deg,#F4F5FA,#f5f3ff);border-color:#CDD0EE">
                         <p class="text-sm font-semibold text-indigo-700 mb-1">📐 Mortgage Payment Formula</p>
                         <p class="text-xs text-gray-600 font-mono">M = P × [r(1+r)ⁿ] / [(1+r)ⁿ – 1]</p>
                         <p class="text-xs text-gray-400 mt-1">P = loan · r = monthly rate · n = total payments (term × 12)</p>
@@ -928,7 +928,7 @@ function mortCalc() {
 
             // Donut segments
             var donutSegs = this._buildDonut([
-                { label: 'Principal & Interest', value: monthlyPI,     color: '#4f46e5' },
+                { label: 'Principal & Interest', value: monthlyPI,     color: '#434CB6' },
                 { label: 'Property Tax',         value: v.monthlyTax,  color: '#0891b2' },
                 { label: 'Home Insurance',       value: v.monthlyIns,  color: '#f59e0b' },
                 { label: 'PMI',                  value: monthlyPMI,    color: '#ef4444' },

@@ -16,7 +16,7 @@
 .cl-pill-btn.active.emerald { color:#059669; }
 .cl-pill-btn.active.blue    { color:#2563eb; }
 .cl-pill-btn.active.rose    { color:#e11d48; }
-.cl-pill-btn.active.brand   { color:#4f46e5; }
+.cl-pill-btn.active.brand   { color:#434CB6; }
 
 /* Hero */
 .cl-hero { font-size:clamp(2.6rem,5.5vw,4rem); font-weight:900; line-height:1; letter-spacing:-.03em; background:linear-gradient(135deg,#059669 0%,#10b981 55%,#34d399 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -27,7 +27,7 @@
 .cl-stat-lbl { font-size:.62rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:.07em; }
 .cl-stat-val { font-size:1.3rem; font-weight:800; line-height:1.1; }
 .cl-stat-val.emerald { background:linear-gradient(135deg,#059669,#10b981); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.cl-stat-val.brand   { background:linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.cl-stat-val.brand   { background:linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .cl-stat-val.rose    { background:linear-gradient(135deg,#e11d48,#f43f5e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .cl-stat-val.amber   { background:linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .cl-stat-sub { font-size:.65rem; color:#94a3b8; }
@@ -52,7 +52,7 @@
 
 /* Macro bar */
 .cl-macro-bar { height:14px; border-radius:9999px; overflow:hidden; display:flex; }
-.cl-macro-p { background:#6366f1; }
+.cl-macro-p { background:#5B62C5; }
 .cl-macro-c { background:#10b981; }
 .cl-macro-f { background:#f59e0b; }
 .cl-macro-legend-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
@@ -378,14 +378,14 @@
                                         <div class="cl-macro-f transition-all duration-500" :style="'width:'+currentMacros.fatPct+'%'"></div>
                                     </div>
                                     <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">
-                                        <span class="flex items-center gap-1.5"><span class="cl-macro-legend-dot" style="background:#6366f1"></span><span class="text-gray-500">Protein <strong x-text="fmt0(currentMacros.proteinG)+'g'"></strong> (<span x-text="currentMacros.proteinPct+'%'"></span>)</span></span>
+                                        <span class="flex items-center gap-1.5"><span class="cl-macro-legend-dot" style="background:#5B62C5"></span><span class="text-gray-500">Protein <strong x-text="fmt0(currentMacros.proteinG)+'g'"></strong> (<span x-text="currentMacros.proteinPct+'%'"></span>)</span></span>
                                         <span class="flex items-center gap-1.5"><span class="cl-macro-legend-dot" style="background:#10b981"></span><span class="text-gray-500">Carbs <strong x-text="fmt0(currentMacros.carbG)+'g'"></strong> (<span x-text="currentMacros.carbPct+'%'"></span>)</span></span>
                                         <span class="flex items-center gap-1.5"><span class="cl-macro-legend-dot" style="background:#f59e0b"></span><span class="text-gray-500">Fat <strong x-text="fmt0(currentMacros.fatG)+'g'"></strong> (<span x-text="currentMacros.fatPct+'%'"></span>)</span></span>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-3 gap-3">
-                                    <div class="text-center p-3 rounded-xl border-2" style="border-color:#e0e7ff;background:#eef2ff">
-                                        <p class="text-2xl font-black" style="color:#4f46e5" x-text="fmt0(currentMacros.proteinG)+'g'"></p>
+                                    <div class="text-center p-3 rounded-xl border-2" style="border-color:#E9EAF7;background:#F4F5FA">
+                                        <p class="text-2xl font-black" style="color:#434CB6" x-text="fmt0(currentMacros.proteinG)+'g'"></p>
                                         <p class="text-xs font-semibold text-indigo-700">Protein</p>
                                         <p class="text-xs text-gray-400 mt-0.5" x-text="fmt0(currentMacros.proteinG*4)+' kcal'"></p>
                                     </div>
@@ -781,7 +781,7 @@ function calCalc() {
                 { label:'Mild Weight Loss',     change:-250,  note:'~½ lb/week',   color:'#eab308' },
                 { label:'Maintain Weight',      change:0,     note:'No change',     color:'#10b981', isMaintain:true },
                 { label:'Mild Weight Gain',     change:250,   note:'~½ lb/week',   color:'#3b82f6' },
-                { label:'Weight Gain',          change:500,   note:'~1 lb/week',   color:'#6366f1' },
+                { label:'Weight Gain',          change:500,   note:'~1 lb/week',   color:'#5B62C5' },
                 { label:'Fast Weight Gain',     change:1000,  note:'~2 lbs/week',  color:'#8b5cf6' },
             ].map(function(g) {
                 return Object.assign({}, g, { calories: Math.max(1200, Math.round(tdee + g.change)) });

@@ -11,14 +11,14 @@
    ══════════════════════════════════════════ */
 
 /* Hero */
-.ve-hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#312e81 100%);border-bottom:1px solid #1e1b4b;padding:2rem 0}
+.ve-hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#262A5E 100%);border-bottom:1px solid #1e1b4b;padding:2rem 0}
 .ve-hero h1{color:#fff}
-.ve-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#e0e7ff;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
+.ve-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#E9EAF7;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
 
 /* Drop zone */
-.ve-drop{border:2px dashed #a5b4fc;border-radius:16px;padding:3rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:all .2s;user-select:none}
-.ve-drop:hover,.ve-drop.over{border-color:#4f46e5;background:#eef2ff}
-.ve-drop-icon{width:68px;height:68px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.ve-drop{border:2px dashed #AAAEE4;border-radius:16px;padding:3rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:all .2s;user-select:none}
+.ve-drop:hover,.ve-drop.over{border-color:#434CB6;background:#F4F5FA}
+.ve-drop-icon{width:68px;height:68px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
 
 /* Editor card */
 .ve-editor{background:#fff;border-radius:14px;border:1px solid #e5e7eb;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -34,11 +34,11 @@
 
 /* Buttons */
 .ve-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.35rem .7rem;border-radius:7px;border:1.5px solid #e5e7eb;font-size:.8rem;font-weight:500;color:#374151;cursor:pointer;background:#fff;transition:all .12s;white-space:nowrap;line-height:1.3}
-.ve-btn:hover:not(:disabled){border-color:#a5b4fc;color:#4338ca;background:#eef2ff}
+.ve-btn:hover:not(:disabled){border-color:#AAAEE4;color:#383F99;background:#F4F5FA}
 .ve-btn:disabled{opacity:.4;cursor:not-allowed}
-.ve-btn.active{border-color:#4f46e5;background:#eef2ff;color:#4338ca}
-.ve-btn-primary{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-color:#4f46e5;color:#fff;padding:.45rem 1rem}
-.ve-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#4338ca,#6d28d9);border-color:#4338ca;color:#fff}
+.ve-btn.active{border-color:#434CB6;background:#F4F5FA;color:#383F99}
+.ve-btn-primary{background:linear-gradient(135deg,#434CB6,#7c3aed);border-color:#434CB6;color:#fff;padding:.45rem 1rem}
+.ve-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#383F99,#6d28d9);border-color:#383F99;color:#fff}
 .ve-btn-green{background:linear-gradient(135deg,#059669,#047857);border-color:#059669;color:#fff;padding:.45rem 1rem}
 .ve-btn-green:hover:not(:disabled){background:linear-gradient(135deg,#047857,#065f46);border-color:#047857;color:#fff}
 .ve-btn-red{border-color:#fca5a5;color:#dc2626}
@@ -50,8 +50,8 @@
 .ve-timeline{position:relative;height:44px;background:#f1f5f9;border-radius:8px;cursor:pointer;user-select:none;touch-action:none;margin:0 8px}
 .ve-tl-bg{position:absolute;inset:0;border-radius:8px;overflow:hidden}
 .ve-tl-bg-inner{position:absolute;inset:0;background:linear-gradient(90deg,#cbd5e1 1px,transparent 1px) 0 0/10% 100%;opacity:.4}
-.ve-tl-select{position:absolute;top:0;height:100%;background:rgba(79,70,229,.15);border-top:2.5px solid #4f46e5;border-bottom:2.5px solid #4f46e5;pointer-events:none}
-.ve-handle{position:absolute;top:50%;width:14px;height:36px;transform:translate(-50%,-50%);background:#4f46e5;border-radius:4px;cursor:ew-resize;touch-action:none;z-index:4;box-shadow:0 2px 8px rgba(79,70,229,.4)}
+.ve-tl-select{position:absolute;top:0;height:100%;background:rgba(67,76,182,.15);border-top:2.5px solid #434CB6;border-bottom:2.5px solid #434CB6;pointer-events:none}
+.ve-handle{position:absolute;top:50%;width:14px;height:36px;transform:translate(-50%,-50%);background:#434CB6;border-radius:4px;cursor:ew-resize;touch-action:none;z-index:4;box-shadow:0 2px 8px rgba(67,76,182,.4)}
 .ve-handle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:2px;height:12px;background:rgba(255,255,255,.7);border-radius:1px;box-shadow:4px 0 rgba(255,255,255,.7),-4px 0 rgba(255,255,255,.7)}
 .ve-playhead{position:absolute;top:-5px;bottom:-5px;width:2.5px;background:#ef4444;transform:translateX(-50%);z-index:5;pointer-events:none;border-radius:1px}
 .ve-playhead::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #ef4444}
@@ -59,27 +59,27 @@
 
 /* Time inputs */
 .ve-time-input{width:88px;padding:.35rem .5rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;font-variant-numeric:tabular-nums;text-align:center;background:#fff;transition:border-color .15s}
-.ve-time-input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,.1)}
+.ve-time-input:focus{outline:none;border-color:#434CB6;box-shadow:0 0 0 3px rgba(67,76,182,.1)}
 
 /* Sliders & controls */
-.ve-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#4f46e5 var(--p,50%),#e5e7eb var(--p,50%));outline:none;cursor:pointer}
-.ve-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 1px 4px rgba(79,70,229,.4);cursor:pointer}
-.ve-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;cursor:pointer;border:none}
+.ve-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#434CB6 var(--p,50%),#e5e7eb var(--p,50%));outline:none;cursor:pointer}
+.ve-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 1px 4px rgba(67,76,182,.4);cursor:pointer}
+.ve-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;cursor:pointer;border:none}
 
 /* Toggle switch */
 .ve-toggle{position:relative;width:40px;height:22px;flex-shrink:0}
 .ve-toggle input{opacity:0;width:0;height:0;position:absolute}
 .ve-toggle-track{position:absolute;inset:0;background:#e5e7eb;border-radius:999px;transition:background .2s;cursor:pointer}
-.ve-toggle input:checked+.ve-toggle-track{background:#4f46e5}
+.ve-toggle input:checked+.ve-toggle-track{background:#434CB6}
 .ve-toggle-thumb{position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);pointer-events:none}
 .ve-toggle input:checked~.ve-toggle-thumb{transform:translateX(18px)}
 
 /* Select */
 .ve-select{padding:.4rem .625rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;background:#fff;cursor:pointer;transition:border-color .15s}
-.ve-select:focus{outline:none;border-color:#4f46e5}
+.ve-select:focus{outline:none;border-color:#434CB6}
 
 /* Section label */
-.ve-sec{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5;margin-bottom:.5rem}
+.ve-sec{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#434CB6;margin-bottom:.5rem}
 
 /* Info panel */
 .ve-info-row{display:flex;align-items:center;justify-content:space-between;font-size:.8125rem;padding:.3rem 0;border-bottom:1px solid #f3f4f6}
@@ -89,23 +89,23 @@
 
 /* Progress bar */
 .ve-progress-track{height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden}
-.ve-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#4f46e5,#7c3aed);transition:width .4s ease}
+.ve-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#434CB6,#7c3aed);transition:width .4s ease}
 
 /* Processing card */
 .ve-proc-card{background:#fff;border-radius:14px;border:1px solid #e5e7eb;padding:3rem 2rem;text-align:center}
-.ve-proc-spin{width:52px;height:52px;border:3px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:ve-spin .8s linear infinite}
+.ve-proc-spin{width:52px;height:52px;border:3px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:ve-spin .8s linear infinite}
 @keyframes ve-spin{to{transform:rotate(360deg)}}
 
 /* Stage indicator */
 .ve-stage{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:#6b7280;justify-content:center}
 .ve-stage-dot{width:6px;height:6px;border-radius:50%;background:#e5e7eb;flex-shrink:0}
 .ve-stage-dot.done{background:#10b981}
-.ve-stage-dot.active{background:#4f46e5;animation:ve-pulse 1s ease-in-out infinite}
+.ve-stage-dot.active{background:#434CB6;animation:ve-pulse 1s ease-in-out infinite}
 @keyframes ve-pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* Comparison (done phase) */
 .ve-compare-tab{padding:.3rem .7rem;font-size:.78rem;font-weight:600;cursor:pointer;border-radius:6px;color:#6b7280;border:1px solid transparent}
-.ve-compare-tab.active{background:#fff;color:#4f46e5;border-color:#c7d2fe}
+.ve-compare-tab.active{background:#fff;color:#434CB6;border-color:#CDD0EE}
 
 /* Result stat */
 .ve-stat-box{background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:.75rem 1rem;text-align:center}
@@ -120,7 +120,7 @@
 <div class="ve-hero">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
     <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-      <div style="width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#5B62C5,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
         </svg>
@@ -133,7 +133,7 @@
             Browser-Only &bull; Powered by FFmpeg.wasm
           </span>
         </div>
-        <p class="text-sm" style="color:#c7d2fe">Trim, mute, resize and export MP4 videos entirely in your browser — nothing is uploaded anywhere.</p>
+        <p class="text-sm" style="color:#CDD0EE">Trim, mute, resize and export MP4 videos entirely in your browser — nothing is uploaded anywhere.</p>
       </div>
     </div>
   </div>
@@ -170,7 +170,7 @@
           @click="$refs.fileIn.click()"
         >
           <div class="ve-drop-icon">
-            <svg width="34" height="34" fill="none" stroke="#4f46e5" stroke-width="1.7" viewBox="0 0 24 24">
+            <svg width="34" height="34" fill="none" stroke="#434CB6" stroke-width="1.7" viewBox="0 0 24 24">
               <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
             </svg>
           </div>
@@ -513,7 +513,7 @@
         <div class="relative mb-6 mx-auto w-20 h-20">
           <div class="ve-proc-spin"></div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <svg width="22" height="22" fill="none" stroke="#4f46e5" stroke-width="1.8" viewBox="0 0 24 24">
+            <svg width="22" height="22" fill="none" stroke="#434CB6" stroke-width="1.8" viewBox="0 0 24 24">
               <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
             </svg>
           </div>

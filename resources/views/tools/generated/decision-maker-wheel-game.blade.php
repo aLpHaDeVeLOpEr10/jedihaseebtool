@@ -7,9 +7,9 @@
 
 <style>
 /* ── Decision Wheel Styles (prefix: dw-) ── */
-.dw-hero{background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 50%,#c7d2fe 100%);border-bottom:1px solid #c7d2fe;padding:2rem 0}
-.dw-hero-icon{width:56px;height:56px;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.dw-badge{display:inline-flex;align-items:center;gap:.375rem;background:#e0e7ff;border:1px solid #c7d2fe;color:#3730a3;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
+.dw-hero{background:linear-gradient(135deg,#F4F5FA 0%,#E9EAF7 50%,#CDD0EE 100%);border-bottom:1px solid #CDD0EE;padding:2rem 0}
+.dw-hero-icon{width:56px;height:56px;background:linear-gradient(135deg,#434CB6,#7c3aed);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dw-badge{display:inline-flex;align-items:center;gap:.375rem;background:#E9EAF7;border:1px solid #CDD0EE;color:#2F3479;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
 
 /* ── Two-column tool layout ── */
 .dw-layout{display:flex;flex-direction:column;gap:1.25rem}
@@ -24,12 +24,12 @@
 .dw-canvas-wrap canvas{width:100%;aspect-ratio:1;display:block}
 
 /* ── Spin button ── */
-.dw-spin-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;font-size:1.0625rem;font-weight:700;padding:.8rem 2.5rem;border-radius:12px;border:none;cursor:pointer;transition:all .15s;box-shadow:0 4px 14px rgba(79,70,229,.3);letter-spacing:.01em}
-.dw-spin-btn:hover:not(:disabled){background:linear-gradient(135deg,#4338ca,#6d28d9);transform:translateY(-1px);box-shadow:0 6px 22px rgba(79,70,229,.45)}
+.dw-spin-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:linear-gradient(135deg,#434CB6,#7c3aed);color:#fff;font-size:1.0625rem;font-weight:700;padding:.8rem 2.5rem;border-radius:12px;border:none;cursor:pointer;transition:all .15s;box-shadow:0 4px 14px rgba(67,76,182,.3);letter-spacing:.01em}
+.dw-spin-btn:hover:not(:disabled){background:linear-gradient(135deg,#383F99,#6d28d9);transform:translateY(-1px);box-shadow:0 6px 22px rgba(67,76,182,.45)}
 .dw-spin-btn:active:not(:disabled){transform:translateY(0)}
 .dw-spin-btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
 .dw-spin-btn.ready{animation:dw-glow 2.2s ease-in-out infinite}
-@keyframes dw-glow{0%,100%{box-shadow:0 4px 14px rgba(79,70,229,.3)}50%{box-shadow:0 4px 28px rgba(79,70,229,.55)}}
+@keyframes dw-glow{0%,100%{box-shadow:0 4px 14px rgba(67,76,182,.3)}50%{box-shadow:0 4px 28px rgba(67,76,182,.55)}}
 .dw-spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:dw-spin .7s linear infinite;flex-shrink:0}
 @keyframes dw-spin{to{transform:rotate(360deg)}}
 
@@ -38,8 +38,8 @@
 .dw-choice-item:hover{background:#f3f4f6}
 .dw-choice-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 1.5px rgba(0,0,0,.08)}
 .dw-choice-text{flex:1;font-size:.85rem;color:#1f2937;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.dw-edit-input{flex:1;padding:.2rem .4rem;border:1.5px solid #4f46e5;border-radius:5px;font-size:.85rem;color:#1f2937;background:#fff;min-width:0}
-.dw-edit-input:focus{outline:none;box-shadow:0 0 0 2px rgba(79,70,229,.15)}
+.dw-edit-input{flex:1;padding:.2rem .4rem;border:1.5px solid #434CB6;border-radius:5px;font-size:.85rem;color:#1f2937;background:#fff;min-width:0}
+.dw-edit-input:focus{outline:none;box-shadow:0 0 0 2px rgba(67,76,182,.15)}
 .dw-icon-btn{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;flex-shrink:0;transition:all .1s;background:transparent;color:#9ca3af;padding:0}
 .dw-icon-btn:hover{background:#e5e7eb;color:#374151}
 .dw-icon-btn.del:hover{background:#fee2e2;color:#dc2626}
@@ -48,21 +48,21 @@
 /* ── Add row ── */
 .dw-add-row{display:flex;gap:.5rem;margin-top:.625rem}
 .dw-add-input{flex:1;padding:.5rem .75rem;border:1.5px solid #e5e7eb;border-radius:8px;font-size:.875rem;color:#1f2937;background:#fff;transition:border-color .15s;min-width:0}
-.dw-add-input:focus{outline:none;border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,.1)}
-.dw-add-btn{display:inline-flex;align-items:center;gap:.25rem;background:#4f46e5;color:#fff;font-size:.875rem;font-weight:600;padding:.5rem .875rem;border-radius:8px;border:none;cursor:pointer;flex-shrink:0;transition:background .15s}
-.dw-add-btn:hover:not(:disabled){background:#4338ca}
+.dw-add-input:focus{outline:none;border-color:#434CB6;box-shadow:0 0 0 3px rgba(67,76,182,.1)}
+.dw-add-btn{display:inline-flex;align-items:center;gap:.25rem;background:#434CB6;color:#fff;font-size:.875rem;font-weight:600;padding:.5rem .875rem;border-radius:8px;border:none;cursor:pointer;flex-shrink:0;transition:background .15s}
+.dw-add-btn:hover:not(:disabled){background:#383F99}
 .dw-add-btn:disabled{opacity:.45;cursor:not-allowed}
 
 /* ── Count badge ── */
-.dw-count{display:inline-flex;align-items:center;justify-content:center;background:#e0e7ff;color:#4338ca;font-size:.7rem;font-weight:700;padding:.1rem .45rem;border-radius:999px;min-width:20px}
+.dw-count{display:inline-flex;align-items:center;justify-content:center;background:#E9EAF7;color:#383F99;font-size:.7rem;font-weight:700;padding:.1rem .45rem;border-radius:999px;min-width:20px}
 
 /* ── Result ── */
 .dw-result{padding:1.125rem 1.25rem;border-radius:12px;border:2.5px solid;text-align:center;animation:dw-pop .45s cubic-bezier(.34,1.56,.64,1);width:100%;max-width:380px}
 @keyframes dw-pop{from{transform:scale(.75);opacity:0}to{transform:scale(1);opacity:1}}
 .dw-result-label{font-size:.6875rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6b7280;margin-bottom:.25rem}
 .dw-result-text{font-size:1.5rem;font-weight:800;color:#111827;word-break:break-word;line-height:1.25}
-.dw-spin-again{display:inline-flex;align-items:center;gap:.375rem;background:#fff;border:1.5px solid #e5e7eb;color:#4f46e5;font-size:.875rem;font-weight:600;padding:.45rem 1rem;border-radius:8px;cursor:pointer;transition:all .12s;margin-top:.75rem}
-.dw-spin-again:hover{background:#eef2ff;border-color:#a5b4fc}
+.dw-spin-again{display:inline-flex;align-items:center;gap:.375rem;background:#fff;border:1.5px solid #e5e7eb;color:#434CB6;font-size:.875rem;font-weight:600;padding:.45rem 1rem;border-radius:8px;cursor:pointer;transition:all .12s;margin-top:.75rem}
+.dw-spin-again:hover{background:#F4F5FA;border-color:#AAAEE4}
 
 /* ── Empty state text ── */
 .dw-min-warn{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:.5rem .75rem;font-size:.8rem;color:#92400e;text-align:center;width:100%;max-width:380px}
@@ -70,12 +70,12 @@
 /* ── Action row below choices ── */
 .dw-action-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
 .dw-sm-btn{display:inline-flex;align-items:center;gap:.25rem;padding:.35rem .75rem;border-radius:7px;border:1.5px solid #e5e7eb;font-size:.8rem;font-weight:500;color:#6b7280;cursor:pointer;background:#fff;transition:all .12s}
-.dw-sm-btn:hover{border-color:#c7d2fe;color:#4338ca;background:#eef2ff}
+.dw-sm-btn:hover{border-color:#CDD0EE;color:#383F99;background:#F4F5FA}
 .dw-sm-btn.red:hover{border-color:#fca5a5;color:#dc2626;background:#fef2f2}
 
 /* ── Sidebar presets ── */
 .dw-preset-chip{display:inline-flex;align-items:center;padding:.3rem .7rem;border-radius:999px;border:1.5px solid #e5e7eb;font-size:.8rem;font-weight:500;color:#4b5563;cursor:pointer;background:#fff;transition:all .12s;white-space:nowrap;margin:.2rem .2rem .2rem 0}
-.dw-preset-chip:hover{border-color:#a5b4fc;color:#4338ca;background:#eef2ff}
+.dw-preset-chip:hover{border-color:#AAAEE4;color:#383F99;background:#F4F5FA}
 
 /* ── History ── */
 .dw-hist-item{display:flex;align-items:center;gap:.5rem;padding:.375rem .5rem;border-radius:6px;background:#f9fafb;border:1px solid #f3f4f6;margin-bottom:.3rem}
@@ -672,8 +672,8 @@ function dwTool() {
       ctx.lineTo(cx - 11, tipY - PTR_H + 4);
       ctx.lineTo(cx + 11, tipY - PTR_H + 4);
       ctx.closePath();
-      ctx.fillStyle   = '#4f46e5';
-      ctx.shadowColor = 'rgba(79,70,229,0.5)';
+      ctx.fillStyle   = '#434CB6';
+      ctx.shadowColor = 'rgba(67,76,182,0.5)';
       ctx.shadowBlur  = 10;
       ctx.fill();
       ctx.shadowBlur  = 0;
@@ -712,7 +712,7 @@ function dwTool() {
       ctx.lineTo(cx - 11, tipY - 22);
       ctx.lineTo(cx + 11, tipY - 22);
       ctx.closePath();
-      ctx.fillStyle   = '#c7d2fe';
+      ctx.fillStyle   = '#CDD0EE';
       ctx.shadowColor = 'rgba(199,210,254,0.4)';
       ctx.shadowBlur  = 8;
       ctx.fill();

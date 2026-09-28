@@ -10,12 +10,12 @@
 
 /* ── Landing ─────────────────────────────────────────────────────── */
 .pea-landing{min-height:calc(100vh - 64px);background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);display:flex;align-items:center;justify-content:center;padding:40px 16px}
-.pea-drop{border:2px dashed #4f46e5;border-radius:16px;padding:48px 40px;text-align:center;background:rgba(99,102,241,.05);transition:all .2s;cursor:pointer;max-width:560px;width:100%}
-.pea-drop.over{border-color:#818cf8;background:rgba(99,102,241,.12)}
+.pea-drop{border:2px dashed #434CB6;border-radius:16px;padding:48px 40px;text-align:center;background:rgba(91,98,197,.05);transition:all .2s;cursor:pointer;max-width:560px;width:100%}
+.pea-drop.over{border-color:#7B81D3;background:rgba(91,98,197,.12)}
 .pea-drop svg{width:56px;height:56px;margin:0 auto 16px;opacity:.7}
 .pea-quick-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
 .pea-quick-btn{padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;border:1px solid #374151;background:#1f2937;color:#e5e7eb;transition:all .15s}
-.pea-quick-btn:hover{background:#374151;border-color:#6366f1;color:#a5b4fc}
+.pea-quick-btn:hover{background:#374151;border-color:#5B62C5;color:#AAAEE4}
 
 /* ── Editor shell ────────────────────────────────────────────────── */
 .pea-root{display:flex;flex-direction:column;height:calc(100vh - 64px);background:#111827;color:#e5e7eb;overflow:hidden}
@@ -25,7 +25,7 @@
 .pea-sep{width:1px;height:24px;background:#374151;margin:0 4px;flex-shrink:0}
 .pea-tbtn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;border:none;background:transparent;color:#9ca3af;cursor:pointer;font-size:14px;transition:background .1s,color .1s;flex-shrink:0;padding:0;position:relative}
 .pea-tbtn:hover{background:#374151;color:#e5e7eb}
-.pea-tbtn.active{background:#6366f1;color:#fff}
+.pea-tbtn.active{background:#5B62C5;color:#fff}
 .pea-tbtn:disabled{opacity:.4;cursor:not-allowed}
 .pea-tbtn-wide{padding:0 10px;width:auto;font-size:12px;gap:4px}
 .pea-tbtn-green{color:#34d399!important}
@@ -45,7 +45,7 @@
 .pea-drag-hint{font-size:9px;color:#4b5563;letter-spacing:.5px}
 .pea-thumbs{flex:1;overflow-y:auto;padding:8px 6px;display:flex;flex-direction:column;gap:6px}
 .pea-tcard{position:relative;border-radius:6px;border:2px solid transparent;overflow:hidden;background:#374151;cursor:pointer;transition:border-color .15s;user-select:none}
-.pea-tcard.cur{border-color:#6366f1}
+.pea-tcard.cur{border-color:#5B62C5}
 .pea-tcard:hover:not(.cur){border-color:#4b5563}
 .pea-tcard img,.pea-tcard canvas{width:100%;display:block}
 .pea-tcard-ph{height:90px;display:flex;align-items:center;justify-content:center;color:#4b5563;font-size:11px}
@@ -54,11 +54,11 @@
 .pea-tcard:hover .pea-tacts{display:flex}
 .pea-tacts-row{display:flex;gap:2px}
 .pea-tbtn-xs{background:rgba(0,0,0,.75);border:none;color:#fff;border-radius:3px;width:20px;height:20px;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;line-height:1}
-.pea-tbtn-xs:hover{background:#6366f1}
+.pea-tbtn-xs:hover{background:#5B62C5}
 .pea-pages-ops{padding:6px;border-top:1px solid #374151;display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap}
 .pea-page-op{flex:1;min-width:calc(50% - 2px);padding:4px 0;border-radius:5px;border:none;font-size:11px;cursor:pointer;font-weight:500;color:#9ca3af;background:#374151;transition:all .1s;white-space:nowrap;text-align:center}
 .pea-page-op:hover{background:#4b5563;color:#e5e7eb}
-.sortable-ghost{opacity:.4;background:#6366f1!important;border-color:#818cf8!important}
+.sortable-ghost{opacity:.4;background:#5B62C5!important;border-color:#7B81D3!important}
 .sortable-chosen{cursor:grabbing!important}
 
 /* ── Canvas area ─────────────────────────────────────────────────── */
@@ -67,7 +67,7 @@
 .pea-page-wrap canvas{display:block}
 .pea-page-wrap .canvas-container{position:absolute!important;top:0!important;left:0!important}
 .pea-page-wrap .canvas-container,.pea-page-wrap .lower-canvas,.pea-page-wrap .upper-canvas{background:transparent!important}
-.pea-spinner{width:36px;height:36px;border:3px solid #374151;border-top-color:#6366f1;border-radius:50%;animation:peaSpin .7s linear infinite;margin:0}
+.pea-spinner{width:36px;height:36px;border:3px solid #374151;border-top-color:#5B62C5;border-radius:50%;animation:peaSpin .7s linear infinite;margin:0}
 @keyframes peaSpin{to{transform:rotate(360deg)}}
 
 /* ── Props panel ─────────────────────────────────────────────────── */
@@ -76,7 +76,7 @@
 .pea-prow{margin-bottom:10px}
 .pea-prow label{display:block;font-size:11px;color:#6b7280;margin-bottom:3px}
 .pea-prow input[type=color]{width:100%;height:28px;border-radius:4px;border:1px solid #374151;background:#374151;cursor:pointer;padding:1px;display:block}
-.pea-prow input[type=range]{width:100%;accent-color:#6366f1;margin-top:2px}
+.pea-prow input[type=range]{width:100%;accent-color:#5B62C5;margin-top:2px}
 .pea-prow input[type=number],.pea-prow select{width:100%;background:#374151;border:1px solid #4b5563;border-radius:4px;color:#e5e7eb;padding:4px 8px;font-size:12px}
 .pea-prow select{cursor:pointer}
 .pea-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
@@ -92,7 +92,7 @@
 
 /* ── Buttons ─────────────────────────────────────────────────────── */
 .pea-btn{padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;border:none;font-weight:500;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
-.pea-btn-primary{background:#6366f1;color:#fff}.pea-btn-primary:hover{background:#4f46e5}
+.pea-btn-primary{background:#5B62C5;color:#fff}.pea-btn-primary:hover{background:#434CB6}
 .pea-btn-secondary{background:#374151;color:#e5e7eb;border:1px solid #4b5563}.pea-btn-secondary:hover{background:#4b5563}
 .pea-btn-danger{background:#dc2626;color:#fff}.pea-btn-danger:hover{background:#b91c1c}
 .pea-btn-sm{padding:4px 10px;font-size:11px}
@@ -115,7 +115,7 @@
 .pea-divider{height:1px;background:#374151;margin:12px 0}
 .pea-presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .pea-size-btn{padding:5px 12px;border-radius:6px;border:1px solid #4b5563;background:#374151;color:#9ca3af;cursor:pointer;font-size:12px;transition:all .1s}
-.pea-size-btn:hover,.pea-size-btn.on{background:#6366f1;border-color:#6366f1;color:#fff}
+.pea-size-btn:hover,.pea-size-btn.on{background:#5B62C5;border-color:#5B62C5;color:#fff}
 </style>
 
 <div x-data="pdfAdvEditor()" x-init="init()" id="pea-app">
@@ -126,14 +126,14 @@
     x-on:dragleave="dragging=false"
     x-on:drop.prevent="dragging=false; loadFile($event.dataTransfer.files[0])">
     <div class="pea-drop" :class="dragging && 'over'" @click="$refs.fi0.click()">
-      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:#6366f1">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:#5B62C5">
         <path stroke-linecap="round" stroke-linejoin="round"
               d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
       </svg>
       <h1 class="text-2xl font-bold text-white mb-2">Professional PDF Editor</h1>
       <p class="text-sm text-gray-400 mb-1">Drop a PDF here, or click to browse</p>
       <p class="text-xs text-gray-500 mb-4">Text · Shapes · Redact · Sign · Highlight · Watermark · Merge &amp; Split</p>
-      <p class="text-xs font-semibold" style="color:#6366f1">🔒 100% private — nothing ever leaves your device</p>
+      <p class="text-xs font-semibold" style="color:#5B62C5">🔒 100% private — nothing ever leaves your device</p>
       <div class="pea-quick-btns">
         <button class="pea-quick-btn" @click.stop="$refs.fi0.click()">📂 Open PDF</button>
         <button class="pea-quick-btn" @click.stop="openMergeModal()">⊕ Merge PDFs</button>
@@ -179,7 +179,7 @@
       <button class="pea-tbtn" :class="tool==='ellipse'&&'active'"   @click="setTool('ellipse')"   title="Ellipse">◯</button>
       <button class="pea-tbtn" :class="tool==='line'&&'active'"      @click="setTool('line')"      title="Line" style="font-size:16px">╱</button>
       <button class="pea-tbtn" :class="tool==='arrow'&&'active'"     @click="setTool('arrow')"     title="Arrow" style="font-size:16px">→</button>
-      <button class="pea-tbtn" :class="tool==='redact'&&'active'"    @click="setTool('redact')"    title="Redact / Cover Text" style="font-size:12px;background:tool==='redact'?'#6366f1':'transparent'">⬛</button>
+      <button class="pea-tbtn" :class="tool==='redact'&&'active'"    @click="setTool('redact')"    title="Redact / Cover Text" style="font-size:12px;background:tool==='redact'?'#5B62C5':'transparent'">⬛</button>
       <div class="pea-sep"></div>
 
       {{-- Draw / Erase --}}
@@ -470,9 +470,9 @@
     {{-- Status Bar --}}
     <div class="pea-status">
       <span>Page <span x-text="curPage+1"></span>/<span x-text="pages.length"></span></span>
-      <span>Tool: <span x-text="tool" style="color:#a5b4fc;text-transform:capitalize"></span></span>
+      <span>Tool: <span x-text="tool" style="color:#AAAEE4;text-transform:capitalize"></span></span>
       <span>Zoom: <span x-text="Math.round(zoom*100)+'%'"></span></span>
-      <span x-show="_clipboard" style="color:#a5b4fc">📋 Clipboard ready</span>
+      <span x-show="_clipboard" style="color:#AAAEE4">📋 Clipboard ready</span>
       <span class="pea-status-ok" x-show="statusOk" x-text="statusOk"></span>
       <span class="pea-status-err" x-show="statusErr" x-text="statusErr"></span>
     </div>
@@ -519,7 +519,7 @@
       <div class="pea-wm-preview" :style="`color:${wmColor};font-size:${wmSz/2}px;opacity:${wmOp}`" x-text="wmText||'WATERMARK'"></div>
       <div class="pea-modal-foot">
         <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;cursor:pointer;margin-right:auto">
-          <input type="checkbox" x-model="wmAll" style="accent-color:#6366f1"> All pages
+          <input type="checkbox" x-model="wmAll" style="accent-color:#5B62C5"> All pages
         </label>
         <button class="pea-btn pea-btn-secondary" @click="showWm=false">Cancel</button>
         <button class="pea-btn pea-btn-primary" @click="applyWm()">Apply</button>
@@ -567,7 +567,7 @@
         <div style="max-height:220px;overflow-y:auto">
           <template x-for="r in findHits" :key="r.page">
             <div class="pea-find-hit" @click="switchPage(r.page); showFind=false">
-              <strong style="color:#a5b4fc">Page <span x-text="r.page+1"></span></strong>
+              <strong style="color:#AAAEE4">Page <span x-text="r.page+1"></span></strong>
               <span style="color:#9ca3af;margin-left:6px" x-text="r.snippet"></span>
             </div>
           </template>
@@ -585,7 +585,7 @@
       <div>
         <template x-for="(f,i) in mFiles" :key="i">
           <div class="pea-merge-row">
-            <span style="color:#a5b4fc;margin-right:8px" x-text="i+1+'. '"></span>
+            <span style="color:#AAAEE4;margin-right:8px" x-text="i+1+'. '"></span>
             <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" x-text="f.name"></span>
             <button @click="mFiles.splice(i,1)" style="background:none;border:none;color:#f87171;cursor:pointer;margin-left:8px">✕</button>
           </div>

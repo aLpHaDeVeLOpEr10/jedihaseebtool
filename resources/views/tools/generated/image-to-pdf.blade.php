@@ -9,26 +9,26 @@
 <style>
 /* ══════════════════════════════════════════════════════════
    Image to PDF  —  prefix: ip-
-   Brand: indigo #4f46e5 (brand-600)
+   Brand: indigo #434CB6 (brand-600)
    Library: jsPDF 2.5.1 (CDN, UMD)
    All processing is 100 % client-side.
 ══════════════════════════════════════════════════════════ */
 
 /* ── Drop zone ─────────────────────────────────────────── */
 .ip-drop {
-  border: 2.5px dashed #c7d2fe;
+  border: 2.5px dashed #CDD0EE;
   border-radius: 1rem;
   padding: 2.5rem 1.5rem;
   text-align: center;
   cursor: pointer;
   transition: all .18s;
-  background: #eef2ff;
+  background: #F4F5FA;
   position: relative;
   user-select: none;
 }
 .ip-drop:hover, .ip-drop.ip-drag-hover {
-  border-color: #4f46e5;
-  background: #e0e7ff;
+  border-color: #434CB6;
+  background: #E9EAF7;
   transform: scale(1.01);
 }
 .ip-drop.ip-drop-sm {
@@ -51,16 +51,16 @@
 
 .ip-img-card {
   position: relative;
-  border: 1.5px solid #e0e7ff;
+  border: 1.5px solid #E9EAF7;
   border-radius: .875rem;
   overflow: hidden;
   background: #fff;
   transition: box-shadow .15s, border-color .15s, opacity .15s;
   cursor: grab;
 }
-.ip-img-card:hover { box-shadow: 0 4px 12px rgba(79,70,229,.12); border-color: #a5b4fc; }
+.ip-img-card:hover { box-shadow: 0 4px 12px rgba(67,76,182,.12); border-color: #AAAEE4; }
 .ip-img-card.ip-dragging  { opacity: .4; }
-.ip-img-card.ip-drop-here { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,.2); }
+.ip-img-card.ip-drop-here { border-color: #434CB6; box-shadow: 0 0 0 3px rgba(67,76,182,.2); }
 
 .ip-thumb-wrap {
   width: 100%; padding-top: 75%; /* 4:3 ratio */
@@ -79,7 +79,7 @@
 /* Number badge */
 .ip-num-badge {
   position: absolute; top: .4rem; left: .4rem;
-  background: rgba(79,70,229,.85); color: #fff;
+  background: rgba(67,76,182,.85); color: #fff;
   font-size: .62rem; font-weight: 800;
   padding: .15rem .45rem; border-radius: 9999px;
   pointer-events: none;
@@ -101,7 +101,7 @@
 .ip-drag-handle {
   position: absolute; top: 50%; right: .35rem;
   transform: translateY(-50%);
-  color: #c7d2fe; font-size: .95rem; cursor: grab;
+  color: #CDD0EE; font-size: .95rem; cursor: grab;
   padding: .2rem;
   pointer-events: none; /* handled by parent draggable */
 }
@@ -124,26 +124,26 @@
 
 .ip-select {
   width: 100%; padding: .5rem .85rem;
-  border: 1.5px solid #e0e7ff; border-radius: .75rem;
+  border: 1.5px solid #E9EAF7; border-radius: .75rem;
   font-size: .82rem; font-weight: 600; color: #374151;
   background: #fff; outline: none; cursor: pointer;
   transition: border-color .14s;
 }
-.ip-select:focus { border-color: #818cf8; box-shadow: 0 0 0 3px rgba(99,102,241,.12); }
+.ip-select:focus { border-color: #7B81D3; box-shadow: 0 0 0 3px rgba(91,98,197,.12); }
 
-.ip-range { width: 100%; height: 6px; border-radius: 9999px; accent-color: #4f46e5; cursor: pointer; }
+.ip-range { width: 100%; height: 6px; border-radius: 9999px; accent-color: #434CB6; cursor: pointer; }
 
 /* ── Fit option buttons ────────────────────────────────── */
 .ip-fit-group { display: flex; gap: .5rem; flex-wrap: wrap; }
 .ip-fit-btn {
   flex: 1; min-width: 5rem; padding: .5rem .6rem;
-  border: 1.5px solid #e0e7ff; border-radius: .75rem;
+  border: 1.5px solid #E9EAF7; border-radius: .75rem;
   font-size: .75rem; font-weight: 700; cursor: pointer;
   text-align: center; transition: all .14s;
   background: #fff; color: #6b7280;
 }
-.ip-fit-btn:hover { border-color: #818cf8; color: #4f46e5; background: #eef2ff; }
-.ip-fit-btn.ip-fit-active { background: #eef2ff; border-color: #4f46e5; color: #4338ca; }
+.ip-fit-btn:hover { border-color: #7B81D3; color: #434CB6; background: #F4F5FA; }
+.ip-fit-btn.ip-fit-active { background: #F4F5FA; border-color: #434CB6; color: #383F99; }
 
 /* ── Section divider ───────────────────────────────────── */
 .ip-div {
@@ -159,21 +159,21 @@
   font-size: 1rem; font-weight: 800; cursor: pointer;
   display: flex; align-items: center; justify-content: center; gap: .5rem;
   transition: all .16s; border: none;
-  background: linear-gradient(135deg, #3730a3, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, #2F3479, #434CB6, #5B62C5);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(79,70,229,.38);
+  box-shadow: 0 4px 14px rgba(67,76,182,.38);
 }
-.ip-gen-btn:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(79,70,229,.55); transform: translateY(-1px); }
+.ip-gen-btn:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(67,76,182,.55); transform: translateY(-1px); }
 .ip-gen-btn:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* ── Progress bar ──────────────────────────────────────── */
 .ip-prog-track {
   width: 100%; height: .6rem; border-radius: 9999px;
-  background: #e0e7ff; overflow: hidden;
+  background: #E9EAF7; overflow: hidden;
 }
 .ip-prog-fill {
   height: 100%; border-radius: 9999px;
-  background: linear-gradient(90deg, #4338ca, #4f46e5, #6366f1);
+  background: linear-gradient(90deg, #383F99, #434CB6, #5B62C5);
   transition: width .25s ease; position: relative; overflow: hidden;
 }
 .ip-prog-fill::after {
@@ -199,8 +199,8 @@
 .ip-privacy {
   display:flex; align-items:center; gap:.5rem;
   padding:.5rem .85rem; border-radius:.75rem;
-  background:#eef2ff; border:1px solid #c7d2fe;
-  font-size:.75rem; color:#3730a3; font-weight:500;
+  background:#F4F5FA; border:1px solid #CDD0EE;
+  font-size:.75rem; color:#2F3479; font-weight:500;
 }
 
 /* ── Stat pill ─────────────────────────────────────────── */
@@ -208,7 +208,7 @@
   display:inline-flex; align-items:center; gap:.3rem;
   padding:.2rem .6rem; border-radius:9999px;
   font-size:.68rem; font-weight:700;
-  background:#eef2ff; color:#3730a3; border:1.5px solid #c7d2fe;
+  background:#F4F5FA; color:#2F3479; border:1.5px solid #CDD0EE;
 }
 
 /* ── Spinner ───────────────────────────────────────────── */
@@ -318,7 +318,7 @@
                   <div class="ip-thumb-wrap">
                     {{-- Loading spinner --}}
                     <div x-show="img.loading" class="ip-thumb-loading">
-                      <span class="ip-spin" style="color:#818cf8;width:1.4rem;height:1.4rem;border-width:2.5px"></span>
+                      <span class="ip-spin" style="color:#7B81D3;width:1.4rem;height:1.4rem;border-width:2.5px"></span>
                     </div>
 
                     {{-- Thumbnail image --}}
@@ -646,7 +646,7 @@
 <script>
 /* ─────────────────────────────────────────────────────────────
    Image to PDF — Alpine.js component   (prefix: ip-)
-   Brand: indigo (#4f46e5)
+   Brand: indigo (#434CB6)
 
    Flow:
      1. User drops / selects images (JPG, PNG, WebP)

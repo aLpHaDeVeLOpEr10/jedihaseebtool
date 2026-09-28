@@ -10,22 +10,22 @@
 /* ── Image Background Remover (prefix: bgr-) ── */
 
 /* Upload drop zone */
-.bgr-drop{border:2px dashed #a5b4fc;border-radius:16px;padding:3rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
-.bgr-drop:hover,.bgr-drop.over{border-color:#4f46e5;background:#eef2ff}
-.bgr-drop-icon{width:64px;height:64px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.bgr-drop{border:2px dashed #AAAEE4;border-radius:16px;padding:3rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
+.bgr-drop:hover,.bgr-drop.over{border-color:#434CB6;background:#F4F5FA}
+.bgr-drop-icon{width:64px;height:64px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
 
 /* Checkerboard transparency background */
 .bgr-checker{background-image:repeating-conic-gradient(#e5e7eb 0% 25%,#f9fafb 0% 50%);background-size:18px 18px}
 
 /* Toolbar view tabs */
 .bgr-tab{padding:.375rem .875rem;font-size:.8rem;font-weight:500;color:#6b7280;cursor:pointer;border-radius:7px;transition:all .12s;border:1.5px solid transparent}
-.bgr-tab.active{background:#fff;color:#4f46e5;border-color:#c7d2fe;font-weight:600}
+.bgr-tab.active{background:#fff;color:#434CB6;border-color:#CDD0EE;font-weight:600}
 .bgr-tab:not(.active):hover{background:#f3f4f6;color:#374151}
 
 /* Range input */
-.bgr-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#4f46e5 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
-.bgr-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 1px 4px rgba(79,70,229,.35);cursor:pointer}
-.bgr-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;cursor:pointer;border:none}
+.bgr-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#434CB6 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
+.bgr-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 1px 4px rgba(67,76,182,.35);cursor:pointer}
+.bgr-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;cursor:pointer;border:none}
 
 /* Color swatch input */
 .bgr-swatch{-webkit-appearance:none;appearance:none;width:40px;height:40px;border:2px solid #e5e7eb;border-radius:8px;cursor:pointer;padding:2px;background:none}
@@ -37,7 +37,7 @@
 
 /* Processing overlay */
 .bgr-overlay{position:absolute;inset:0;background:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;z-index:5}
-.bgr-spin{width:36px;height:36px;border:3px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:bgr-spin .8s linear infinite}
+.bgr-spin{width:36px;height:36px;border:3px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:bgr-spin .8s linear infinite}
 @keyframes bgr-spin{to{transform:rotate(360deg)}}
 
 /* Tip box */
@@ -48,7 +48,7 @@
 .bgr-crosshair-hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;font-size:.72rem;padding:.3rem .75rem;border-radius:999px;pointer-events:none;white-space:nowrap;z-index:10}
 
 /* Section label */
-.bgr-sec{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#4f46e5;margin-bottom:.5rem}
+.bgr-sec{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#434CB6;margin-bottom:.5rem}
 
 /* Spinning download button */
 .bgr-dl-spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:bgr-spin .7s linear infinite}
@@ -59,7 +59,7 @@
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-7">
     <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">
+           style="background:linear-gradient(135deg,#5B62C5,#8b5cf6)">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <rect x="3" y="3" width="18" height="18" rx="2"/>
           <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -111,7 +111,7 @@
         @click="$refs.fileIn.click()"
       >
         <div class="bgr-drop-icon">
-          <svg width="32" height="32" fill="none" stroke="#4f46e5" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg width="32" height="32" fill="none" stroke="#434CB6" stroke-width="1.8" viewBox="0 0 24 24">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
           </svg>
         </div>

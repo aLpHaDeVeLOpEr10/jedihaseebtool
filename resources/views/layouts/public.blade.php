@@ -109,7 +109,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/logo-icon-96.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/images/logo-icon-512.png">
     <link rel="apple-touch-icon" href="/images/logo-icon-180.png">
-    <meta name="theme-color" content="#4c55a5">
+    <meta name="theme-color" content="#434CB6">
 
     {{-- Inter is self-hosted (see resources/css/app.css). Preloading the latin
     file starts the download in parallel with the stylesheet, so text

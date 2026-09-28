@@ -506,7 +506,7 @@ function colorPicker() {
         alpha: 100, /* opacity 0-100       */
 
         /* ── UI state ── */
-        prevColor: '#4f46e5',
+        prevColor: '#434CB6',
         _picking:  false,
         _foc:      null,   /* 'hex'|'rgb'|'hsl'|null — which input is focused */
         copiedKey: '',

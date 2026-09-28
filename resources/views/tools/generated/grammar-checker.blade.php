@@ -35,7 +35,7 @@ del.gc-del {
     background: white; font-size: .82rem;
     transition: border-color .12s, background .12s;
 }
-.gc-issue:hover { border-color: #c7d2fe; background: #f8faff; }
+.gc-issue:hover { border-color: #CDD0EE; background: #f8faff; }
 
 /* ── Issue type badge ── */
 .gc-badge {

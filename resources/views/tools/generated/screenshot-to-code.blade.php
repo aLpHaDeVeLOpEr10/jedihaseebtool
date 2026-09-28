@@ -11,18 +11,18 @@
    ══════════════════════════════════════════════ */
 
 /* ── Drop zone ── */
-.stc-drop{border:2px dashed #a5b4fc;border-radius:18px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
-.stc-drop:hover,.stc-drop.over{border-color:#4f46e5;background:#eef2ff}
-.stc-drop-icon{width:68px;height:68px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.stc-drop{border:2px dashed #AAAEE4;border-radius:18px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;background:#f8f7ff;transition:border-color .2s,background .2s;user-select:none}
+.stc-drop:hover,.stc-drop.over{border-color:#434CB6;background:#F4F5FA}
+.stc-drop-icon{width:68px;height:68px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
 
 /* ── Option tabs (framework) ── */
 .stc-fw-tab{flex:1;padding:.5rem .75rem;font-size:.78rem;font-weight:600;text-align:center;cursor:pointer;border-radius:9px;border:1.5px solid #e5e7eb;background:#fff;color:#6b7280;transition:all .13s;white-space:nowrap}
-.stc-fw-tab:hover{background:#f5f3ff;border-color:#c4b5fd;color:#4f46e5}
-.stc-fw-tab.active{background:#4f46e5;border-color:#4f46e5;color:#fff;box-shadow:0 2px 8px rgba(79,70,229,.28)}
+.stc-fw-tab:hover{background:#f5f3ff;border-color:#c4b5fd;color:#434CB6}
+.stc-fw-tab.active{background:#434CB6;border-color:#434CB6;color:#fff;box-shadow:0 2px 8px rgba(67,76,182,.28)}
 
 /* ── Progress bar ── */
 .stc-progress-track{height:6px;background:#e5e7eb;border-radius:999px;overflow:hidden}
-.stc-progress-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:999px;transition:width .12s linear}
+.stc-progress-fill{height:100%;background:linear-gradient(90deg,#434CB6,#7c3aed);border-radius:999px;transition:width .12s linear}
 
 /* ── Code output ── */
 .stc-code-wrap{position:relative;border-radius:14px;overflow:hidden}
@@ -35,8 +35,8 @@
 
 /* ── Output tabs ── */
 .stc-tab{padding:.45rem .9rem;font-size:.75rem;font-weight:600;cursor:pointer;border-radius:8px;border:1.5px solid transparent;color:#6b7280;transition:all .12s;white-space:nowrap}
-.stc-tab:hover{background:#f5f3ff;color:#4f46e5}
-.stc-tab.active{background:#eef2ff;border-color:#4f46e5;color:#4f46e5}
+.stc-tab:hover{background:#f5f3ff;color:#434CB6}
+.stc-tab.active{background:#F4F5FA;border-color:#434CB6;color:#434CB6}
 
 /* ── Color palette strip ── */
 .stc-swatch{width:36px;height:36px;border-radius:8px;border:2px solid rgba(0,0,0,.08);flex-shrink:0;cursor:pointer;transition:transform .12s;position:relative}
@@ -48,8 +48,8 @@
 .stc-preview-frame{width:100%;border:none;border-radius:0 0 14px 14px;background:#fff;display:block}
 
 /* ── Spinner ── */
-.stc-spin{width:36px;height:36px;border:3px solid #e0e7ff;border-top-color:#4f46e5;border-radius:50%;animation:stc-rot .8s linear infinite}
-.stc-spin-sm{width:14px;height:14px;border:2px solid rgba(79,70,229,.25);border-top-color:#4f46e5;border-radius:50%;animation:stc-rot .7s linear infinite;flex-shrink:0}
+.stc-spin{width:36px;height:36px;border:3px solid #E9EAF7;border-top-color:#434CB6;border-radius:50%;animation:stc-rot .8s linear infinite}
+.stc-spin-sm{width:14px;height:14px;border:2px solid rgba(67,76,182,.25);border-top-color:#434CB6;border-radius:50%;animation:stc-rot .7s linear infinite;flex-shrink:0}
 @keyframes stc-rot{to{transform:rotate(360deg)}}
 
 /* ── Info boxes ── */
@@ -57,7 +57,7 @@
 .stc-info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.6rem .875rem;font-size:.78rem;color:#1d4ed8;display:flex;gap:.45rem;align-items:flex-start}
 
 /* ── Section label ── */
-.stc-sec{font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#4f46e5;margin-bottom:.5rem}
+.stc-sec{font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#434CB6;margin-bottom:.5rem}
 
 /* ── Image preview ── */
 .stc-img-preview{width:100%;max-h-44;object-fit:contain;display:block;border-radius:10px;border:1px solid #e5e7eb}
@@ -81,7 +81,7 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-7">
     <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">
+           style="background:linear-gradient(135deg,#5B62C5,#8b5cf6)">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <rect x="2" y="3" width="20" height="14" rx="2"/>
           <polyline points="8 21 12 17 16 21"/>
@@ -139,7 +139,7 @@
                @drop.prevent="onDrop($event)"
                @click="$refs.fileInput.click()">
             <div class="stc-drop-icon">
-              <svg width="28" height="28" fill="none" stroke="#6366f1" stroke-width="1.8" viewBox="0 0 24 24">
+              <svg width="28" height="28" fill="none" stroke="#5B62C5" stroke-width="1.8" viewBox="0 0 24 24">
                 <rect x="2" y="3" width="20" height="14" rx="2"/>
                 <polyline points="8 21 12 17 16 21"/>
                 <line x1="12" y1="17" x2="12" y2="21"/>
@@ -284,8 +284,8 @@
       {{-- Idle placeholder --}}
       <div class="card" x-show="!generated && !processing">
         <div class="flex flex-col items-center justify-center py-20 px-6 text-center">
-          <div style="width:80px;height:80px;background:linear-gradient(135deg,#e0e7ff,#c7d2fe);border-radius:22px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-            <svg width="36" height="36" fill="none" stroke="#6366f1" stroke-width="1.5" viewBox="0 0 24 24">
+          <div style="width:80px;height:80px;background:linear-gradient(135deg,#E9EAF7,#CDD0EE);border-radius:22px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+            <svg width="36" height="36" fill="none" stroke="#5B62C5" stroke-width="1.5" viewBox="0 0 24 24">
               <polyline points="16 18 22 12 16 6"/>
               <polyline points="8 6 2 12 8 18"/>
             </svg>
@@ -726,7 +726,7 @@ function stcGenerator() {
       /* Primary = most saturated non-neutral */
       var colorful = tagged.filter(function(c){ return c.sat > 0.15 && Math.abs(c.r-c.g)>20 || Math.abs(c.g-c.b)>20 || Math.abs(c.r-c.b)>20; });
       colorful.sort(function(a,b){ return b.sat - a.sat; });
-      var primary   = colorful[0] || { r:79, g:70, b:229, hex:'#4f46e5', lum:80, sat:0.8 };
+      var primary   = colorful[0] || { r:79, g:70, b:229, hex:'#434CB6', lum:80, sat:0.8 };
       var secondary = colorful[1] || { r:124, g:58, b:237, hex:'#7c3aed', lum:80, sat:0.7 };
 
       /* Navbar color = average of top 8% of image */

@@ -8,7 +8,7 @@
 /* ── Result text box ── */
 .result-box {
     background: #f8faff;
-    border: 2px solid #e0e7ff;
+    border: 2px solid #E9EAF7;
     border-radius: 1rem;
     padding: 1.25rem 1.5rem;
     font-family: 'Inter', ui-sans-serif, sans-serif;
@@ -19,7 +19,7 @@
     white-space: pre-wrap;
     min-height: 80px;
 }
-.result-box.multi { border-left: 4px solid #4f46e5; }
+.result-box.multi { border-left: 4px solid #434CB6; }
 
 /* ── Scramble-in animation ── */
 @keyframes scrambleIn {
@@ -170,7 +170,7 @@
                 {{-- Skip short words toggle --}}
                 <label class="flex items-center gap-3 cursor-pointer select-none">
                     <span class="toggle-track"
-                          :style="skipShort ? 'background:#4f46e5' : 'background:#d1d5db'"
+                          :style="skipShort ? 'background:#434CB6' : 'background:#d1d5db'"
                           @click="skipShort = !skipShort; results = []">
                         <span class="toggle-thumb"
                               :style="skipShort ? 'transform:translateX(1.25rem)' : ''"></span>
@@ -182,7 +182,7 @@
                 {{-- Avoid same-as-input toggle --}}
                 <label class="flex items-center gap-3 cursor-pointer select-none">
                     <span class="toggle-track"
-                          :style="avoidSame ? 'background:#4f46e5' : 'background:#d1d5db'"
+                          :style="avoidSame ? 'background:#434CB6' : 'background:#d1d5db'"
                           @click="avoidSame = !avoidSame; results = []">
                         <span class="toggle-thumb"
                               :style="avoidSame ? 'transform:translateX(1.25rem)' : ''"></span>

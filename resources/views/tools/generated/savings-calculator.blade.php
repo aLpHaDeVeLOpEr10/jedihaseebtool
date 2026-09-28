@@ -16,8 +16,8 @@
     background: transparent; border-top: none; border-left: none; border-right: none;
     cursor: pointer; transition: color .12s, border-color .12s; white-space: nowrap;
 }
-.sv-tab:hover { color: #4f46e5; }
-.sv-tab-active { color: #4f46e5; border-bottom-color: #4f46e5; }
+.sv-tab:hover { color: #434CB6; }
+.sv-tab-active { color: #434CB6; border-bottom-color: #434CB6; }
 
 /* ── Big hero number ── */
 .sv-hero-amount {
@@ -43,15 +43,15 @@
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     word-break: break-all;
 }
-.sv-stat-val.brand  { background: linear-gradient(135deg,#4f46e5,#7c3aed); -webkit-background-clip:text; background-clip:text; }
+.sv-stat-val.brand  { background: linear-gradient(135deg,#434CB6,#7c3aed); -webkit-background-clip:text; background-clip:text; }
 .sv-stat-val.amber  { background: linear-gradient(135deg,#d97706,#f59e0b); -webkit-background-clip:text; background-clip:text; }
 .sv-stat-val.cyan   { background: linear-gradient(135deg,#0891b2,#06b6d4); -webkit-background-clip:text; background-clip:text; }
 .sv-stat-sub { font-size: .68rem; color: #94a3b8; }
 
 /* ── Breakdown bar ── */
 .sv-bar-track { height: 18px; border-radius: 9999px; overflow: hidden; display: flex; background: #f1f5f9; }
-.sv-bar-initial  { background: #4f46e5; }
-.sv-bar-contrib  { background: #6366f1; }
+.sv-bar-initial  { background: #434CB6; }
+.sv-bar-contrib  { background: #5B62C5; }
 .sv-bar-interest { background: #10b981; }
 .sv-legend-dot   { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
@@ -76,7 +76,7 @@
     padding: .75rem; border-radius: .75rem; border: 1.5px solid #e2e8f0; background: #fff;
     text-align: center; cursor: pointer; transition: all .15s;
 }
-.sv-whatif-card:hover { border-color: #a5b4fc; background: #f5f3ff; }
+.sv-whatif-card:hover { border-color: #AAAEE4; background: #f5f3ff; }
 .sv-whatif-card.current { border-color: #059669; background: #f0fdf4; }
 .sv-whatif-amount { font-size: 1rem; font-weight: 800; color: #059669; }
 .sv-whatif-label  { font-size: .65rem; color: #6b7280; margin-top: .15rem; }
@@ -97,7 +97,7 @@
 
 /* ── Progress toward goal ── */
 .sv-goal-bar-wrap { height: 12px; border-radius: 9999px; background: #f1f5f9; overflow: hidden; }
-.sv-goal-bar-fill { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#4f46e5,#10b981); transition: width .5s ease; }
+.sv-goal-bar-fill { height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#434CB6,#10b981); transition: width .5s ease; }
 
 /* ── Table ── */
 .sv-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
@@ -130,7 +130,7 @@
 .sv-toggle-btn { flex: 1; padding: .3rem .65rem; border-radius: .45rem;
     font-size: .75rem; font-weight: 600; color: #64748b;
     cursor: pointer; transition: all .15s; border: none; background: none; }
-.sv-toggle-btn.active { background: white; color: #4f46e5; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.sv-toggle-btn.active { background: white; color: #434CB6; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
 
 /* ── Section divider ── */
 .sv-div { display: flex; align-items: center; gap: .6rem;
@@ -523,11 +523,11 @@
                         </div>
                         <div class="flex flex-wrap gap-4 text-xs">
                             <span class="flex items-center gap-1.5">
-                                <span class="sv-legend-dot" style="background:#4f46e5"></span>
+                                <span class="sv-legend-dot" style="background:#434CB6"></span>
                                 <span class="text-gray-600">Initial <strong x-text="result ? fmtC(result.principal) : ''"></strong> (<span x-text="result ? fmtPct(result.initialPct) : ''"></span>)</span>
                             </span>
                             <span class="flex items-center gap-1.5" x-show="result && result.totalContribs > 0">
-                                <span class="sv-legend-dot" style="background:#6366f1"></span>
+                                <span class="sv-legend-dot" style="background:#5B62C5"></span>
                                 <span class="text-gray-600">Contributions <strong x-text="result ? fmtC(result.totalContribs) : ''"></strong> (<span x-text="result ? fmtPct(result.contribPct) : ''"></span>)</span>
                             </span>
                             <span class="flex items-center gap-1.5">
@@ -604,9 +604,9 @@
                                             <text :x="result.chart.padX - 6" :y="gl.y + 4" text-anchor="end" font-size="9" fill="#9ca3af" x-text="gl.label"></text>
                                         </template>
                                         {{-- Contributions area (under contributions line) --}}
-                                        <path :d="result.chart.contribAreaPath" fill="rgba(99,102,241,0.1)"/>
+                                        <path :d="result.chart.contribAreaPath" fill="rgba(91,98,197,0.1)"/>
                                         {{-- Contributions line --}}
-                                        <path :d="result.chart.contribLinePath" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5 3"/>
+                                        <path :d="result.chart.contribLinePath" fill="none" stroke="#7B81D3" stroke-width="1.5" stroke-dasharray="5 3"/>
                                         {{-- Balance area --}}
                                         <path :d="result.chart.areaPath" fill="url(#svAreaGrad)"/>
                                         {{-- Balance line --}}
@@ -628,7 +628,7 @@
                                 Balance
                             </span>
                             <span class="inline-flex items-center gap-1">
-                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5 3"/></svg>
+                                <svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="#7B81D3" stroke-width="1.5" stroke-dasharray="5 3"/></svg>
                                 Contributions Only
                             </span>
                         </p>
@@ -766,7 +766,7 @@
                     <div class="card overflow-hidden">
                         <div style="background:linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);" class="px-6 py-5 text-center">
                             <p class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-1">Required Monthly Savings</p>
-                            <p style="font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1;background:linear-gradient(135deg,#4f46e5,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"
+                            <p style="font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1;background:linear-gradient(135deg,#434CB6,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"
                                x-text="result ? fmtC(result.requiredPMT) : '—'"></p>
                             <p class="text-xs text-gray-500 mt-1.5">per month for <strong x-text="result ? fmtDuration(result.totalMonths) : ''"></strong></p>
                         </div>

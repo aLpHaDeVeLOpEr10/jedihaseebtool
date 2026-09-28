@@ -7,14 +7,14 @@
 
 <style>
 /* ── Object Remover Styles (prefix: or-) ── */
-.or-hero{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4338ca 100%);border-bottom:1px solid #3730a3;padding:2rem 0}
+.or-hero{background:linear-gradient(135deg,#1e1b4b 0%,#262A5E 50%,#383F99 100%);border-bottom:1px solid #2F3479;padding:2rem 0}
 .or-hero h1{color:#fff}
-.or-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#e0e7ff;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
+.or-badge{display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#E9EAF7;font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
 
 /* Upload drop zone */
-.or-drop{border:2px dashed #a5b4fc;border-radius:14px;padding:3.5rem 2rem;text-align:center;cursor:pointer;background:#f5f3ff;transition:all .2s}
-.or-drop:hover,.or-drop.active{border-color:#4f46e5;background:#eef2ff}
-.or-drop-icon{width:60px;height:60px;background:#e0e7ff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.or-drop{border:2px dashed #AAAEE4;border-radius:14px;padding:3.5rem 2rem;text-align:center;cursor:pointer;background:#f5f3ff;transition:all .2s}
+.or-drop:hover,.or-drop.active{border-color:#434CB6;background:#F4F5FA}
+.or-drop-icon{width:60px;height:60px;background:#E9EAF7;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
 
 /* Editor card */
 .or-editor{background:#fff;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -28,11 +28,11 @@
 
 /* Buttons */
 .or-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.375rem .75rem;border-radius:7px;border:1.5px solid #e5e7eb;font-size:.8rem;font-weight:500;color:#374151;cursor:pointer;background:#fff;transition:all .12s;white-space:nowrap;line-height:1}
-.or-btn:hover:not(:disabled){border-color:#a5b4fc;color:#4338ca;background:#eef2ff}
+.or-btn:hover:not(:disabled){border-color:#AAAEE4;color:#383F99;background:#F4F5FA}
 .or-btn:disabled{opacity:.4;cursor:not-allowed}
-.or-btn.active{border-color:#4f46e5;background:#eef2ff;color:#4338ca}
-.or-btn-primary{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-color:#4f46e5;color:#fff}
-.or-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#4338ca,#6d28d9);border-color:#4338ca;color:#fff}
+.or-btn.active{border-color:#434CB6;background:#F4F5FA;color:#383F99}
+.or-btn-primary{background:linear-gradient(135deg,#434CB6,#7c3aed);border-color:#434CB6;color:#fff}
+.or-btn-primary:hover:not(:disabled){background:linear-gradient(135deg,#383F99,#6d28d9);border-color:#383F99;color:#fff}
 .or-btn-green{background:linear-gradient(135deg,#16a34a,#15803d);border-color:#16a34a;color:#fff}
 .or-btn-green:hover:not(:disabled){background:linear-gradient(135deg,#15803d,#166534);border-color:#15803d;color:#fff}
 .or-btn-red{border-color:#fca5a5;color:#dc2626}
@@ -48,24 +48,24 @@
 
 /* Sidebar panels */
 .or-panel{padding:.875rem 1rem}
-.or-sec{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5;margin:.875rem 0 .5rem}
+.or-sec{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#434CB6;margin:.875rem 0 .5rem}
 .or-sec:first-child{margin-top:0}
 
 /* Brush mode toggle */
 .or-mode-row{display:grid;grid-template-columns:1fr 1fr;gap:.375rem;margin-bottom:.75rem}
 .or-mode-btn{display:flex;align-items:center;justify-content:center;gap:.375rem;padding:.5rem;border:1.5px solid #e5e7eb;border-radius:8px;font-size:.8rem;font-weight:500;color:#374151;cursor:pointer;background:#fff;transition:all .12s}
-.or-mode-btn:hover{border-color:#a5b4fc;background:#eef2ff}
-.or-mode-btn.active{border-color:#4f46e5;background:#eef2ff;color:#4338ca}
+.or-mode-btn:hover{border-color:#AAAEE4;background:#F4F5FA}
+.or-mode-btn.active{border-color:#434CB6;background:#F4F5FA;color:#383F99}
 .or-mode-btn.erase.active{border-color:#0891b2;background:#ecfeff;color:#0e7490}
 
 /* Brush size */
 .or-slider-row{margin-bottom:.75rem}
 .or-slider-header{display:flex;justify-content:space-between;margin-bottom:.3rem}
 .or-slider-lbl{font-size:.75rem;font-weight:600;color:#374151}
-.or-slider-val{font-size:.75rem;font-weight:600;color:#4f46e5}
-.or-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#4f46e5 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
-.or-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;box-shadow:0 1px 4px rgba(79,70,229,.4);cursor:pointer}
-.or-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#4f46e5;border:2px solid #fff;cursor:pointer;border:none}
+.or-slider-val{font-size:.75rem;font-weight:600;color:#434CB6}
+.or-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;background:linear-gradient(to right,#434CB6 var(--pct,50%),#e5e7eb var(--pct,50%));outline:none;cursor:pointer}
+.or-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;box-shadow:0 1px 4px rgba(67,76,182,.4);cursor:pointer}
+.or-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#434CB6;border:2px solid #fff;cursor:pointer;border:none}
 
 /* Hotkey hint */
 .or-hint-row{display:flex;align-items:center;gap:.375rem;font-size:.7rem;color:#9ca3af;margin-bottom:.3rem}
@@ -78,7 +78,7 @@
 
 /* Processing overlay */
 .or-processing-overlay{position:absolute;inset:0;background:rgba(17,17,46,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:10}
-.or-spin{width:40px;height:40px;border:3px solid rgba(79,70,229,.25);border-top-color:#6366f1;border-radius:50%;animation:or-rotate .75s linear infinite}
+.or-spin{width:40px;height:40px;border:3px solid rgba(67,76,182,.25);border-top-color:#5B62C5;border-radius:50%;animation:or-rotate .75s linear infinite}
 @keyframes or-rotate{to{transform:rotate(360deg)}}
 
 /* Status bar */
@@ -87,22 +87,22 @@
 /* View tabs */
 .or-view-tabs{display:flex;gap:.375rem}
 .or-view-tab{padding:.3rem .6rem;border-radius:5px;font-size:.7rem;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all .12s;color:#6b7280}
-.or-view-tab:hover{color:#4f46e5}
-.or-view-tab.active{background:#1e1b4b;border-color:#4f46e5;color:#a5b4fc}
+.or-view-tab:hover{color:#434CB6}
+.or-view-tab.active{background:#1e1b4b;border-color:#434CB6;color:#AAAEE4}
 
 /* Tip callout */
 .or-tip{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.625rem .875rem;font-size:.78rem;color:#15803d;display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.75rem}
 
 /* Radius select */
 .or-select{width:100%;padding:.4rem .625rem;border:1.5px solid #e5e7eb;border-radius:7px;font-size:.8125rem;color:#1f2937;background:#fff}
-.or-select:focus{outline:none;border-color:#4f46e5}
+.or-select:focus{outline:none;border-color:#434CB6}
 </style>
 
 <!-- Hero -->
 <div class="or-hero">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
     <div class="flex items-start gap-4">
-      <div style="width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#5B62C5,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg width="28" height="28" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
           <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
           <path d="M15 9l-6 6M9 9l6 6" stroke-linecap="round"/>
@@ -116,7 +116,7 @@
             Browser-Only &middot; Privacy-First
           </span>
         </div>
-        <p class="text-sm max-w-2xl" style="color:#c7d2fe">Paint over any object with the brush, then click Remove — the tool fills the region with surrounding content using the Telea inpainting algorithm.</p>
+        <p class="text-sm max-w-2xl" style="color:#CDD0EE">Paint over any object with the brush, then click Remove — the tool fills the region with surrounding content using the Telea inpainting algorithm.</p>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@
         @click="$refs.fileIn.click()"
       >
         <div class="or-drop-icon">
-          <svg width="30" height="30" fill="none" stroke="#4f46e5" stroke-width="1.8" viewBox="0 0 24 24">
+          <svg width="30" height="30" fill="none" stroke="#434CB6" stroke-width="1.8" viewBox="0 0 24 24">
             <path d="M15 10l-4-4-4 4M11 6v8"/><rect x="3" y="14" width="18" height="7" rx="2"/>
           </svg>
         </div>
@@ -306,8 +306,8 @@
             <!-- Processing overlay -->
             <div class="or-processing-overlay" x-show="processing">
               <div class="or-spin"></div>
-              <div style="color:#e0e7ff;font-size:.9rem;font-weight:600">Removing object…</div>
-              <div style="color:#a5b4fc;font-size:.78rem" x-text="progressMsg"></div>
+              <div style="color:#E9EAF7;font-size:.9rem;font-weight:600">Removing object…</div>
+              <div style="color:#AAAEE4;font-size:.78rem" x-text="progressMsg"></div>
             </div>
           </div>
 
@@ -652,8 +652,8 @@ function orEditor() {
         // Handle circle
         ctx.beginPath(); ctx.arc(pos, ch/2, 16, 0, Math.PI*2);
         ctx.fillStyle = '#fff'; ctx.fill();
-        ctx.strokeStyle = '#4f46e5'; ctx.lineWidth=2; ctx.stroke();
-        ctx.fillStyle='#4f46e5'; ctx.font='bold 13px sans-serif';
+        ctx.strokeStyle = '#434CB6'; ctx.lineWidth=2; ctx.stroke();
+        ctx.fillStyle='#434CB6'; ctx.font='bold 13px sans-serif';
         ctx.textAlign='center'; ctx.textBaseline='middle';
         ctx.fillText('‹ ›', pos, ch/2);
         // Labels

@@ -259,7 +259,7 @@
                                min="5" max="180" step="5"
                                @change="applySettings()"
                                class="w-full h-2 rounded-full appearance-none cursor-pointer bg-gray-200"
-                               style="accent-color:#4f46e5">
+                               style="accent-color:#434CB6">
                         <div class="flex justify-between text-xs text-gray-400 mt-1">
                             <span>5 min</span><span>3 hours</span>
                         </div>
@@ -479,7 +479,7 @@ function studyTimer() {
             return { idle:'Ready', studying:'Studying', break:'Break', complete:'Done!' }[this.phase] || '';
         },
         get phaseColor() {
-            return { idle:'#d1d5db', studying:'#4f46e5', break:'#f59e0b', complete:'#059669' }[this.phase];
+            return { idle:'#d1d5db', studying:'#434CB6', break:'#f59e0b', complete:'#059669' }[this.phase];
         },
         get phaseTextClass() {
             return { idle:'text-gray-400', studying:'text-brand-600', break:'text-amber-600', complete:'text-emerald-600' }[this.phase];
