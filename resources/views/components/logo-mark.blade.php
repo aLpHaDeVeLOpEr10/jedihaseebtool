@@ -9,7 +9,7 @@
     $isFull   = $variant === 'full';
     // Intrinsic sizes of the source files, used to reserve space so the logo
     // cannot shift the layout while it loads.
-    $ratio    = $isFull ? 358 / 144 : 1;
+    $ratio    = $isFull ? 646 / 260 : 1;
     $width    = (int) round($height * $ratio);
     $src      = $isFull ? '/images/logo-full.png' : '/images/logo-icon-180.png';
 @endphp

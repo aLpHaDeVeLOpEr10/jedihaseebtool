@@ -1,12 +1,14 @@
 <nav class="bg-white border-b border-gray-100 sticky top-0 z-40 backdrop-blur-sm" x-data="{ open: false, search: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-16">
+        {{-- Taller on desktop so the 65px lockup sits comfortably; the phone
+             bar stays compact and shows the square mark only. --}}
+        <div class="flex items-center justify-between h-16 sm:h-[81px]">
             {{-- Logo --}}
             {{-- The lockup already contains the wordmark, so no text beside it.
                  On narrow screens only the square mark is shown. --}}
             <a href="{{ route('home') }}" class="flex items-center hover:opacity-90 transition-opacity" aria-label="{{ \App\Models\Setting::get('site_name', config('app.name')) }} — home">
-                <x-logo-mark variant="full" :height="34" class="hidden sm:block" />
-                <x-logo-mark :height="32" class="sm:hidden" />
+                <x-logo-mark variant="full" :height="65" class="hidden sm:block" />
+                <x-logo-mark :height="40" class="sm:hidden" />
             </a>
 
             {{-- Desktop Nav --}}

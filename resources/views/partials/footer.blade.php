@@ -6,7 +6,7 @@
                 {{-- Dark background: the wordmark in the lockup is navy, so the
                      square mark is paired with white type instead. --}}
                 <div class="flex items-center gap-2.5 mb-4">
-                    <x-logo-mark :height="32" />
+                    <x-logo-mark :height="40" />
                     <span class="font-bold text-white">{{ \App\Models\Setting::get('site_name', config('app.name')) }}</span>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed">
