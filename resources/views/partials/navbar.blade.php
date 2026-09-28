@@ -1,4 +1,4 @@
-<nav class="bg-white border-b border-gray-100 sticky top-0 z-40 backdrop-blur-sm" x-data="{ open: false, search: false }">
+<nav class="bg-white border-b border-gray-100" x-data="{ open: false, search: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         {{-- Sized around the 45px lockup; the phone bar stays compact and
              shows the square mark only. --}}
