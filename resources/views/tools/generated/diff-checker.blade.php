@@ -469,6 +469,10 @@
           </div>
         </div>
       </div>
+      <p class="text-xs text-gray-500 mt-4">
+        Lines look identical but still show as changed? They may contain zero-width spaces or other invisible characters —
+        <a href="{{ route('tools.show', 'invisible-character') }}" class="font-semibold text-brand-600 hover:underline">find hidden characters</a>.
+      </p>
     </div>
 
   </div>

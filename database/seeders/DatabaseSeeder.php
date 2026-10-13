@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             CategorySeeder::class,
             ToolSeeder::class,
+            InvisibleCharacterToolSeeder::class,
         ]);
     }
 }

@@ -202,7 +202,7 @@
                             @if($section->title)
                                 <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ $section->title }}</h2>
                             @endif
-                            <div class="tool-prose">{!! nl2br(e($section->content)) !!}</div>
+                            <div class="tool-prose">{{ \App\Support\Prose::render($section->content) }}</div>
                         </div>
                     @endforeach
                 </div>

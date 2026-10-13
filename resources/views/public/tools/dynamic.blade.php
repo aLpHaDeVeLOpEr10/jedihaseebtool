@@ -366,7 +366,7 @@
                 <div class="card p-6">
                     <h2 class="text-lg font-semibold text-gray-900 mb-4">About This Tool</h2>
                     <div class="tool-prose">
-                        {!! nl2br(e($tool->long_description)) !!}
+                        {{ \App\Support\Prose::render($tool->long_description) }}
                     </div>
                 </div>
                 @endif
@@ -377,7 +377,7 @@
                     @if($content->title)
                     <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ $content->title }}</h2>
                     @endif
-                    <div class="tool-prose">{!! nl2br(e($content->content)) !!}</div>
+                    <div class="tool-prose">{{ \App\Support\Prose::render($content->content) }}</div>
                 </div>
                 @endforeach
 

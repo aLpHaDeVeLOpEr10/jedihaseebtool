@@ -302,6 +302,12 @@
 
     </div>{{-- end stats section --}}
 
+    <p class="text-xs text-gray-500 text-center">
+      Character count higher than you expected? Your text may contain hidden characters —
+      <a href="{{ route('tools.show', 'invisible-character') }}" class="font-semibold text-brand-600 hover:underline">find hidden characters</a>
+      with our Invisible Character tool.
+    </p>
+
   </div>
 </div>
 @endsection
